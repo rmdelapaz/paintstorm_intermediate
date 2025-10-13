@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Intermediate Paintstorm Studio Course - Advanced techniques for digital artists ready to level up their skills">
+    <meta name="keywords" content="Paintstorm Studio, intermediate, digital art, tutorial, advanced techniques, painting, character art">
+    <meta name="author" content="Paintstorm Tutorial">
+    <title>Paintstorm Studio Intermediate Course</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        /* Hero section styles */
+        .hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 0 0 2rem 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .cta-button {
+            padding: 1rem 2rem;
+            background: white;
+            color: #f5576c;
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        /* Module cards */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .module-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb, #f5576c);
+        }
+        
+        .module-card.brush::before {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .module-card.color::before {
+            background: linear-gradient(90deg, #fa709a, #fee140);
+        }
+        
+        .module-card.composition::before {
+            background: linear-gradient(90deg, #30cfd0, #330867);
+        }
+        
+        .module-card.technique::before {
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+        }
+        
+        .module-card.character::before {
+            background: linear-gradient(90deg, #43e97b, #38f9d7);
+        }
+        
+        .module-card.professional::before {
+            background: linear-gradient(90deg, #fa8bff, #2bd2ff);
+        }
+        
+        .module-card.specialized::before {
+            background: linear-gradient(90deg, #ff9a56, #ff6a88);
+        }
+        
+        .module-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .lesson-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .lesson-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .lesson-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .lesson-list a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        
+        .lesson-list a:hover {
+            color: #f5576c;
+        }
+        
+        .lesson-list .lesson-icon {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        .lesson-list .project-badge {
+            margin-left: auto;
+            padding: 0.25rem 0.75rem;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        
+        /* Features section */
+        .features {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            border-radius: 1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .feature-card {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Stats section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Progress tracker */
+        .progress-tracker {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .progress-bar-container {
+            background: #f0f0f0;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f093fb, #f5576c);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        /* Prerequisites banner */
+        .prerequisites-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .prerequisites-banner h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .prerequisites-banner a {
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin: 3rem 0;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: #666;
+            line-height: 1.6;
+            display: none;
+            padding-top: 0.5rem;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-toggle {
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🎨 Paintstorm Studio - Intermediate</a>
+            <div class="nav-links">
+                <a href="#modules">Modules</a>
+                <a href="#about">About</a>
+                <a href="#faq">FAQ</a>
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🚀 Paintstorm Studio Intermediate</h1>
+        <p>Master Advanced Digital Painting Techniques</p>
+        <p style="font-size: 1rem; opacity: 0.9;">Take your digital art to professional levels with advanced brushwork, lighting, and composition</p>
+        <div class="cta-buttons">
+            <a href="module1_brush_mastery.html" class="cta-button">Start Learning</a>
+            <a href="#modules" class="cta-button secondary">Explore Modules</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+            
+            <!-- Prerequisites Banner -->
+            <div class="prerequisites-banner">
+                <h3>⚠️ Before You Start</h3>
+                <p>This course builds on fundamental digital painting skills. Make sure you've completed the <a href="../paintstorm/index.html" target="_blank">Paintstorm Studio Beginner's Course</a> or have equivalent experience with digital painting software, layers, brushes, and basic color theory.</p>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Advanced Modules</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">21</span>
+                    <span class="stat-label">In-Depth Lessons</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Portfolio Projects</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Pro</span>
+                    <span class="stat-label">Level Skills</span>
+                </div>
+            </div>
+
+            <!-- Progress Tracker -->
+            <div class="progress-tracker" id="progress-tracker">
+                <h2>📊 Your Learning Progress</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progress-bar"></div>
+                </div>
+                <p id="progress-text">Ready to level up! Start with Module 1: Advanced Brush Mastery.</p>
+            </div>
+
+            <!-- Learning Path Section -->
+            <section id="modules">
+                <h2 style="text-align: center; font-size: 2.5rem; margin: 3rem 0;">🎯 Advanced Learning Path</h2>
+                
+                <!-- Module 1: Advanced Brush Mastery -->
+                <div class="module-section">
+                    <h3 style="color: #667eea; margin-bottom: 1.5rem;">🖌️ Module 1: Advanced Brush Mastery</h3>
+                    <p style="margin-bottom: 2rem;">Master custom brush creation and specialized techniques for professional results.</p>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card brush">
+                            <span class="module-number">1.1</span>
+                            <h3>Custom Brush Creation</h3>
+                            <p>Create custom brushes from scratch with full control over dynamics and expressions.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson1_1_custom_brushes.html">
+                                        <span class="lesson-icon">🎨</span>
+                                        Custom Brush Creation
+                                        <span class="project-badge">10 Brushes</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card brush">
+                            <span class="module-number">1.2</span>
+                            <h3>Specialized Techniques</h3>
+                            <p>Master brushes for hair, foliage, effects, and organic textures.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson1_2_specialized_brushes.html">
+                                        <span class="lesson-icon">🌿</span>
+                                        Specialized Brush Techniques
+                                        <span class="project-badge">Nature Scene</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card brush">
+                            <span class="module-number">1.3</span>
+                            <h3>Efficiency Workflows</h3>
+                            <p>Optimize your brush workflow for speed and consistency.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson1_3_brush_efficiency.html">
+                                        <span class="lesson-icon">⚡</span>
+                                        Brush Efficiency Workflows
+                                        <span class="project-badge">Speed Paint</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2: Advanced Color & Lighting -->
+                <div class="module-section" style="margin-top: 4rem;">
+                    <h3 style="color: #fa709a; margin-bottom: 1.5rem;">🎨 Module 2: Advanced Color & Lighting</h3>
+                    <p style="margin-bottom: 2rem;">Master complex lighting scenarios and material rendering techniques.</p>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card color">
+                            <span class="module-number">2.1</span>
+                            <h3>Color Theory Deep Dive</h3>
+                            <p>Advanced color harmonies, temperature, and emotional psychology.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson2_1_color_theory.html">
+                                        <span class="lesson-icon">🌈</span>
+                                        Color Theory Deep Dive
+                                        <span class="project-badge">4 Moods</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card color">
+                            <span class="module-number">2.2</span>
+                            <h3>Complex Lighting</h3>
+                            <p>Multiple light sources, colored lighting, and atmospheric effects.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson2_2_complex_lighting.html">
+                                        <span class="lesson-icon">💡</span>
+                                        Complex Lighting Scenarios
+                                        <span class="project-badge">Interior Scene</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card color">
+                            <span class="module-number">2.3</span>
+                            <h3>Material Rendering</h3>
+                            <p>Realistic materials: metals, glass, fabric, and skin.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson2_3_materials.html">
+                                        <span class="lesson-icon">✨</span>
+                                        Material Rendering
+                                        <span class="project-badge">Still Life</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3: Composition & Storytelling -->
+                <div class="module-section" style="margin-top: 4rem;">
+                    <h3 style="color: #30cfd0; margin-bottom: 1.5rem;">📐 Module 3: Composition & Storytelling</h3>
+                    <p style="margin-bottom: 2rem;">Create compelling visual narratives with advanced composition techniques.</p>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card composition">
+                            <span class="module-number">3.1</span>
+                            <h3>Advanced Composition</h3>
+                            <p>Golden ratio, dynamic symmetry, and visual flow mastery.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson3_1_composition.html">
+                                        <span class="lesson-icon">🎯</span>
+                                        Advanced Composition
+                                        <span class="project-badge">3 Variations</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card composition">
+                            <span class="module-number">3.2</span>
+                            <h3>Visual Storytelling</h3>
+                            <p>Tell stories through environment, mood, and composition.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson3_2_storytelling.html">
+                                        <span class="lesson-icon">📖</span>
+                                        Visual Storytelling
+                                        <span class="project-badge">Narrative Art</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card composition">
+                            <span class="module-number">3.3</span>
+                            <h3>Perspective Mastery</h3>
+                            <p>Complex perspective techniques and atmospheric depth.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson3_3_perspective.html">
+                                        <span class="lesson-icon">🏙️</span>
+                                        Perspective Mastery
+                                        <span class="project-badge">Urban Scene</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 4: Digital Painting Techniques -->
+                <div class="module-section" style="margin-top: 4rem;">
+                    <h3 style="color: #4facfe; margin-bottom: 1.5rem;">🖼️ Module 4: Digital Painting Techniques</h3>
+                    <p style="margin-bottom: 2rem;">Professional workflows for concept art and matte painting.</p>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card technique">
+                            <span class="module-number">4.1</span>
+                            <h3>Photo Integration</h3>
+                            <p>Ethical photo bashing and seamless blending techniques.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson4_1_photo_integration.html">
+                                        <span class="lesson-icon">📷</span>
+                                        Photo Integration
+                                        <span class="project-badge">Concept Art</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card technique">
+                            <span class="module-number">4.2</span>
+                            <h3>Matte Painting</h3>
+                            <p>Create cinematic environments with professional techniques.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson4_2_matte_painting.html">
+                                        <span class="lesson-icon">🏔️</span>
+                                        Matte Painting Basics
+                                        <span class="project-badge">Fantasy Scene</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card technique">
+                            <span class="module-number">4.3</span>
+                            <h3>Speed Painting</h3>
+                            <p>Rapid iteration and time management strategies.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson4_3_speed_painting.html">
+                                        <span class="lesson-icon">⏱️</span>
+                                        Speed Painting
+                                        <span class="project-badge">Timed Challenges</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 5: Character Art -->
+                <div class="module-section" style="margin-top: 4rem;">
+                    <h3 style="color: #43e97b; margin-bottom: 1.5rem;">👤 Module 5: Character Art</h3>
+                    <p style="margin-bottom: 2rem;">Professional character design and portrait painting techniques.</p>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card character">
+                            <span class="module-number">5.1</span>
+                            <h3>Character Design</h3>
+                            <p>Shape language, silhouettes, and character development.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson5_1_character_design.html">
+                                        <span class="lesson-icon">🎭</span>
+                                        Character Design Process
+                                        <span class="project-badge">Character Sheet</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card character">
+                            <span class="module-number">5.2</span>
+                            <h3>Portrait Painting</h3>
+                            <p>Advanced facial anatomy, skin tones, and expressions.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson5_2_portraits.html">
+                                        <span class="lesson-icon">👨‍🎨</span>
+                                        Portrait Painting
+                                        <span class="project-badge">Portrait Series</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card character">
+                            <span class="module-number">5.3</span>
+                            <h3>Figure in Environment</h3>
+                            <p>Integrate characters with backgrounds and lighting.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson5_3_figure_environment.html">
+                                        <span class="lesson-icon">🎬</span>
+                                        Figure in Environment
+                                        <span class="project-badge">Full Illustration</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 6: Professional Workflows -->
+                <div class="module-section" style="margin-top: 4rem;">
+                    <h3 style="color: #fa8bff; margin-bottom: 1.5rem;">💼 Module 6: Professional Workflows</h3>
+                    <p style="margin-bottom: 2rem;">Industry-standard workflows and portfolio development.</p>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card professional">
+                            <span class="module-number">6.1</span>
+                            <h3>Non-Destructive Workflow</h3>
+                            <p>Smart techniques for professional flexibility.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson6_1_nondestructive.html">
+                                        <span class="lesson-icon">🔄</span>
+                                        Non-Destructive Workflows
+                                        <span class="project-badge">5 Variations</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card professional">
+                            <span class="module-number">6.2</span>
+                            <h3>Client Work</h3>
+                            <p>Professional briefs, iteration, and presentation.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson6_2_client_work.html">
+                                        <span class="lesson-icon">🤝</span>
+                                        Client Work Preparation
+                                        <span class="project-badge">Mock Project</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card professional">
+                            <span class="module-number">6.3</span>
+                            <h3>Style Development</h3>
+                            <p>Find your unique voice and build a cohesive portfolio.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson6_3_style.html">
+                                        <span class="lesson-icon">🎨</span>
+                                        Style Development
+                                        <span class="project-badge">Portfolio Series</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 7: Specialized Techniques -->
+                <div class="module-section" style="margin-top: 4rem;">
+                    <h3 style="color: #ff9a56; margin-bottom: 1.5rem;">✨ Module 7: Specialized Techniques</h3>
+                    <p style="margin-bottom: 2rem;">Master effects, textures, and experimental approaches.</p>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card specialized">
+                            <span class="module-number">7.1</span>
+                            <h3>Effects & Atmosphere</h3>
+                            <p>Weather effects, particles, and motion blur.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson7_1_effects.html">
+                                        <span class="lesson-icon">🌫️</span>
+                                        Effects and Atmosphere
+                                        <span class="project-badge">Weather Series</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card specialized">
+                            <span class="module-number">7.2</span>
+                            <h3>Texture & Detail</h3>
+                            <p>Create texture libraries and hyper-detailed work.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson7_2_texture.html">
+                                        <span class="lesson-icon">🔍</span>
+                                        Texture and Detail
+                                        <span class="project-badge">Detailed Study</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="module-card specialized">
+                            <span class="module-number">7.3</span>
+                            <h3>Mixed Media Digital</h3>
+                            <p>Combine traditional and digital techniques.</p>
+                            <ul class="lesson-list">
+                                <li>
+                                    <a href="lesson7_3_mixed_media.html">
+                                        <span class="lesson-icon">🎭</span>
+                                        Mixed Media Digital
+                                        <span class="project-badge">Experimental</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <h2 style="text-align: center; margin-bottom: 2rem;">✨ Course Highlights</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h4>Project-Based Learning</h4>
+                        <p>Every lesson includes portfolio-worthy projects to build your skills.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💼</div>
+                        <h4>Industry Standards</h4>
+                        <p>Learn professional workflows used in concept art and illustration.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h4>Advanced Techniques</h4>
+                        <p>Master custom brushes, complex lighting, and material rendering.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h4>Style Development</h4>
+                        <p>Find and develop your unique artistic voice and style.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" style="margin: 4rem 0;">
+                <div class="card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 3rem;">
+                    <h2 style="text-align: center; margin-bottom: 2rem;">📖 About This Intermediate Course</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                        This intermediate course is designed for digital artists who have mastered the fundamentals and are ready to elevate their skills to a professional level. Through 7 comprehensive modules and over 50 portfolio projects, you'll learn advanced techniques used by industry professionals in concept art, illustration, and digital painting.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 2rem auto 0;">
+                        Each module builds systematically on previous knowledge, taking you from intermediate techniques to professional workflows. You'll create a diverse portfolio of work including character designs, environments, matte paintings, and stylized illustrations. By the end of this course, you'll have the skills and confidence to take on professional projects and develop your unique artistic style.
+                    </p>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="faq-section">
+                <h2 style="text-align: center; margin-bottom: 2rem;">❓ Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need to complete the beginner course first?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, or you should have equivalent experience. This course assumes you're comfortable with Paintstorm's interface, basic brush usage, layers, color selection, and fundamental painting techniques. If you're brand new to digital art, start with the beginner course.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long will it take to complete this course?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        The course contains approximately 40-50 hours of instruction and practice. However, the projects can take significantly longer depending on your pace and detail level. Most students complete the course in 3-6 months with consistent practice (5-10 hours per week).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Will this help me build a professional portfolio?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! Each module includes portfolio-quality projects. By the end of the course, you'll have completed 50+ pieces including character designs, environments, matte paintings, and styled illustrations. Module 6 specifically focuses on portfolio development and professional presentation.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What equipment do I need?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        A graphics tablet with pressure sensitivity is essential for this course. We recommend at least a mid-range tablet (Wacom Intuos, Huion, or XP-Pen equivalents). A computer capable of running Paintstorm Studio smoothly with multiple layers is also required.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I use these techniques in other software?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! While the course is taught using Paintstorm Studio, the concepts, techniques, and workflows are applicable to any digital painting software including Photoshop, Procreate, Krita, or Clip Studio Paint. The principles of lighting, composition, and color theory are universal.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section style="text-align: center; margin: 4rem 0;">
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3rem; color: white;">
+                    <h2 style="margin-bottom: 1rem;">🚀 Ready to Level Up Your Art?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Transform your digital painting skills with professional techniques!</p>
+                    <a href="module1_brush_mastery.html" class="cta-button" style="font-size: 1.2rem; padding: 1.2rem 3rem; background: white; color: #667eea;">
+                        Start Module 1 →
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #2c3e50; color: white; padding: 3rem 0; margin-top: 4rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h4>Course Navigation</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;"><a href="module1_brush_mastery.html" style="color: #ecf0f1;">Module 1: Brush Mastery</a></li>
+                        <li style="padding: 0.5rem 0;"><a href="#modules" style="color: #ecf0f1;">All Modules</a></li>
+                        <li style="padding: 0.5rem 0;"><a href="../paintstorm/index.html" style="color: #ecf0f1;">Beginner Course</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;"><a href="https://paintstormstudio.com" target="_blank" style="color: #ecf0f1;">Paintstorm Studio</a></li>
+                        <li style="padding: 0.5rem 0;"><a href="#" style="color: #ecf0f1;">Download Assets</a></li>
+                        <li style="padding: 0.5rem 0;"><a href="#" style="color: #ecf0f1;">Community Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>About</h4>
+                    <p style="line-height: 1.6; color: #bdc3c7;">
+                        Intermediate course for digital artists ready to master advanced techniques and build professional portfolios with Paintstorm Studio.
+                    </p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #34495e;">
+                <p>&copy; 2024 Paintstorm Studio Intermediate Course. Level up your digital art! 🚀</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+            
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                const newTheme = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+            });
+        }
+
+        // Progress tracking
+        function updateProgress() {
+            const modules = [
+                '1_1', '1_2', '1_3',
+                '2_1', '2_2', '2_3',
+                '3_1', '3_2', '3_3',
+                '4_1', '4_2', '4_3',
+                '5_1', '5_2', '5_3',
+                '6_1', '6_2', '6_3',
+                '7_1', '7_2', '7_3'
+            ];
+            
+            let completed = 0;
+            modules.forEach(module => {
+                if (localStorage.getItem(`module_${module}_completed`) === 'true') {
+                    completed++;
+                }
+            });
+            
+            const percentage = (completed / modules.length) * 100;
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            
+            if (progressBar) {
+                progressBar.style.width = `${percentage}%`;
+            }
+            
+            if (progressText) {
+                if (completed === 0) {
+                    progressText.textContent = 'Ready to level up! Start with Module 1: Advanced Brush Mastery.';
+                } else if (completed === modules.length) {
+                    progressText.textContent = '🎉 Congratulations! You\'ve completed the intermediate course!';
+                } else {
+                    progressText.textContent = `${completed} of ${modules.length} lessons completed (${Math.round(percentage)}%)`;
+                }
+            }
+        }
+        
+        // Update progress on page load
+        updateProgress();
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out both';
+                }
+            });
+        }, observerOptions);
+
+        // Observe module cards
+        document.querySelectorAll('.module-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

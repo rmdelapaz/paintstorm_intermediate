@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master realistic textures, fabric, metal, organic surfaces, weathering effects, and detail hierarchy in Paintstorm Studio">
+    <meta name="author" content="Paintstorm Intermediate Tutorial">
+    <title>Texture & Detail - Part 1 - Paintstorm Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="progressbar" aria-label="Page scroll progress"><div class="progress-bar"></div></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🎨 Paintstorm Studio - Intermediate</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links" aria-hidden="false">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Lessons</a>
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Specialized Techniques</a></li>
+            <li aria-current="page">Texture & Detail - Part 1</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🎨 Texture & Detail - Part 1</h1>
+                <p class="lead">Master the art of texture! Learn to create believable surfaces from scratch—fabric, metal, wood, stone, skin, and more. Understand weathering, aging, material properties, and strategic detail placement. Transform flat paintings into tactile, believable worlds!</p>
+                
+                <div class="card">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this lesson, you will master:</p>
+                    <ul>
+                        <li>Creating realistic textures from scratch without photo references</li>
+                        <li>Understanding material properties (roughness, reflectivity, absorption)</li>
+                        <li>Painting fabric and clothing with proper folds and texture</li>
+                        <li>Rendering metals, glass, and reflective surfaces convincingly</li>
+                        <li>Creating organic textures (skin, bark, stone, earth)</li>
+                        <li>Applying weathering and aging effects realistically</li>
+                        <li>Strategic detail hierarchy—where to add and omit detail</li>
+                    </ul>
+                </div>
+            </header>
+
+            <nav class="card" aria-label="Table of Contents">
+                <h2 style="cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center;" onclick="toggleTOC()">
+                    <span>📑 Table of Contents</span>
+                    <span id="toc-toggle-icon" style="transition: transform 0.3s;">▼</span>
+                </h2>
+                <ol id="toc-list" style="overflow: hidden; transition: max-height 0.3s ease-out; max-height: 500px; margin: 0; padding-left: 1.5rem;">
+                    <li><a href="#introduction" class="toc-link">Understanding Texture & Materials</a></li>
+                    <li><a href="#material-properties" class="toc-link">Material Properties Fundamentals</a></li>
+                    <li><a href="#fabric-textures" class="toc-link">Fabric & Clothing Textures</a></li>
+                    <li><a href="#metal-textures" class="toc-link">Metal & Reflective Surfaces</a></li>
+                    <li><a href="#organic-textures" class="toc-link">Organic Textures</a></li>
+                    <li><a href="#weathering" class="toc-link">Weathering & Aging Effects</a></li>
+                    <li><a href="#detail-hierarchy" class="toc-link">Detail Hierarchy & Strategic Detail Placement</a></li>
+                </ol>
+            </nav>
+
+            <!-- Section 1: Introduction -->
+            <section id="introduction" class="lesson-section">
+                <h2>Understanding Texture & Materials 🔍</h2>
+                
+                <p>Texture is what makes digital paintings feel real and touchable. It's the difference between a flat color and a weathered stone wall, between a graphic shape and worn leather. Mastering texture creation elevates your art from simple to sensational!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Texture Principle</h3>
+                    <p><strong>Texture is light interacting with surface irregularities!</strong> Every material has unique properties—how it reflects, absorbs, or scatters light. Understanding physics creates believability. You're not painting "rough"—you're painting how light behaves on rough surfaces!</p>
+                </div>
+
+                <h3>Why Texture Matters</h3>
+                
+                <div class="card">
+                    <h4>🎨 The Power of Texture</h4>
+                    
+                    <p><strong>What texture achieves:</strong></p>
+                    <ul>
+                        <li><strong>Believability:</strong> Makes fantasy worlds feel physically real</li>
+                        <li><strong>Tactile Quality:</strong> Viewers "feel" surfaces through sight</li>
+                        <li><strong>Visual Interest:</strong> Texture prevents monotony and adds complexity</li>
+                        <li><strong>Storytelling:</strong> Wear, age, and condition tell history</li>
+                        <li><strong>Material Recognition:</strong> Instantly communicates what objects are made of</li>
+                        <li><strong>Quality Perception:</strong> Professional texture = professional art</li>
+                    </ul>
+                </div>
+
+                <h3>Texture vs. Detail</h3>
+                
+                <div class="card">
+                    <h4>Understanding the Difference</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Texture</th>
+                                <th>Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Definition</strong></td>
+                                <td>Surface quality and feel</td>
+                                <td>Complexity and information</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Purpose</strong></td>
+                                <td>Material identification</td>
+                                <td>Visual interest and realism</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scale</strong></td>
+                                <td>Micro-surface variations</td>
+                                <td>Macro-level features</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Example</strong></td>
+                                <td>Canvas weave, wood grain</td>
+                                <td>Buttons, scratches, cracks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>The Relationship:</strong> Texture is surface character, detail is surface information. Both are essential, but serve different purposes. You can have detailed smooth surfaces or simple textured ones!</p>
+                </div>
+
+                <h3>Approaches to Creating Texture</h3>
+                
+                <div class="card">
+                    <h4>🖌️ Three Methods</h4>
+                    
+                    <p><strong>Method 1: From-Scratch Painting (Recommended for learning)</strong></p>
+                    <ul>
+                        <li>Paint texture manually using brushes</li>
+                        <li>Full artistic control</li>
+                        <li>Develops observational skills</li>
+                        <li>Time-intensive but most valuable</li>
+                        <li><strong>This lesson focuses on this method</strong></li>
+                    </ul>
+                    
+                    <p><strong>Method 2: Photo Textures (Production work)</strong></p>
+                    <ul>
+                        <li>Use photographic textures</li>
+                        <li>Fast and efficient</li>
+                        <li>Requires integration skills</li>
+                        <li>See <a href="photo_integration_a.html">Lesson 4.1: Photo Integration</a></li>
+                    </ul>
+                    
+                    <p><strong>Method 3: Hybrid Approach (Professional standard)</strong></p>
+                    <ul>
+                        <li>Combine painting and photos</li>
+                        <li>Speed + control</li>
+                        <li>Industry-standard workflow</li>
+                        <li>Requires mastery of both methods</li>
+                    </ul>
+                </div>
+
+                <h3>The Texture Artist's Mindset</h3>
+                
+                <div class="card">
+                    <h4>👁️ Observational Thinking</h4>
+                    
+                    <p><strong>When studying any material, ask:</strong></p>
+                    <ol>
+                        <li><strong>How does it reflect light?</strong>
+                            <ul>
+                                <li>Sharp specular highlights or soft glow?</li>
+                                <li>Directional reflection or scattered?</li>
+                            </ul>
+                        </li>
+                        <li><strong>What's the surface structure?</strong>
+                            <ul>
+                                <li>Smooth, rough, bumpy, irregular?</li>
+                                <li>Regular pattern or random?</li>
+                            </ul>
+                        </li>
+                        <li><strong>How does it absorb vs. reflect?</strong>
+                            <ul>
+                                <li>Matte (absorbs) or glossy (reflects)?</li>
+                                <li>Does color saturate or desaturate in shadow?</li>
+                            </ul>
+                        </li>
+                        <li><strong>What's the scale of texture?</strong>
+                            <ul>
+                                <li>Fine (silk) or coarse (burlap)?</li>
+                                <li>Visible from distance or up close?</li>
+                            </ul>
+                        </li>
+                        <li><strong>How has it been affected by time?</strong>
+                            <ul>
+                                <li>Weathering, wear, aging?</li>
+                                <li>Pristine or battle-scarred?</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <canvas id="texture-intro-demo" width="800" height="500"></canvas>
+
+                <blockquote>
+                    <strong>🔍 Observation Wisdom:</strong> "The best texture artists are forensic observers. They don't just see 'wood'—they see growth rings, grain direction, knots, weathering, and how light plays across each element. Train your eye before training your hand!"
+                </blockquote>
+            </section>
+
+            <!-- Section 7: Detail Hierarchy & Strategic Detail Placement -->
+            <section id="detail-hierarchy" class="lesson-section">
+                <h2>Detail Hierarchy & Strategic Detail Placement 🎯</h2>
+                
+                <p>Not all areas deserve equal detail! Strategic detail placement directs viewer attention and manages production time. Learn where to add detail and where to simplify for maximum impact!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Detail Hierarchy Principle</h3>
+                    <p><strong>80% of detail should occupy 20% of your canvas!</strong> Focal areas get full detail, supporting areas get suggestion, background gets simplification. Uniform detail everywhere creates visual noise. Strategic detail creates focus!</p>
+                </div>
+
+                <h3>The Three Detail Zones</h3>
+                
+                <div class="card">
+                    <h4>📍 Detail Allocation Strategy</h4>
+                    
+                    <p><strong>Zone 1: Focal Point (10-20% of canvas)</strong></p>
+                    <ul>
+                        <li><strong>Detail Level:</strong> 100% (maximum detail)</li>
+                        <li><strong>What to include:</strong>
+                            <ul>
+                                <li>Full texture resolution</li>
+                                <li>Crisp edges</li>
+                                <li>Rich color variation</li>
+                                <li>Highlight and shadow subtlety</li>
+                                <li>Surface imperfections</li>
+                            </ul>
+                        </li>
+                        <li><strong>Time Investment:</strong> 60-80% of texture work</li>
+                    </ul>
+                    
+                    <p><strong>Zone 2: Supporting Areas (30-40% of canvas)</strong></p>
+                    <ul>
+                        <li><strong>Detail Level:</strong> 40-60% (medium detail)</li>
+                        <li><strong>What to include:</strong>
+                            <ul>
+                                <li>Suggested texture (not fully rendered)</li>
+                                <li>Clear material identification</li>
+                                <li>Simplified edges</li>
+                                <li>Basic highlight/shadow</li>
+                            </ul>
+                        </li>
+                        <li><strong>Time Investment:</strong> 15-25% of texture work</li>
+                    </ul>
+                    
+                    <p><strong>Zone 3: Background (40-60% of canvas)</strong></p>
+                    <ul>
+                        <li><strong>Detail Level:</strong> 10-30% (minimal detail)</li>
+                        <li><strong>What to include:</strong>
+                            <ul>
+                                <li>Atmospheric blur/softening</li>
+                                <li>Simplified shapes</li>
+                                <li>Muted colors</li>
+                                <li>Implied texture only</li>
+                            </ul>
+                        </li>
+                        <li><strong>Time Investment:</strong> 5-15% of texture work</li>
+                    </ul>
+                </div>
+
+                <h3>Where to Focus Detail</h3>
+                
+                <div class="card">
+                    <h4>🔍 High-Detail Priority Areas</h4>
+                    
+                    <p><strong>Automatically Deserving High Detail:</strong></p>
+                    <ul>
+                        <li><strong>Faces & Eyes:</strong> Viewers instinctively focus here</li>
+                        <li><strong>Hands:</strong> Expressive and often visible</li>
+                        <li><strong>Foreground Objects:</strong> Closest to viewer</li>
+                        <li><strong>Story-Critical Elements:</strong> Items important to narrative</li>
+                        <li><strong>Light-Catching Surfaces:</strong> Highlights draw attention</li>
+                        <li><strong>Edges Against Contrast:</strong> High-contrast boundaries stand out</li>
+                    </ul>
+                    
+                    <p><strong>Can Be Simplified:</strong></p>
+                    <ul>
+                        <li>Deep shadows (detail invisible anyway)</li>
+                        <li>Motion-blurred areas</li>
+                        <li>Atmospheric distance</li>
+                        <li>Out-of-focus backgrounds</li>
+                        <li>Unimportant props</li>
+                        <li>Occluded areas</li>
+                    </ul>
+                </div>
+
+                <canvas id="detail-hierarchy-demo" width="800" height="550"></canvas>
+
+                <h3>Avoiding Common Detail Mistakes</h3>
+                
+                <div class="card">
+                    <h4>⚠️ Detail Pitfalls</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mistake</th>
+                                <th>Problem</th>
+                                <th>Solution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Uniform Detail</strong></td>
+                                <td>No focal point, visual chaos</td>
+                                <td>Create clear hierarchy—focal, support, background</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Over-Texturing</strong></td>
+                                <td>Surface too noisy, distracting</td>
+                                <td>Use texture sparingly, let smooth areas breathe</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inconsistent Detail</strong></td>
+                                <td>Hyper-detailed next to crude</td>
+                                <td>Gradual detail falloff, not abrupt</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wrong Focus Areas</strong></td>
+                                <td>Background sharp, foreground soft</td>
+                                <td>Match detail to compositional importance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Texture Overkill</strong></td>
+                                <td>Texture on everything</td>
+                                <td>Some surfaces should be smooth—variation is key</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <blockquote>
+                    <strong>🎯 Detail Wisdom:</strong> "Professional artists know when NOT to add detail. Restraint creates focus. Overwork creates noise. Paint less with more purpose. Your viewer's eye should know exactly where to look—guide them with strategic detail, not overwhelm them with everything!"
+                </blockquote>
+            </section>
+
+            <!-- Section 2: Material Properties Fundamentals -->
+            <section id="material-properties" class="lesson-section">
+                <h2>Material Properties Fundamentals ⚙️</h2>
+                
+                <p>Before painting any texture, understand the physical properties that define it. These properties dictate how you paint highlights, shadows, and surface character!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Material Property Principle</h3>
+                    <p><strong>Materials are defined by how they interact with light!</strong> Roughness, reflectivity, translucency, and absorption determine appearance. Master these properties, and you can paint ANY material convincingly!</p>
+                </div>
+
+                <h3>The Four Core Properties</h3>
+                
+                <div class="card">
+                    <h4>1. Roughness vs. Smoothness</h4>
+                    
+                    <p><strong>What it controls:</strong> How scattered or focused reflections are</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Appearance</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Smooth</strong></td>
+                                <td>Sharp, focused reflections</td>
+                                <td>Mirror, glass, polished metal, water</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Slightly Rough</strong></td>
+                                <td>Soft, blurred reflections</td>
+                                <td>Satin, brushed metal, waxed wood</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rough</strong></td>
+                                <td>Diffuse, scattered light</td>
+                                <td>Concrete, unfinished wood, fabric</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Very Rough</strong></td>
+                                <td>No visible reflections, matte</td>
+                                <td>Chalk, dry clay, rough stone</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Painting Tip:</strong> Smooth = sharp highlights, Rough = soft/no highlights</p>
+                </div>
+
+                <div class="card">
+                    <h4>2. Reflectivity (Metallic vs. Dielectric)</h4>
+                    
+                    <p><strong>What it controls:</strong> How much light reflects vs. penetrates</p>
+                    
+                    <p><strong>Metallic (Conductors):</strong></p>
+                    <ul>
+                        <li>Reflect most light (60-90%)</li>
+                        <li>Reflections are colored (tinted by metal color)</li>
+                        <li>No subsurface scattering</li>
+                        <li>Sharp value contrast</li>
+                        <li><strong>Examples:</strong> Gold, silver, copper, iron</li>
+                    </ul>
+                    
+                    <p><strong>Dielectric (Insulators):</strong></p>
+                    <ul>
+                        <li>Reflect less light (4-16%)</li>
+                        <li>Reflections are white/gray (not colored)</li>
+                        <li>Light penetrates, bounces inside material</li>
+                        <li>Softer value transitions</li>
+                        <li><strong>Examples:</strong> Plastic, wood, fabric, skin, stone</li>
+                    </ul>
+                    
+                    <p><strong>Painting Tip:</strong> Metal highlights = colored, Non-metal highlights = white/gray</p>
+                </div>
+
+                <div class="card">
+                    <h4>3. Translucency vs. Opacity</h4>
+                    
+                    <p><strong>What it controls:</strong> Whether light passes through</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Light Behavior</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Transparent</strong></td>
+                                <td>Light passes through clearly</td>
+                                <td>Glass, clear water, air</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Translucent</strong></td>
+                                <td>Light diffuses through, objects blurred</td>
+                                <td>Wax, thin fabric, skin, leaves</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Opaque</strong></td>
+                                <td>No light passes through</td>
+                                <td>Wood, metal, stone, thick fabric</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Subsurface Scattering (SSS):</strong> When light penetrates translucent materials, bounces inside, exits</p>
+                    <ul>
+                        <li>Creates warm glow in thin areas (ears, fingers, leaves)</li>
+                        <li>Backlit translucent objects glow with internal color</li>
+                        <li>Essential for skin, wax, marble, jade</li>
+                    </ul>
+                    
+                    <p><strong>Painting Tip:</strong> Translucent materials glow when backlit, show warm edges</p>
+                </div>
+
+                <div class="card">
+                    <h4>4. Absorption & Color</h4>
+                    
+                    <p><strong>What it controls:</strong> What wavelengths are absorbed vs. reflected</p>
+                    
+                    <p><strong>Color Perception:</strong></p>
+                    <ul>
+                        <li>We see reflected wavelengths</li>
+                        <li>Red object absorbs blue/green, reflects red</li>
+                        <li>Black absorbs all wavelengths (no reflection)</li>
+                        <li>White reflects all wavelengths</li>
+                    </ul>
+                    
+                    <p><strong>Shadow Behavior by Material:</strong></p>
+                    <ul>
+                        <li><strong>Metallic:</strong> Shadows very dark, almost black (minimal light penetration)</li>
+                        <li><strong>Matte:</strong> Shadows lighter, more color visible (scattered light)</li>
+                        <li><strong>Glossy Non-metal:</strong> Medium shadow darkness, reflected light visible</li>
+                    </ul>
+                    
+                    <p><strong>Painting Tip:</strong> Shiny materials have darker shadows than matte materials</p>
+                </div>
+
+                <h3>Material Property Chart</h3>
+                
+                <div class="card">
+                    <h4>📊 Quick Reference Guide</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Roughness</th>
+                                <th>Reflectivity</th>
+                                <th>Translucency</th>
+                                <th>Key Feature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Polished Metal</strong></td>
+                                <td>Smooth</td>
+                                <td>High, colored</td>
+                                <td>Opaque</td>
+                                <td>Sharp colored reflections</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Brushed Metal</strong></td>
+                                <td>Slightly rough</td>
+                                <td>High, colored</td>
+                                <td>Opaque</td>
+                                <td>Directional soft reflections</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Glass</strong></td>
+                                <td>Smooth</td>
+                                <td>Low, white</td>
+                                <td>Transparent</td>
+                                <td>Sharp white highlights, transparency</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Plastic</strong></td>
+                                <td>Smooth-Medium</td>
+                                <td>Low, white</td>
+                                <td>Opaque</td>
+                                <td>Soft white highlights</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fabric</strong></td>
+                                <td>Rough</td>
+                                <td>Very low</td>
+                                <td>Opaque</td>
+                                <td>Matte, no highlights (usually)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Leather</strong></td>
+                                <td>Medium</td>
+                                <td>Low-medium</td>
+                                <td>Opaque</td>
+                                <td>Soft highlights, grain texture</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Skin</strong></td>
+                                <td>Smooth-Medium</td>
+                                <td>Low, white</td>
+                                <td>Translucent</td>
+                                <td>SSS glow, soft highlights</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wood</strong></td>
+                                <td>Medium-Rough</td>
+                                <td>Low</td>
+                                <td>Opaque</td>
+                                <td>Grain pattern, varied finish</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Stone</strong></td>
+                                <td>Rough</td>
+                                <td>Very low</td>
+                                <td>Opaque</td>
+                                <td>Matte, uneven texture</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Water</strong></td>
+                                <td>Smooth</td>
+                                <td>Low, white</td>
+                                <td>Transparent</td>
+                                <td>Perfect reflections, transparency</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <canvas id="material-properties-demo" width="800" height="600"></canvas>
+
+                <blockquote>
+                    <strong>⚙️ Material Property Wisdom:</strong> "Understanding WHY materials look the way they do is more valuable than memorizing HOW they look. Master the physics, and you can paint materials you've never seen before!"
+                </blockquote>
+            </section>
+
+            <!-- Section 3: Fabric & Clothing Textures -->
+            <section id="fabric-textures" class="lesson-section">
+                <h2>Fabric & Clothing Textures 👔</h2>
+                
+                <p>Fabric is ubiquitous in art—clothing, curtains, banners, upholstery. Understanding fabric behavior, folds, and texture types is essential for character art and environmental storytelling!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Fabric Principle</h3>
+                    <p><strong>Fabric is flexible material responding to forces!</strong> Gravity pulls it down, bodies push it out, tension stretches it tight. Paint the forces acting on fabric, and the material will feel believable. Fabric behavior comes first, texture second!</p>
+                </div>
+
+                <h3>Fabric Types & Properties</h3>
+                
+                <div class="card">
+                    <h4>🧵 Understanding Fabric Materials</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fabric Type</th>
+                                <th>Properties</th>
+                                <th>Folds & Behavior</th>
+                                <th>Texture Approach</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cotton</strong></td>
+                                <td>Medium weight, matte, absorbent</td>
+                                <td>Soft folds, maintains some shape</td>
+                                <td>Fine weave texture, subtle highlights</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Silk</strong></td>
+                                <td>Light, smooth, slightly shiny</td>
+                                <td>Flowing folds, drapes elegantly</td>
+                                <td>Minimal texture, soft highlights</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wool</strong></td>
+                                <td>Heavy, rough, insulating</td>
+                                <td>Stiff folds, holds structure</td>
+                                <td>Fuzzy texture, matte finish</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Leather</strong></td>
+                                <td>Stiff, heavy, semi-glossy</td>
+                                <td>Sharp creases, structured</td>
+                                <td>Grain texture, clear highlights</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Velvet</strong></td>
+                                <td>Soft, directional nap, rich</td>
+                                <td>Soft folds, light/dark shift</td>
+                                <td>No highlights, directional sheen</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Linen</strong></td>
+                                <td>Medium-rough, breathable</td>
+                                <td>Wrinkles easily, casual drape</td>
+                                <td>Visible weave, slightly rough</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Denim</strong></td>
+                                <td>Heavy, durable, textured</td>
+                                <td>Stiff folds, structured fit</td>
+                                <td>Strong weave pattern, worn areas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Painting Fabric Folds</h3>
+                
+                <div class="card">
+                    <h4>📐 The Seven Types of Folds</h4>
+                    
+                    <p>All fabric folds fall into these categories. Master these, and you can paint any clothing!</p>
+                    
+                    <p><strong>1. Pipe Folds (Cylinder)</strong></p>
+                    <ul>
+                        <li><strong>Occurs when:</strong> Fabric hangs from one point</li>
+                        <li><strong>Shape:</strong> Vertical cylinders</li>
+                        <li><strong>Light:</strong> Highlight on front curve, shadow on sides</li>
+                        <li><strong>Examples:</strong> Curtains, hanging sleeves, long skirts</li>
+                    </ul>
+                    
+                    <p><strong>2. Zigzag Folds</strong></p>
+                    <ul>
+                        <li><strong>Occurs when:</strong> Fabric compressed (accordion-like)</li>
+                        <li><strong>Shape:</strong> Alternating peaks and valleys</li>
+                        <li><strong>Light:</strong> Peaks lit, valleys shadowed</li>
+                        <li><strong>Examples:</strong> Gathered waistbands, scrunched sleeves</li>
+                    </ul>
+                    
+                    <p><strong>3. Spiral Folds (Twist)</strong></p>
+                    <ul>
+                        <li><strong>Occurs when:</strong> Fabric twisted around form</li>
+                        <li><strong>Shape:</strong> Diagonal wrapping lines</li>
+                        <li><strong>Light:</strong> Follows spiral form</li>
+                        <li><strong>Examples:</strong> Twisted cloth, rope-like drapery</li>
+                    </ul>
+                    
+                    <p><strong>4. Half-Lock Folds</strong></p>
+                    <ul>
+                        <li><strong>Occurs when:</strong> Fabric hangs over edge</li>
+                        <li><strong>Shape:</strong> U-shaped droop</li>
+                        <li><strong>Light:</strong> Top surface lit, underside shadowed</li>
+                        <li><strong>Examples:</strong> Tablecloth over edge, sleeve over arm</li>
+                    </ul>
+                    
+                    <p><strong>5. Diaper Folds (Diagonal)</strong></p>
+                    <ul>
+                        <li><strong>Occurs when:</strong> Fabric pulled between two points</li>
+                        <li><strong>Shape:</strong> Diamond pattern, tension lines</li>
+                        <li><strong>Light:</strong> Stretched areas lighter</li>
+                        <li><strong>Examples:</strong> Cloth stretched across poles, superhero capes</li>
+                    </ul>
+                    
+                    <p><strong>6. Drop Folds (Waterfall)</strong></p>
+                    <ul>
+                        <li><strong>Occurs when:</strong> Fabric falls freely</li>
+                        <li><strong>Shape:</strong> Cascading, organic curves</li>
+                        <li><strong>Light:</strong> Natural form shading</li>
+                        <li><strong>Examples:</strong> Wedding dress train, flowing cloaks</li>
+                    </ul>
+                    
+                    <p><strong>7. Inert Folds (Resting)</strong></p>
+                    <ul>
+                        <li><strong>Occurs when:</strong> Fabric lies flat or bunched</li>
+                        <li><strong>Shape:</strong> Irregular, random wrinkles</li>
+                        <li><strong>Light:</strong> Top-down lighting</li>
+                        <li><strong>Examples:</strong> Unmade bed, pile of laundry</li>
+                    </ul>
+                </div>
+
+                <h3>Fabric Texture Techniques</h3>
+                
+                <div class="card">
+                    <h4>🖌️ Step-by-Step Fabric Painting</h4>
+                    
+                    <p><strong>Stage 1: Form Foundation (Reference <a href="character_design_a.html">Lesson 5.1</a> for structure)</strong></p>
+                    <ol>
+                        <li>Block in basic shapes of clothing</li>
+                        <li>Identify fold types occurring</li>
+                        <li>Establish major light and shadow areas</li>
+                        <li>Ignore texture—focus on form only</li>
+                    </ol>
+                    
+                    <p><strong>Stage 2: Value Structure</strong></p>
+                    <ol>
+                        <li>Paint core shadows in folds (darkest areas)</li>
+                        <li>Add midtones on raised surfaces</li>
+                        <li>Apply highlights where fabric faces light</li>
+                        <li>Create clear value separation (form reads from distance)</li>
+                        <li>Reference <a href="advanced_lighting_a.html">Lesson 2.2</a> for lighting principles</li>
+                    </ol>
+                    
+                    <p><strong>Stage 3: Secondary Folds & Details</strong></p>
+                    <ol>
+                        <li>Add smaller wrinkles and creases</li>
+                        <li>Show tension lines (pulled fabric)</li>
+                        <li>Include stitching, seams, edges</li>
+                        <li>Vary fold intensity (not uniform)</li>
+                    </ol>
+                    
+                    <p><strong>Stage 4: Texture Application</strong></p>
+                    <ol>
+                        <li>Choose appropriate fabric texture type</li>
+                        <li>Apply texture following fabric form (not flat overlay!)</li>
+                        <li>Texture more visible on lit surfaces</li>
+                        <li>Texture fades in deep shadows</li>
+                    </ol>
+                    
+                    <p><strong>Texture Methods:</strong></p>
+                    <ul>
+                        <li><strong>Weave Pattern:</strong> Crosshatch strokes following form</li>
+                        <li><strong>Brush Texture:</strong> Use textured brush (reference <a href="texture_techniques_a.html">Lesson 1.3</a>)</li>
+                        <li><strong>Noise Layer:</strong> Subtle noise with blend mode, low opacity</li>
+                        <li><strong>Hand-Painted:</strong> Manually add textile pattern</li>
+                    </ul>
+                </div>
+
+                <canvas id="fabric-texture-demo" width="800" height="600"></canvas>
+
+                <h3>Common Fabric Mistakes</h3>
+                
+                <div class="card">
+                    <h4>⚠️ Avoid These Pitfalls</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mistake</th>
+                                <th>Problem</th>
+                                <th>Solution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Random Wrinkles</strong></td>
+                                <td>Folds don't follow physics</td>
+                                <td>Study the seven fold types, apply logically</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Texture Before Form</strong></td>
+                                <td>Texture obscures structure</td>
+                                <td>Establish solid form first, texture last</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Flat Texture Overlay</strong></td>
+                                <td>Texture doesn't follow curves</td>
+                                <td>Warp/bend texture to match fabric form</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Uniform Highlights</strong></td>
+                                <td>Fabric looks plastic</td>
+                                <td>Vary highlight intensity based on surface angle</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Too Many Folds</strong></td>
+                                <td>Cluttered, confusing</td>
+                                <td>Simplify—show key folds only</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wrong Material Weight</strong></td>
+                                <td>Silk behaving like wool</td>
+                                <td>Match fold style to fabric weight</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <blockquote>
+                    <strong>👔 Fabric Wisdom:</strong> "Great fabric painting is 80% understanding form and physics, 20% adding texture. Get the folds right first—texture without correct form is just noise. Study real clothing, not just other art!"
+                </blockquote>
+            </section>
+
+            <!-- Section 4: Metal & Reflective Surfaces -->
+            <section id="metal-textures" class="lesson-section">
+                <h2>Metal & Reflective Surfaces ✨</h2>
+                
+                <p>Metal is one of the most challenging materials because it reflects its environment. You're not painting "metal"—you're painting what the metal reflects! Master environmental reflection and you'll create convincing metallics!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Metal Principle</h3>
+                    <p><strong>Metal shows its environment, not itself!</strong> A shiny sphere in a void is invisible. Metal gets its appearance from reflecting surrounding light, colors, and objects. Paint the world reflected, not the metal!</p>
+                </div>
+
+                <h3>Metal Types & Properties</h3>
+                
+                <div class="card">
+                    <h4>🔩 Common Metals</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metal</th>
+                                <th>Base Color</th>
+                                <th>Reflectivity</th>
+                                <th>Characteristics</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gold</strong></td>
+                                <td>Warm yellow-orange</td>
+                                <td>Very high (70%)</td>
+                                <td>Colored reflections, doesn't tarnish</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Silver</strong></td>
+                                <td>Cool gray-white</td>
+                                <td>Very high (95%)</td>
+                                <td>Neutral reflections, tarnishes black</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Copper</strong></td>
+                                <td>Reddish-orange</td>
+                                <td>High (60%)</td>
+                                <td>Warm reflections, patina green</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Iron/Steel</strong></td>
+                                <td>Medium gray</td>
+                                <td>Medium (50-70%)</td>
+                                <td>Cool reflections, rusts orange</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aluminum</strong></td>
+                                <td>Light gray-white</td>
+                                <td>Medium-high (80%)</td>
+                                <td>Neutral reflections, doesn't rust</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Painting Metal Step-by-Step</h3>
+                
+                <div class="card">
+                    <h4>🎨 Metal Painting Process</h4>
+                    
+                    <p><strong>Step 1: Block Base Color</strong></p>
+                    <ul>
+                        <li>Apply metal's inherent color (gold = yellow, silver = gray, etc.)</li>
+                        <li>This is your foundation—everything builds on this</li>
+                    </ul>
+                    
+                    <p><strong>Step 2: Establish Form with Core Shadow</strong></p>
+                    <ul>
+                        <li>Define 3D form with shadow placement</li>
+                        <li>Metal shadows are DARK (minimal light penetration)</li>
+                        <li>Keep shadows sharp-edged on polished metal, soft on matte</li>
+                    </ul>
+                    
+                    <p><strong>Step 3: Paint Environmental Reflections</strong></p>
+                    <ul>
+                        <li>Top surfaces = sky reflection (light, cool)</li>
+                        <li>Bottom surfaces = ground reflection (dark, warm)</li>
+                        <li>Side surfaces = environmental objects</li>
+<li>Curve reflections following metal's form</li>
+                        <li>Reflections distort based on surface curvature</li>
+                    </ul>
+                    
+                    <p><strong>Step 4: Add Specular Highlights</strong></p>
+                    <ul>
+                        <li>Place brightest highlights where surface directly faces light</li>
+                        <li>Metal highlights are COLORED (tinted by metal type)</li>
+                        <li>Gold = yellow-white highlights</li>
+                        <li>Silver = pure white highlights</li>
+                        <li>Copper = orange-pink highlights</li>
+                        <li>Keep highlights sharp on polished metal, soft on brushed</li>
+                    </ul>
+                    
+                    <p><strong>Step 5: Define Edges & Reflective Bands</strong></p>
+                    <ul>
+                        <li>Metal edges often show sharp value transitions</li>
+                        <li>Create "bands" of reflection (light, dark, light pattern)</li>
+                        <li>Edges catch strong highlights (rim lighting)</li>
+                        <li>Reference Fresnel effect (edges more reflective)</li>
+                    </ul>
+                    
+                    <p><strong>Step 6: Add Surface Texture & Imperfections</strong></p>
+                    <ul>
+                        <li>Scratches (thin light lines in random directions)</li>
+                        <li>Dents (distorted reflections)</li>
+                        <li>Wear (exposed underlayer, color shift)</li>
+                        <li>Dirt/grime (breaks up perfect reflections)</li>
+                        <li>Rust/patina (see weathering section below)</li>
+                    </ul>
+                    
+                    <p><strong>Step 7: Final Integration</strong></p>
+                    <ul>
+                        <li>Ensure metal reflects scene lighting consistently</li>
+                        <li>Adjust contrast (polished = high, matte = low)</li>
+                        <li>Add subtle color variations (temperature shifts)</li>
+                        <li>Unify with scene atmosphere</li>
+                    </ul>
+                </div>
+
+                <h3>The Reflection Rule for Metal</h3>
+                
+                <div class="card">
+                    <h4>🌍 Environmental Reflection Strategy</h4>
+                    
+                    <p><strong>Standard Environment Reflections:</strong></p>
+                    <ol>
+                        <li><strong>Top surfaces reflect sky:</strong> Light, cool (blue-gray)</li>
+                        <li><strong>Bottom surfaces reflect ground:</strong> Dark, warm (brown-orange)</li>
+                        <li><strong>Sides reflect surroundings:</strong> Varied, depends on environment</li>
+                        <li><strong>Curved surfaces show gradient:</strong> Sky → environment → ground</li>
+                    </ol>
+                    
+                    <p><strong>Quick Metal Formula:</strong></p>
+                    <pre><code>Metal Appearance = 
+    Base Metal Color +
+    Environmental Reflections (sky, ground, objects) +
+    Specular Highlights (colored by metal) +
+    Surface Texture (scratches, wear)</code></pre>
+                </div>
+
+                <canvas id="metal-texture-demo" width="800" height="600"></canvas>
+
+                <h3>Glass & Transparent Materials</h3>
+                
+                <div class="card">
+                    <h4>💎 Painting Glass & Crystal</h4>
+                    
+                    <p><strong>Glass Properties:</strong></p>
+                    <ul>
+                        <li><strong>Transparency:</strong> See through to background</li>
+                        <li><strong>Refraction:</strong> Objects behind appear distorted</li>
+                        <li><strong>Reflection:</strong> Surface reflects light (white highlights)</li>
+                        <li><strong>Thickness:</strong> Edges appear darker/colored</li>
+                        <li><strong>Caustics:</strong> Focused light patterns</li>
+                    </ul>
+                    
+                    <p><strong>Glass Painting Technique:</strong></p>
+                    <ol>
+                        <li><strong>Paint what's behind:</strong> Glass is transparent, show background</li>
+                        <li><strong>Distort background:</strong> Apply subtle warping/distortion</li>
+                        <li><strong>Darken edges:</strong> Glass thickness creates darker rims</li>
+                        <li><strong>Add reflections:</strong> White/light gray reflections on surface</li>
+                        <li><strong>Sharp highlights:</strong> Bright white where light hits directly</li>
+                        <li><strong>Subtle color:</strong> Glass edge tint (green for typical glass)</li>
+                    </ol>
+                    
+                    <p><strong>💡 Glass Tip:</strong> Less is more! Overworking glass makes it opaque. Keep transparency clear!</p>
+                </div>
+
+                <blockquote>
+                    <strong>🔩 Metal Wisdom:</strong> "Metal doesn't have 'metal shading'—it has environmental reflections. Stop trying to 'shade' metal and start painting what it reflects. That's the secret. Reference photos of real metal and notice: you're seeing the world reflected!"
+                </blockquote>
+            </section>
+
+            <!-- Section 5: Organic Textures -->
+            <section id="organic-textures" class="lesson-section">
+                <h2>Organic Textures 🌿</h2>
+                
+                <p>Organic materials—skin, wood, stone, bark, earth—have irregular, natural patterns. Unlike manufactured materials, organics show growth, wear, and natural variation. Master these for believable natural environments and characters!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Organic Principle</h3>
+                    <p><strong>Organic textures are never uniform!</strong> Nature creates variation, irregularity, and unique patterns. Avoid repetition and perfect symmetry. Randomness within patterns creates authenticity!</p>
+                </div>
+
+                <h3>Skin Texture</h3>
+                
+                <div class="card">
+                    <h4>👤 Painting Realistic Skin</h4>
+                    
+                    <p><strong>Skin Properties:</strong></p>
+                    <ul>
+                        <li><strong>Subsurface Scattering (SSS):</strong> Light penetrates skin, bounces inside, exits (red glow)</li>
+                        <li><strong>Translucency:</strong> Thin areas glow when backlit (ears, nose, fingers)</li>
+                        <li><strong>Soft Specularity:</strong> Gentle highlights, not sharp like metal</li>
+                        <li><strong>Color Variation:</strong> Red (blood), yellow (fat), blue (veins) show through</li>
+                        <li><strong>Texture:</strong> Pores, wrinkles, hair, imperfections</li>
+                    </ul>
+                    
+                    <p><strong>Skin Painting Technique:</strong></p>
+                    <ol>
+                        <li><strong>Base Tone:</strong> Apply skin base color (varies by ethnicity)
+                            <ul>
+                                <li>Fair: Peachy-pink base</li>
+                                <li>Medium: Warm brown-orange base</li>
+                                <li>Dark: Rich brown base</li>
+                            </ul>
+                        </li>
+                        <li><strong>Color Variation:</strong>
+                            <ul>
+                                <li>Add red in cheeks, nose, ears (blood flow)</li>
+                                <li>Add yellow/olive in forehead, cheeks (fat deposits)</li>
+                                <li>Add blue-purple in jaw, under eyes (veins/shadow)</li>
+                                <li>Blend subtly—not clownish!</li>
+                            </ul>
+                        </li>
+                        <li><strong>Form Shading:</strong> Establish 3D structure with light/shadow</li>
+                        <li><strong>Subsurface Scattering:</strong>
+                            <ul>
+                                <li>Warm up shadows (skin doesn't have pure black shadows)</li>
+                                <li>Add red-orange glow where light passes through (ears, nose)</li>
+                                <li>Soften shadow edges (light wraps around form)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Texture Application:</strong>
+                            <ul>
+                                <li>Add pores (tiny dots, not uniform)</li>
+                                <li>Paint wrinkles where skin folds</li>
+                                <li>Show hair follicles if close-up</li>
+                                <li>Add moles, freckles, imperfections</li>
+                            </ul>
+                        </li>
+                        <li><strong>Highlights:</strong> Soft white-pink highlights on oily areas (nose, forehead)</li>
+                    </ol>
+                    
+                    <p><strong>Reference <a href="portrait_painting_a.html">Lesson 5.2: Portrait Painting</a> for detailed skin techniques!</strong></p>
+                </div>
+
+                <h3>Wood Texture</h3>
+                
+                <div class="card">
+                    <h4>🪵 Painting Convincing Wood</h4>
+                    
+                    <p><strong>Wood Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Grain Pattern:</strong> Directional lines following growth</li>
+                        <li><strong>Growth Rings:</strong> Concentric or parallel patterns</li>
+                        <li><strong>Color Variation:</strong> Alternating light/dark bands</li>
+                        <li><strong>Knots:</strong> Circular darker areas where branches grew</li>
+                        <li><strong>Surface Finish:</strong> Raw (rough) to polished (smooth)</li>
+                    </ul>
+                    
+                    <p><strong>Wood Painting Technique:</strong></p>
+                    <ol>
+                        <li><strong>Base Color:</strong> Choose wood type
+                            <ul>
+                                <li>Pine: Light yellow-tan</li>
+                                <li>Oak: Medium brown</li>
+                                <li>Walnut: Dark brown</li>
+                                <li>Cherry: Reddish-brown</li>
+                                <li>Ebony: Near-black with subtle brown</li>
+                            </ul>
+                        </li>
+                        <li><strong>Establish Form:</strong> Paint object shape with basic lighting</li>
+                        <li><strong>Grain Direction:</strong> Determine which way grain flows
+                            <ul>
+                                <li>Planks: Grain runs lengthwise</li>
+                                <li>Cross-section: Rings radiate from center</li>
+                            </ul>
+                        </li>
+                        <li><strong>Paint Grain Pattern:</strong>
+                            <ul>
+                                <li>Use thin, irregular lines following grain direction</li>
+                                <li>Vary line thickness and spacing</li>
+                                <li>Create darker and lighter bands (growth rings)</li>
+                                <li>Keep lines organic, not perfectly straight</li>
+                            </ul>
+                        </li>
+                        <li><strong>Add Knots (if visible):</strong>
+                            <ul>
+                                <li>Paint oval/circular darker area</li>
+                                <li>Grain curves around knot</li>
+                                <li>Often has crack or separation</li>
+                            </ul>
+                        </li>
+                        <li><strong>Surface Quality:</strong>
+                            <ul>
+                                <li>Rough wood: Obvious texture, matte finish</li>
+                                <li>Sanded wood: Visible grain, slight sheen</li>
+                                <li>Polished wood: Clear grain, glossy highlights</li>
+                            </ul>
+                        </li>
+                        <li><strong>Weathering (if aged):</strong> See weathering section below</li>
+                    </ol>
+                </div>
+
+                <h3>Stone & Rock Texture</h3>
+                
+                <div class="card">
+                    <h4>🪨 Painting Stone Surfaces</h4>
+                    
+                    <p><strong>Stone Types & Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Granite:</strong> Speckled, varied colors, hard edges</li>
+                        <li><strong>Marble:</strong> Veined patterns, polished or rough</li>
+                        <li><strong>Sandstone:</strong> Layered, grainy, soft edges</li>
+                        <li><strong>Limestone:</strong> Porous, light colored, weathered</li>
+                        <li><strong>Slate:</strong> Flat layers, dark, smooth</li>
+                        <li><strong>Boulder/River Rock:</strong> Smooth, rounded, varied</li>
+                    </ul>
+                    
+                    <p><strong>Stone Painting Technique:</strong></p>
+                    <ol>
+                        <li><strong>Base Shape:</strong> Block in stone form with midtone gray/brown</li>
+                        <li><strong>Form Lighting:</strong> Establish light and shadow on 3D form</li>
+                        <li><strong>Color Variation:</strong>
+                            <ul>
+                                <li>Add subtle color shifts (cool shadows, warm lights)</li>
+                                <li>Vary saturation across surface</li>
+                                <li>Stone is never one flat color!</li>
+                            </ul>
+                        </li>
+                        <li><strong>Surface Texture:</strong>
+                            <ul>
+                                <li>Rough stone: Irregular bumps, sharp edges, high contrast</li>
+                                <li>Smooth stone: Minimal texture, soft transitions</li>
+                                <li>Use textured brush or stippling technique</li>
+                            </ul>
+                        </li>
+                        <li><strong>Cracks & Breaks:</strong>
+                            <ul>
+                                <li>Dark lines showing fractures</li>
+                                <li>Highlight one side of crack (directional light)</li>
+                                <li>Cracks create sharp value contrast</li>
+                            </ul>
+                        </li>
+                        <li><strong>Weathering Patterns:</strong>
+                            <ul>
+                                <li>Lichen/moss in crevices (green-yellow)</li>
+                                <li>Water stains (dark streaks running down)</li>
+                                <li>Erosion (rounded edges, worn areas)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Highlights:</strong> Minimal to none (stone is very matte)</li>
+                    </ol>
+                </div>
+
+                <h3>Bark & Tree Texture</h3>
+                
+                <div class="card">
+                    <h4>🌳 Painting Tree Bark</h4>
+                    
+                    <p><strong>Bark Varieties:</strong></p>
+                    <ul>
+                        <li><strong>Rough Bark (Oak, Pine):</strong> Deep crevices, chunky, dark</li>
+                        <li><strong>Smooth Bark (Birch, Beech):</strong> Minimal texture, light colored</li>
+                        <li><strong>Peeling Bark (Eucalyptus, Sycamore):</strong> Layers separating, papery</li>
+                        <li><strong>Ridged Bark (Redwood, Cedar):</strong> Vertical lines, fibrous</li>
+                    </ul>
+                    
+                    <p><strong>Bark Painting Technique:</strong></p>
+                    <ol>
+                        <li><strong>Cylinder Form:</strong> Establish round trunk form with shading</li>
+                        <li><strong>Vertical Direction:</strong> Bark texture flows up trunk (vertical lines)</li>
+                        <li><strong>Create Crevices:</strong>
+                            <ul>
+                                <li>Paint dark vertical cracks (deep shadows)</li>
+                                <li>Add raised areas between cracks (lighter, catching light)</li>
+                                <li>Vary depth and spacing (irregular pattern)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Texture Details:</strong>
+                            <ul>
+                                <li>Add small marks, dots, variations</li>
+                                <li>Show moss/lichen growing on bark (green patches)</li>
+                                <li>Include broken bark pieces, holes, insect damage</li>
+                            </ul>
+                        </li>
+                        <li><strong>Form Wrapping:</strong> Ensure texture follows cylindrical form (curves around trunk)</li>
+                    </ol>
+                </div>
+
+                <canvas id="organic-texture-demo" width="800" height="600"></canvas>
+
+                <blockquote>
+                    <strong>🌿 Organic Texture Wisdom:</strong> "Nature is the ultimate texture artist—study it relentlessly. Take reference photos, examine surfaces up close, notice how light interacts. Every crack, pore, and grain tells a story. Paint the history, not just the surface!"
+                </blockquote>
+            </section>
+
+            <!-- Section 6: Weathering & Aging Effects -->
+            <section id="weathering" class="lesson-section">
+                <h2>Weathering & Aging Effects 🕰️</h2>
+                
+                <p>Weathering transforms pristine objects into believable, lived-in ones. Age, wear, and environmental damage tell stories and ground fantasy in reality. Master weathering to create worlds that feel authentic!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Weathering Principle</h3>
+                    <p><strong>Weathering follows physical logic!</strong> Wear occurs where objects are touched, rain runs downward, rust spreads from edges. Random damage looks fake—intentional, logical wear looks real. Think about HOW and WHERE objects age!</p>
+                </div>
+
+                <h3>Types of Weathering</h3>
+                
+                <div class="card">
+                    <h4>⚡ Common Weathering Effects</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Effect</th>
+                                <th>Cause</th>
+                                <th>Appearance</th>
+                                <th>Where It Occurs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Scratches</strong></td>
+                                <td>Abrasion, impact</td>
+                                <td>Thin light lines</td>
+                                <td>Edges, high-traffic areas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dents</strong></td>
+                                <td>Impact damage</td>
+                                <td>Concave deformation</td>
+                                <td>Random, corners, edges</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rust</strong></td>
+                                <td>Metal oxidation</td>
+                                <td>Orange-brown texture</td>
+                                <td>Edges, joints, water exposure</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dirt/Grime</strong></td>
+                                <td>Accumulated particles</td>
+                                <td>Dark, irregular patches</td>
+                                <td>Crevices, recessed areas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Paint Chipping</strong></td>
+                                <td>Wear, impact, age</td>
+                                <td>Exposed underlayer</td>
+                                <td>Edges, corners, handles</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Water Staining</strong></td>
+                                <td>Water runoff</td>
+                                <td>Dark vertical streaks</td>
+                                <td>Below joints, flowing downward</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Moss/Lichen</strong></td>
+                                <td>Biological growth</td>
+                                <td>Green-gray patches</td>
+                                <td>Shaded, damp areas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fading</strong></td>
+                                <td>UV light exposure</td>
+                                <td>Desaturated color</td>
+                                <td>Sun-facing surfaces</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Painting Rust</h3>
+                
+                <div class="card">
+                    <h4>🦀 Realistic Rust Technique</h4>
+                    
+                    <p><strong>Rust Formation Logic:</strong></p>
+                    <ul>
+                        <li>Starts at edges and joints (water collects)</li>
+                        <li>Spreads outward from initiation points</li>
+                        <li>Creates texture (flaky, rough surface)</li>
+                        <li>Multiple colors (orange, red-brown, dark brown, sometimes green)</li>
+                        <li>Often has streaks (rust runs with water)</li>
+                    </ul>
+                    
+                    <p><strong>Step-by-Step Rust Painting:</strong></p>
+                    <ol>
+                        <li><strong>Clean Metal Base:</strong> Paint metal surface first (gray for steel)</li>
+                        <li><strong>Identify Rust Points:</strong> Mark where rust would start
+                            <ul>
+                                <li>Edges and corners</li>
+                                <li>Joints and seams</li>
+                                <li>Scratches and damage</li>
+                                <li>Areas exposed to water</li>
+                            </ul>
+                        </li>
+                        <li><strong>Apply Base Rust Color:</strong>
+                            <ul>
+                                <li>Medium orange-brown at rust points</li>
+                                <li>Irregular, organic shapes</li>
+                                <li>Keep edges rough, not smooth</li>
+                            </ul>
+                        </li>
+                        <li><strong>Add Rust Variation:</strong>
+                            <ul>
+                                <li>Bright orange in active rust areas</li>
+                                <li>Dark red-brown in deep rust</li>
+                                <li>Some yellow-orange highlights</li>
+                                <li>Dark brown almost-black in oldest rust</li>
+                            </ul>
+                        </li>
+                        <li><strong>Create Texture:</strong>
+                            <ul>
+                                <li>Use textured brush for rough, flaky appearance</li>
+                                <li>Add small dots and specs</li>
+                                <li>Paint irregular edges (rust "blooms")</li>
+                            </ul>
+                        </li>
+                        <li><strong>Rust Streaks:</strong>
+                            <ul>
+                                <li>Paint vertical lines flowing downward</li>
+                                <li>Dark orange-brown streaks</li>
+                                <li>Fade as they flow (diluted by water)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Integration:</strong>
+                            <ul>
+                                <li>Blend rust edges into clean metal (gradual transition)</li>
+                                <li>Show some clean metal exposed (rust isn't uniform)</li>
+                                <li>Add dirt/grime in rusted areas</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Edge Wear & Chipping</h3>
+                
+                <div class="card">
+                    <h4>🔨 Painting Worn Edges</h4>
+                    
+                    <p><strong>Where Wear Occurs:</strong></p>
+                    <ul>
+                        <li><strong>Corners:</strong> Most vulnerable, wear first</li>
+                        <li><strong>Edges:</strong> Contact points, paint chips away</li>
+                        <li><strong>Handles/Grips:</strong> Touched frequently, oils wear finish</li>
+                        <li><strong>High Points:</strong> Raised areas get bumped, worn</li>
+                    </ul>
+                    
+                    <p><strong>Edge Wear Technique:</strong></p>
+                    <ol>
+                        <li><strong>Painted Surface Base:</strong> Apply main surface color/finish</li>
+                        <li><strong>Identify Wear Zones:</strong> Mark logical wear points</li>
+                        <li><strong>Expose Underlayer:</strong>
+                            <ul>
+                                <li>Paint chips showing exposed metal (light gray/brown)</li>
+                                <li>Or exposed primer (often red-brown or gray)</li>
+                                <li>Or raw material underneath</li>
+                            </ul>
+                        </li>
+                        <li><strong>Irregular Shapes:</strong>
+                            <ul>
+                                <li>Chips are random, not uniform</li>
+                                <li>Vary size (large chips on edges, small elsewhere)</li>
+                                <li>Cluster chips in high-wear areas</li>
+                            </ul>
+                        </li>
+                        <li><strong>Highlight Edges:</strong>
+                            <ul>
+                                <li>Bright highlight on worn edge (exposed metal catches light)</li>
+                                <li>Creates "shiny worn" appearance</li>
+                            </ul>
+                        </li>
+                        <li><strong>Transition Zone:</strong> Gradual fade from worn to intact</li>
+                    </ol>
+                </div>
+
+                <h3>Dirt & Grime Accumulation</h3>
+                
+                <div class="card">
+                    <h4>💨 Painting Dirt Buildup</h4>
+                    
+                    <p><strong>Dirt Accumulation Logic:</strong></p>
+                    <ul>
+                        <li><strong>Recessed Areas:</strong> Dirt collects in crevices, corners</li>
+                        <li><strong>Protected Zones:</strong> Less exposure to cleaning, more buildup</li>
+                        <li><strong>Gravity Effect:</strong> Dirt falls, accumulates at bottom of objects</li>
+                        <li><strong>Water Flow:</strong> Streaks follow water paths</li>
+                    </ul>
+                    
+                    <p><strong>Dirt Painting Technique:</strong></p>
+                    <ol>
+                        <li><strong>Clean Base:</strong> Start with clean surface color</li>
+                        <li><strong>Overall Dulling:</strong>
+                            <ul>
+                                <li>Apply subtle desaturation layer</li>
+                                <li>Slight brown/gray tint overall</li>
+                                <li>Reduces "new" appearance</li>
+                            </ul>
+                        </li>
+                        <li><strong>Concentrated Dirt:</strong>
+                            <ul>
+                                <li>Dark brown/gray in recessed areas</li>
+                                <li>Corners, crevices, seams</li>
+                                <li>Under edges and overhangs</li>
+                            </ul>
+                        </li>
+                        <li><strong>Streaks & Splatter:</strong>
+                            <ul>
+                                <li>Vertical streaks from water/rain</li>
+                                <li>Splash patterns near ground level</li>
+                                <li>Random dirt spots</li>
+                            </ul>
+                        </li>
+                        <li><strong>Texture:</strong> Slightly rough, not smooth (use low-opacity textured brush)</li>
+                    </ol>
+                </div>
+
+                <canvas id="weathering-demo" width="800" height="600"></canvas>
+
+                <h3>Creating Age Hierarchy</h3>
+                
+                <div class="card">
+                    <h4>📅 Staged Weathering</h4>
+                    
+                    <p><strong>Not all objects age equally! Create visual hierarchy:</strong></p>
+                    
+                    <p><strong>Hero Objects (Focal Point):</strong></p>
+                    <ul>
+                        <li>Detailed weathering with story</li>
+                        <li>Specific wear patterns</li>
+                        <li>Multiple weathering types</li>
+                        <li>High attention to logic</li>
+                    </ul>
+                    
+                    <p><strong>Secondary Objects:</strong></p>
+                    <ul>
+                        <li>Moderate weathering</li>
+                        <li>1-2 weathering types</li>
+                        <li>Less detail than hero</li>
+                    </ul>
+                    
+                    <p><strong>Background Objects:</strong></p>
+                    <ul>
+                        <li>Minimal weathering detail</li>
+                        <li>Overall aged appearance</li>
+                        <li>Suggestion rather than detail</li>
+                    </ul>
+                </div>
+
+                <blockquote>
+                    <strong>🕰️ Weathering Wisdom:</strong> "Weathering is storytelling through surface. Every scratch, rust spot, and dirt streak tells how an object was used and where it's been. Think like a detective—what history does this surface reveal? Paint the story, not random damage!"
+                </blockquote>
+            </section>
+
+            // Continue demo...
+        }
+        
+        function drawTextureIntroDemo() {
+            const canvas = document.getElementById('texture-intro-demo');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#34495e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Title
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Texture = Light Interaction with Surface', canvas.width/2, 50);
+            
+            // Draw three material examples
+            const y = 150;
+            const spacing = 250;
+            
+            // Smooth surface
+            ctx.fillStyle = '#95a5a6';
+            ctx.fillRect(50, y, 200, 200);
+            const smoothGrad = ctx.createLinearGradient(50, y, 250, y);
+            smoothGrad.addColorStop(0, '#7f8c8d');
+            smoothGrad.addColorStop(0.5, '#ecf0f1');
+            smoothGrad.addColorStop(1, '#7f8c8d');
+            ctx.fillStyle = smoothGrad;
+            ctx.fillRect(50, y, 200, 200);
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = '16px Arial';
+            ctx.fillText('Smooth', 150, y + 230);
+            ctx.font = '12px Arial';
+            ctx.fillText('Sharp reflections', 150, y + 250);
+            
+            // Rough surface
+            ctx.fillStyle = '#7f8c8d';
+            ctx.fillRect(50 + spacing, y, 200, 200);
+            for (let i = 0; i < 1000; i++) {
+                const x = 50 + spacing + Math.random() * 200;
+                const py = y + Math.random() * 200;
+                ctx.fillStyle = Math.random() > 0.5 ? '#95a5a6' : '#5d6d7e';
+                ctx.fillRect(x, py, 2, 2);
+            }
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = '16px Arial';
+            ctx.fillText('Rough', 150 + spacing, y + 230);
+            ctx.font = '12px Arial';
+            ctx.fillText('Diffuse, scattered light', 150 + spacing, y + 250);
+            
+            // Textured surface
+            ctx.fillStyle = '#8b7355';
+            ctx.fillRect(50 + spacing * 2, y, 200, 200);
+            ctx.strokeStyle = '#654321';
+            ctx.lineWidth = 2;
+            for (let i = 0; i < 15; i++) {
+                ctx.beginPath();
+                const startX = 60 + spacing * 2;
+                const lineY = y + 10 + i * 13;
+                ctx.moveTo(startX, lineY);
+                ctx.lineTo(startX + 180, lineY + Math.random() * 4 - 2);
+                ctx.stroke();
+            }
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = '16px Arial';
+            ctx.fillText('Textured', 150 + spacing * 2, y + 230);
+            ctx.font = '12px Arial';
+            ctx.fillText('Pattern + variation', 150 + spacing * 2, y + 250);
+        }
+        
+        function drawMaterialPropertiesDemo() {
+            const canvas = document.getElementById('material-properties-demo');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#2c3e50';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Title
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Material Properties: Metal vs Non-Metal', canvas.width/2, 50);
+            
+            // Metal sphere
+            const centerX1 = 200;
+            const centerY = 300;
+            const radius = 100;
+            
+            // Metal - colored reflections
+            const metalGrad = ctx.createRadialGradient(centerX1 - 20, centerY - 20, 10, centerX1, centerY, radius);
+            metalGrad.addColorStop(0, '#ffd700');
+            metalGrad.addColorStop(0.4, '#b8860b');
+            metalGrad.addColorStop(1, '#8b6914');
+            ctx.fillStyle = metalGrad;
+            ctx.beginPath();
+            ctx.arc(centerX1, centerY, radius, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Bright highlight on metal
+            ctx.fillStyle = '#ffffe0';
+            ctx.beginPath();
+            ctx.arc(centerX1 - 30, centerY - 30, 20, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = '18px Arial';
+            ctx.fillText('METALLIC', centerX1, centerY + radius + 40);
+            ctx.font = '14px Arial';
+            ctx.fillText('Colored reflections', centerX1, centerY + radius + 60);
+            ctx.fillText('High contrast', centerX1, centerY + radius + 80);
+            
+            // Non-metal sphere
+            const centerX2 = 600;
+            
+            // Non-metal - white reflections, softer
+            const nonMetalGrad = ctx.createRadialGradient(centerX2 - 30, centerY - 30, 30, centerX2, centerY, radius);
+            nonMetalGrad.addColorStop(0, '#c0392b');
+            nonMetalGrad.addColorStop(0.7, '#922b21');
+            nonMetalGrad.addColorStop(1, '#641e16');
+            ctx.fillStyle = nonMetalGrad;
+            ctx.beginPath();
+            ctx.arc(centerX2, centerY, radius, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // White highlight on non-metal
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.beginPath();
+            ctx.arc(centerX2 - 35, centerY - 35, 25, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = '18px Arial';
+            ctx.fillText('DIELECTRIC', centerX2, centerY + radius + 40);
+            ctx.font = '14px Arial';
+            ctx.fillText('White reflections', centerX2, centerY + radius + 60);
+            ctx.fillText('Softer transitions', centerX2, centerY + radius + 80);
+        }
+        
+        function drawFabricTextureDemo() {
+            const canvas = document.getElementById('fabric-texture-demo');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#34495e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Title
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Fabric Fold Types', canvas.width/2, 50);
+            
+            ctx.font = '16px Arial';
+            
+            // Pipe fold
+            ctx.fillStyle = '#8b4789';
+            ctx.fillRect(80, 120, 200, 300);
+            const pipeGrad = ctx.createLinearGradient(80, 120, 280, 120);
+            pipeGrad.addColorStop(0, '#5d3a5c');
+            pipeGrad.addColorStop(0.5, '#8b4789');
+            pipeGrad.addColorStop(1, '#5d3a5c');
+            ctx.fillStyle = pipeGrad;
+            for (let i = 0; i < 5; i++) {
+                const x = 100 + i * 40;
+                ctx.fillRect(x, 120, 30, 300);
+            }
+            ctx.fillStyle = '#ecf0f1';
+            ctx.fillText('Pipe Folds', 180, 450);
+            ctx.font = '12px Arial';
+            ctx.fillText('Hanging vertical', 180, 470);
+            
+            // Zigzag fold
+            ctx.font = '16px Arial';
+            ctx.fillStyle = '#2471a3';
+            ctx.fillRect(320, 120, 200, 300);
+            ctx.fillStyle = '#1a5276';
+            ctx.beginPath();
+            ctx.moveTo(340, 140);
+            for (let i = 0; i < 15; i++) {
+                const x = 340;
+                const y = 140 + i * 20;
+                ctx.lineTo(x + (i % 2 === 0 ? 160 : 0), y);
+            }
+            ctx.lineTo(340, 400);
+            ctx.fill();
+            
+            ctx.fillStyle = '#ecf0f1';
+            ctx.fillText('Zigzag Folds', 420, 450);
+            ctx.font = '12px Arial';
+            ctx.fillText('Compressed', 420, 470);
+            
+            // Drop fold
+            ctx.font = '16px Arial';
+            ctx.fillStyle = '#a93226';
+            ctx.fillRect(560, 120, 200, 300);
+            const dropGrad = ctx.createRadialGradient(660, 200, 50, 660, 300, 150);
+            dropGrad.addColorStop(0, '#c0392b');
+            dropGrad.addColorStop(0.5, '#a93226');
+            dropGrad.addColorStop(1, '#7b241c');
+            ctx.fillStyle = dropGrad;
+            ctx.beginPath();
+            ctx.moveTo(660, 140);
+            ctx.quadraticCurveTo(700, 250, 660, 400);
+            ctx.quadraticCurveTo(620, 250, 660, 140);
+            ctx.fill();
+            
+            ctx.fillStyle = '#ecf0f1';
+            ctx.fillText('Drop Folds', 660, 450);
+            ctx.font = '12px Arial';
+            ctx.fillText('Cascading curves', 660, 470);
+            
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Master fold types before adding texture detail', canvas.width/2, canvas.height - 30);
+        }
+        
+        function drawMetalTextureDemo() {
+            const canvas = document.getElementById('metal-texture-demo');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#34495e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Title
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Metal Environmental Reflections', canvas.width/2, 50);
+            
+            // Draw a metallic sphere showing environment reflection
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 120;
+            
+            // Metal sphere base
+            const metalGrad = ctx.createRadialGradient(centerX - 30, centerY - 30, 20, centerX, centerY, radius);
+            metalGrad.addColorStop(0, '#c0c0c0');
+            metalGrad.addColorStop(0.5, '#808080');
+            metalGrad.addColorStop(1, '#404040');
+            ctx.fillStyle = metalGrad;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Sky reflection (top)
+            ctx.fillStyle = '#87ceeb';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY - 40, 60, 0, Math.PI, true);
+            ctx.fill();
+            
+            // Ground reflection (bottom)
+            ctx.fillStyle = '#8b4513';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY + 40, 60, 0, Math.PI);
+            ctx.fill();
+            
+            // Bright specular highlight
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(centerX - 35, centerY - 35, 25, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Labels
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'left';
+            ctx.fillText('Sky Reflection', centerX - 90, centerY - 100);
+            ctx.fillText('(Cool, Light)', centerX - 90, centerY - 80);
+            
+            ctx.fillText('Ground Reflection', centerX - 90, centerY + 100);
+            ctx.fillText('(Warm, Dark)', centerX - 90, centerY + 120);
+            
+            ctx.fillText('Specular Highlight', centerX - 90, centerY - 30);
+            ctx.fillText('(Bright, Sharp)', centerX - 90, centerY - 10);
+            
+            ctx.font = '16px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Paint what the metal reflects, not the metal itself', canvas.width/2, canvas.height - 30);
+        }
+
+        function drawOrganicTextureDemo() {
+            const canvas = document.getElementById('organic-texture-demo');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#2c3e50';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Title
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Organic Texture Patterns', canvas.width/2, 50);
+            
+            ctx.font = '16px Arial';
+            
+            // Wood grain example
+            ctx.fillStyle = '#d2691e';
+            ctx.fillRect(100, 120, 150, 200);
+            ctx.strokeStyle = '#8b4513';
+            ctx.lineWidth = 2;
+            for (let i = 0; i < 10; i++) {
+                ctx.beginPath();
+                const y = 130 + i * 20;
+                ctx.moveTo(110, y);
+                ctx.bezierCurveTo(140, y + 5, 160, y - 5, 190, y);
+                ctx.bezierCurveTo(210, y + 3, 230, y - 3, 240, y);
+                ctx.stroke();
+            }
+            ctx.fillStyle = '#ecf0f1';
+            ctx.fillText('Wood Grain', 175, 340);
+            
+            // Stone texture
+            ctx.fillStyle = '#7f8c8d';
+            ctx.fillRect(320, 120, 150, 200);
+            ctx.globalAlpha = 0.5;
+            for (let i = 0; i < 200; i++) {
+                const x = 320 + Math.random() * 150;
+                const y = 120 + Math.random() * 200;
+                const size = Math.random() * 3 + 1;
+                ctx.fillStyle = Math.random() > 0.5 ? '#95a5a6' : '#5d6d7e';
+                ctx.fillRect(x, y, size, size);
+            }
+            ctx.globalAlpha = 1.0;
+            ctx.fillStyle = '#ecf0f1';
+            ctx.fillText('Stone Texture', 395, 340);
+            
+            // Bark texture
+            ctx.fillStyle = '#654321';
+            ctx.fillRect(540, 120, 150, 200);
+            ctx.strokeStyle = '#3e2723';
+            ctx.lineWidth = 3;
+            for (let i = 0; i < 8; i++) {
+                const x = 550 + i * 18;
+                ctx.beginPath();
+                ctx.moveTo(x, 130);
+                ctx.lineTo(x + Math.random() * 4 - 2, 310);
+                ctx.stroke();
+            }
+            ctx.fillStyle = '#ecf0f1';
+            ctx.fillText('Bark Texture', 615, 340);
+            
+            ctx.font = '14px Arial';
+            ctx.fillText('Organic textures are irregular and varied—avoid uniformity', canvas.width/2, canvas.height - 30);
+        }
+
+        function drawWeatheringDemo() {
+            const canvas = document.getElementById('weathering-demo');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#bdc3c7';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Title
+            ctx.fillStyle = '#2c3e50';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Weathering Effect Comparison', canvas.width/2, 50);
+            
+            // Left: Clean metal plate
+            ctx.fillStyle = '#95a5a6';
+            ctx.fillRect(100, 150, 250, 300);
+            const cleanGradient = ctx.createLinearGradient(100, 150, 350, 150);
+            cleanGradient.addColorStop(0, '#7f8c8d');
+            cleanGradient.addColorStop(0.5, '#bdc3c7');
+            cleanGradient.addColorStop(1, '#7f8c8d');
+            ctx.fillStyle = cleanGradient;
+            ctx.fillRect(100, 150, 250, 300);
+            
+            ctx.fillStyle = '#2c3e50';
+            ctx.font = '18px Arial';
+            ctx.fillText('CLEAN', 225, 480);
+            
+            // Right: Weathered metal plate
+            ctx.fillStyle = '#95a5a6';
+            ctx.fillRect(450, 150, 250, 300);
+            ctx.fillStyle = cleanGradient;
+            ctx.fillRect(450, 150, 250, 300);
+            
+            // Add rust spots
+            ctx.globalAlpha = 0.7;
+            ctx.fillStyle = '#cd5c5c';
+            ctx.beginPath();
+            ctx.arc(480, 180, 20, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(650, 200, 15, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Rust streaks
+            ctx.fillStyle = '#a0522d';
+            ctx.fillRect(475, 200, 10, 150);
+            ctx.fillRect(645, 215, 8, 120);
+            
+            // Edge wear
+            ctx.globalAlpha = 0.9;
+            ctx.fillStyle = '#ecf0f1';
+            ctx.fillRect(450, 150, 250, 5);
+            ctx.fillRect(450, 150, 5, 300);
+            
+            // Scratches
+            ctx.strokeStyle = '#ecf0f1';
+            ctx.lineWidth = 1;
+            ctx.globalAlpha = 0.5;
+            for (let i = 0; i < 15; i++) {
+                ctx.beginPath();
+                const x1 = 460 + Math.random() * 230;
+                const y1 = 160 + Math.random() * 280;
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x1 + Math.random() * 40 - 20, y1 + Math.random() * 40 - 20);
+                ctx.stroke();
+            }
+            
+            ctx.globalAlpha = 1.0;
+            ctx.fillStyle = '#2c3e50';
+            ctx.font = '18px Arial';
+            ctx.fillText('WEATHERED', 575, 480);
+            
+            ctx.font = '14px Arial';
+            ctx.fillText('Weathering tells story: rust, scratches, wear at edges', canvas.width/2, canvas.height - 30);
+        }
+
+        function drawDetailHierarchyDemo() {
+            const canvas = document.getElementById('detail-hierarchy-demo');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#34495e');
+            gradient.addColorStop(1, '#2c3e50');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Title
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Detail Hierarchy Zones', canvas.width/2, 50);
+            
+            // Draw three zones with varying detail
+            ctx.font = '16px Arial';
+            
+            // Background (minimal detail)
+            ctx.globalAlpha = 0.3;
+            ctx.fillStyle = '#95a5a6';
+            ctx.fillRect(50, 150, 200, 300);
+            ctx.globalAlpha = 1.0;
+            ctx.fillStyle = '#ecf0f1';
+            ctx.fillText('BACKGROUND', 150, 480);
+            ctx.font = '12px Arial';
+            ctx.fillText('10-30% detail', 150, 500);
+            
+            // Midground (medium detail)
+            ctx.globalAlpha = 0.6;
+            ctx.fillStyle = '#7f8c8d';
+            ctx.fillRect(300, 150, 200, 300);
+            ctx.fillStyle = '#bdc3c7';
+            for (let i = 0; i < 50; i++) {
+                const x = 310 + Math.random() * 180;
+                const y = 160 + Math.random() * 280;
+                ctx.fillRect(x, y, 3, 3);
+            }
+            ctx.globalAlpha = 1.0;
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = '16px Arial';
+            ctx.fillText('MIDGROUND', 400, 480);
+            ctx.font = '12px Arial';
+            ctx.fillText('40-60% detail', 400, 500);
+            
+            // Foreground/Focal (maximum detail)
+            ctx.globalAlpha = 1.0;
+            ctx.fillStyle = '#5d6d7e';
+            ctx.fillRect(550, 150, 200, 300);
+            ctx.fillStyle = '#ecf0f1';
+            for (let i = 0; i < 200; i++) {
+                const x = 560 + Math.random() * 180;
+                const y = 160 + Math.random() * 280;
+                const size = Math.random() * 2 + 1;
+                ctx.fillRect(x, y, size, size);
+            }
+            // Add more complex details
+            ctx.strokeStyle = '#bdc3c7';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < 30; i++) {
+                ctx.beginPath();
+                const x = 560 + Math.random() * 180;
+                const y = 160 + Math.random() * 280;
+                ctx.moveTo(x, y);
+                ctx.lineTo(x + Math.random() * 20 - 10, y + Math.random() * 20 - 10);
+                ctx.stroke();
+            }
+            
+            ctx.fillStyle = '#ecf0f1';
+            ctx.font = '16px Arial';
+            ctx.fillText('FOCAL POINT', 650, 480);
+            ctx.font = '12px Arial';
+            ctx.fillText('100% detail', 650, 500);
+            
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('80% of detail effort goes into 20% of the canvas (focal areas)', canvas.width/2, canvas.height - 30);
+        }
+
+        // Initialize all demos
+        document.addEventListener('DOMContentLoaded', () => {
+            drawTextureIntroDemo();
+            drawMaterialPropertiesDemo();
+            drawFabricTextureDemo();
+            drawMetalTextureDemo();
+            drawOrganicTextureDemo();
+            drawWeatheringDemo();
+            drawDetailHierarchyDemo();
+        });
+
+        // TOC Toggle
+        function toggleTOC() {
+            const tocList = document.getElementById('toc-list');
+            const tocIcon = document.getElementById('toc-toggle-icon');
+            if (tocList.style.maxHeight === '0px' || tocList.style.maxHeight === '') {
+                tocList.style.maxHeight = '500px';
+                tocIcon.style.transform = 'rotate(0deg)';
+            } else {
+                tocList.style.maxHeight = '0px';
+                tocIcon.style.transform = 'rotate(-90deg)';
+            }
+        }
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const progress = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.querySelector('.progress-bar').style.width = `${Math.min(progress, 100)}%`;
+        });
+
+        // Mobile menu
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                const navLinks = document.getElementById('nav-links');
+                navLinks.classList.toggle('active');
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+            });
+        }
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+            
+            themeToggle.addEventListener('click', () => {
+                const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+            });
+        }
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

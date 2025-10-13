@@ -1,0 +1,2961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master matte painting basics in Paintstorm Studio - Creating depth with layers, sky replacement, atmospheric effects, and photorealistic integration">
+    <meta name="author" content="Paintstorm Intermediate Tutorial">
+    <title>Matte Painting Basics - Paintstorm Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="progressbar" aria-label="Page scroll progress"><div class="progress-bar"></div></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🎨 Paintstorm Studio - Intermediate</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links" aria-hidden="false">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Lessons</a>
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Digital Painting Techniques</a></li>
+            <li aria-current="page">Matte Painting Basics</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>🏔️ Matte Painting Basics</h1>
+                <p class="lead">Create cinematic environments worthy of the big screen! Master the art of matte painting - combining photography, painting, and digital techniques to build photorealistic worlds that don't exist. From establishing shots to fantasy landscapes, learn the professional workflows used in film and game production.</p>
+                
+                <div class="card">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this lesson, you will master:</p>
+                    <ul>
+                        <li>What matte painting is and its professional applications</li>
+                        <li>Creating convincing depth through strategic layer organization</li>
+                        <li>Sky replacement and integration techniques</li>
+                        <li>Applying atmospheric perspective for realism</li>
+                        <li>Understanding scale, proportion, and camera perspective</li>
+                        <li>Seamless photorealistic integration of elements</li>
+                        <li>Building complete environments from multiple sources</li>
+                        <li>Professional matte painting workflow from concept to finish</li>
+                    </ul>
+                </div>
+            </header>
+
+            <nav class="card" aria-label="Table of Contents">
+                <h2 style="cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center;" onclick="toggleTOC()">
+                    <span>📑 Table of Contents</span>
+                    <span id="toc-toggle-icon" style="transition: transform 0.3s;">▼</span>
+                </h2>
+                <ol id="toc-list" style="overflow: hidden; transition: max-height 0.3s ease-out; max-height: 500px; margin: 0; padding-left: 1.5rem;">
+                    <li><a href="#what-is-matte-painting" class="toc-link">What is Matte Painting?</a></li>
+                    <li><a href="#depth-with-layers" class="toc-link">Creating Depth with Layers</a></li>
+                    <li><a href="#sky-replacement" class="toc-link">Sky Replacement Techniques</a></li>
+                    <li><a href="#atmospheric-effects" class="toc-link">Atmospheric Effects & Perspective</a></li>
+                    <li><a href="#scale-proportion" class="toc-link">Scale, Proportion & Camera Perspective</a></li>
+                    <li><a href="#photorealistic-integration" class="toc-link">Photorealistic Integration</a></li>
+                    <li><a href="#complete-workflow" class="toc-link">Complete Matte Painting Workflow</a></li>
+                    <li><a href="#practice" class="toc-link">Practice Exercise</a></li>
+                    <li><a href="#summary" class="toc-link">Summary & Next Steps</a></li>
+                </ol>
+            </nav>
+
+            <!-- Section 1: What is Matte Painting? -->
+            <section id="what-is-matte-painting" class="lesson-section">
+                <h2>What is Matte Painting? 🎬</h2>
+                
+                <p>Matte painting is the art of <strong>creating photorealistic environments</strong> that would be impossible, impractical, or too expensive to build or film in real life. Originally painted on glass for film, modern digital matte painting combines photography, 3D, and painting to create anything from alien planets to historical cities.</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Matte Painting Principle</h3>
+                    <p><strong>Believability through detail and depth!</strong> Matte paintings must convince the viewer they're looking at a real place. This requires perfect perspective, atmospheric depth, photorealistic detail, and flawless integration. Every element must feel like it belongs in the same world!</p>
+                </div>
+
+                <h3>History & Evolution</h3>
+                
+                <div class="card">
+                    <h4>🎥 From Glass to Digital</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Era</th>
+                                <th>Technique</th>
+                                <th>Famous Examples</th>
+                                <th>Limitations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1900s-1980s</strong></td>
+                                <td>Glass matte painting</td>
+                                <td>Citizen Kane, Star Wars Original Trilogy</td>
+                                <td>Static camera, one-take only</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1980s-1990s</strong></td>
+                                <td>Traditional painting scanned</td>
+                                <td>Indiana Jones, Die Hard</td>
+                                <td>Time-intensive, hard to revise</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1990s-2000s</strong></td>
+                                <td>Early digital matte painting</td>
+                                <td>Lord of the Rings, Star Wars Prequels</td>
+                                <td>Lower resolution, processing limits</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2000s-Present</strong></td>
+                                <td>Photo-bash + 3D projection</td>
+                                <td>Avatar, Marvel films, Game of Thrones</td>
+                                <td>Requires high-end hardware</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Present-Future</strong></td>
+                                <td>AI-assisted + real-time rendering</td>
+                                <td>The Mandalorian (Virtual Production)</td>
+                                <td>Expensive technology, learning curve</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Modern Applications</h3>
+                
+                <div class="card">
+                    <h4>🌍 Where Matte Paintings Are Used Today</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Industry</th>
+                                <th>Purpose</th>
+                                <th>Requirements</th>
+                                <th>Career Path</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Film & TV</strong></td>
+                                <td>Establishing shots, background extensions</td>
+                                <td>4K+ resolution, camera projection ready</td>
+                                <td>VFX studio matte painter</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Video Games</strong></td>
+                                <td>Skyboxes, background layers, concept art</td>
+                                <td>Game engine compatible, tileable</td>
+                                <td>Environment artist</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Concept Art</strong></td>
+                                <td>Visualizing environments for production</td>
+                                <td>Speed, multiple iterations, mood</td>
+                                <td>Concept artist, visual development</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Advertising</strong></td>
+                                <td>Product placement in impossible locations</td>
+                                <td>Print quality, brand-specific style</td>
+                                <td>Commercial artist, retoucher</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Architecture</strong></td>
+                                <td>Visualizing unbuilt structures</td>
+                                <td>Accurate perspective, realistic lighting</td>
+                                <td>Architectural visualization artist</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Publishing</strong></td>
+                                <td>Book covers, editorial illustration</td>
+                                <td>Print resolution, mood-driven</td>
+                                <td>Illustrator, cover artist</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Matte Painting vs Concept Art vs Photo-Bashing</h3>
+                
+                <div class="card">
+                    <h4>🎨 Understanding the Differences</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Matte Painting</th>
+                                <th>Concept Art</th>
+                                <th>Photo-Bashing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Goal</strong></td>
+                                <td>Final, photorealistic environment</td>
+                                <td>Communicate design ideas quickly</td>
+                                <td>Fast composition from photos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Realism Level</strong></td>
+                                <td>Must be photorealistic</td>
+                                <td>Can be stylized</td>
+                                <td>Variable, often rough</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Time Investment</strong></td>
+                                <td>Days to weeks</td>
+                                <td>Hours to days</td>
+                                <td>Minutes to hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Detail Level</strong></td>
+                                <td>Extreme, pixel-perfect</td>
+                                <td>Focused on key features</td>
+                                <td>Rough to polished</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Photo Use</strong></td>
+                                <td>Heavy, but fully integrated</td>
+                                <td>Moderate, stylized over</td>
+                                <td>Primary technique</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Painting %</strong></td>
+                                <td>40-60% painted</td>
+                                <td>30-70% painted</td>
+                                <td>10-40% painted</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Camera Ready</strong></td>
+                                <td>Yes, production-ready</td>
+                                <td>No, for approval/direction</td>
+                                <td>Variable</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Key Insight:</strong> Matte painting is the most demanding - it must be completely convincing at film resolution. Concept art communicates ideas. Photo-bashing is a technique used within both.</p>
+                </div>
+
+                <div class="mermaid">
+                    graph TD
+                        A[Matte Painting Project] --> B[Concept Phase]
+                        A --> C[Production Phase]
+                        A --> D[Final Integration]
+                        
+                        B --> B1[Concept art/sketches]
+                        B --> B2[Reference gathering]
+                        B --> B3[Client approval]
+                        
+                        C --> C1[Photo-bashing layout]
+                        C --> C2[3D elements if needed]
+                        C --> C3[Painting integration]
+                        C --> C4[Detail refinement]
+                        
+                        D --> D1[Color grading]
+                        D --> D2[Atmospheric effects]
+                        D --> D3[Final polish]
+                        D --> D4[Delivery formats]
+                </div>
+
+                <blockquote>
+                    <strong>🎬 Industry Insight:</strong> "A successful matte painting is invisible - the audience should never question whether it's real or created. If they notice the matte, you've failed. If they talk about the beautiful location, you've succeeded!" - Professional Matte Painter
+                </blockquote>
+
+                <h3>Essential Matte Painting Skills</h3>
+                
+                <div class="card">
+                    <h4>💪 What You Need to Master</h4>
+                    <ul>
+                        <li><strong>Perspective:</strong> Perfect camera perspective matching is non-negotiable</li>
+                        <li><strong>Atmospheric Depth:</strong> Understanding how air affects distance</li>
+                        <li><strong>Lighting:</strong> Consistent light direction, quality, and color</li>
+                        <li><strong>Photo Integration:</strong> Seamlessly blending multiple sources</li>
+                        <li><strong>Painting Skills:</strong> Ability to paint photorealistic details</li>
+                        <li><strong>Scale Understanding:</strong> Proper proportions across entire scene</li>
+                        <li><strong>Photography Knowledge:</strong> Camera lenses, focal length effects</li>
+                        <li><strong>3D Basics:</strong> Understanding depth, projection, parallax</li>
+                        <li><strong>Color Theory:</strong> Managing complex color relationships</li>
+                        <li><strong>Patience:</strong> Matte painting is slow, meticulous work!</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2: Creating Depth with Layers -->
+            <section id="depth-with-layers" class="lesson-section">
+                <h2>Creating Depth with Layers 📏</h2>
+                
+                <p>The foundation of convincing matte paintings is <strong>proper depth organization</strong>. By separating your scene into foreground, midground, and background layers with appropriate atmospheric treatment, you create the illusion of vast three-dimensional space!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Depth Principle</h3>
+                    <p><strong>Distance equals atmosphere!</strong> The farther away something is, the more air sits between it and the camera. This air scatters light, reduces contrast, shifts color, and softens details. Master atmospheric perspective and your flat paintings will feel miles deep!</p>
+                </div>
+
+                <h3>The Layer System</h3>
+                
+                <div class="card">
+                    <h4>🗂️ Professional Depth Organization</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Layer Zone</th>
+                                <th>Distance</th>
+                                <th>Characteristics</th>
+                                <th>Detail Level</th>
+                                <th>Atmospheric Effect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Extreme Foreground</strong></td>
+                                <td>0-5 feet</td>
+                                <td>Sharp, high contrast, frame elements</td>
+                                <td>Maximum detail</td>
+                                <td>None, fully saturated</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Near Foreground</strong></td>
+                                <td>5-20 feet</td>
+                                <td>Sharp, full color, main subjects</td>
+                                <td>High detail</td>
+                                <td>Minimal atmospheric haze</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Foreground</strong></td>
+                                <td>20-100 feet</td>
+                                <td>Clear, saturated, important elements</td>
+                                <td>Good detail</td>
+                                <td>Slight haze, 5-10% lighter</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Midground</strong></td>
+                                <td>100-500 feet</td>
+                                <td>Slightly hazed, reduced contrast</td>
+                                <td>Moderate detail</td>
+                                <td>10-25% lighter, less saturated</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Far Midground</strong></td>
+                                <td>500-1000 feet</td>
+                                <td>Noticeably hazed, softer edges</td>
+                                <td>Low detail</td>
+                                <td>25-40% lighter, muted colors</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Background</strong></td>
+                                <td>1000-5000 feet</td>
+                                <td>Heavy haze, low contrast</td>
+                                <td>Minimal detail</td>
+                                <td>40-60% lighter, very desaturated</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Far Background</strong></td>
+                                <td>5000+ feet</td>
+                                <td>Mountains, distant features</td>
+                                <td>Silhouettes only</td>
+                                <td>60-80% lighter, almost monochrome</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sky</strong></td>
+                                <td>Infinite</td>
+                                <td>Gradient, clouds, atmosphere</td>
+                                <td>Soft, atmospheric</td>
+                                <td>Lightest values, full atmospheric</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Layer Organization Strategy</h3>
+                
+                <div class="card">
+                    <h4>🏗️ Building Depth Step-by-Step</h4>
+                    <ol>
+                        <li><strong>Start with Sky:</strong>
+                            <ul>
+                                <li>Sky is the foundation - it sets mood and lighting</li>
+                                <li>Everything else sits in front of sky</li>
+                                <li>Choose sky first, build forward from there</li>
+                            </ul>
+                        </li>
+                        <li><strong>Add Far Background:</strong>
+                            <ul>
+                                <li>Distant mountains, horizon line</li>
+                                <li>Lightest values after sky</li>
+                                <li>Very low detail, soft edges</li>
+                                <li>Establish scale and distance</li>
+                            </ul>
+                        </li>
+                        <li><strong>Build Background Elements:</strong>
+                            <ul>
+                                <li>Distant buildings, trees, landscape features</li>
+                                <li>Moderate atmospheric haze</li>
+                                <li>Reduced contrast from foreground</li>
+                            </ul>
+                        </li>
+                        <li><strong>Construct Midground:</strong>
+                            <ul>
+                                <li>Main environment features</li>
+                                <li>Where most story/interest happens</li>
+                                <li>Clear but atmospheric</li>
+                                <li>Good detail level</li>
+                            </ul>
+                        </li>
+                        <li><strong>Place Foreground:</strong>
+                            <ul>
+                                <li>Closest elements, highest detail</li>
+                                <li>Full saturation and contrast</li>
+                                <li>Sharp focus (unless depth of field applied)</li>
+                                <li>Frame the scene</li>
+                            </ul>
+                        </li>
+                        <li><strong>Add Atmospheric Layers:</strong>
+                            <ul>
+                                <li>Fog, haze, dust, smoke</li>
+                                <li>Separate layers between depth zones</li>
+                                <li>Unifies disparate elements</li>
+                                <li>Enhances depth perception</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Depth Cues Beyond Atmosphere</h3>
+                
+                <div class="card">
+                    <h4>👁️ Creating Depth Through Multiple Techniques</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Depth Cue</th>
+                                <th>How It Works</th>
+                                <th>Application</th>
+                                <th>Effect Strength</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Atmospheric Perspective</strong></td>
+                                <td>Air makes distant objects lighter/bluer</td>
+                                <td>Gradual value shift back to sky color</td>
+                                <td>Very strong</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Size Diminution</strong></td>
+                                <td>Objects appear smaller with distance</td>
+                                <td>Scale items consistently with perspective</td>
+                                <td>Very strong</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Overlap</strong></td>
+                                <td>Near objects obscure far objects</td>
+                                <td>Layer elements clearly in front of each other</td>
+                                <td>Strong</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Detail Reduction</strong></td>
+                                <td>Distant objects lose fine detail</td>
+                                <td>Paint less detail on distant elements</td>
+                                <td>Strong</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contrast Reduction</strong></td>
+                                <td>Distance lowers contrast</td>
+                                <td>Compress value range in background</td>
+                                <td>Strong</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Edge Softening</strong></td>
+                                <td>Distant edges become less defined</td>
+                                <td>Blur or soften background elements</td>
+                                <td>Moderate</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Color Temperature Shift</strong></td>
+                                <td>Distance shifts toward blue/cool (usually)</td>
+                                <td>Add blue/cool tint to distant layers</td>
+                                <td>Moderate</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Desaturation</strong></td>
+                                <td>Distant colors become less vivid</td>
+                                <td>Reduce saturation progressively</td>
+                                <td>Moderate</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Elevation</strong></td>
+                                <td>Distant objects higher in frame</td>
+                                <td>Position background higher on canvas</td>
+                                <td>Moderate</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Texture Gradient</strong></td>
+                                <td>Texture becomes finer with distance</td>
+                                <td>Reduce texture visibility in background</td>
+                                <td>Subtle</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Pro Tip:</strong> Use ALL depth cues together! Each one reinforces the others. One alone is weak, but combined they create powerful depth illusion!</p>
+                </div>
+
+
+                <h3>Layer Naming & Organization</h3>
+                
+                <div class="card">
+                    <h4>📁 Professional Layer Structure</h4>
+                    <pre><code>PROJECT_NAME_matte.psd
+│
+├── 📁 ADJUSTMENTS (top layer group)
+│   ├── Color Grading
+│   ├── Overall Contrast
+│   └── Final Vignette
+│
+├── 📁 ATMOSPHERE
+│   ├── Front Fog/Mist
+│   ├── Middle Haze
+│   ├── Far Haze
+│   └── Dust/Particles
+│
+├── 📁 FOREGROUND (0-100ft)
+│   ├── Frame Elements
+│   ├── Main Characters/Objects
+│   ├── Ground Detail
+│   └── Shadows FG
+│
+├── 📁 MIDGROUND (100-1000ft)
+│   ├── Hero Architecture
+│   ├── Environment Details
+│   ├── Vegetation MG
+│   └── Shadows MG
+│
+├── 📁 BACKGROUND (1000-5000ft)
+│   ├── Distant Structures
+│   ├── Landscape Features
+│   ├── Trees/Vegetation BG
+│   └── Atmospheric Integration
+│
+├── 📁 FAR BACKGROUND (5000ft+)
+│   ├── Mountains
+│   ├── Distant Horizon
+│   └── Atmospheric Silhouettes
+│
+└── 📁 SKY (base layer)
+    ├── Sky Gradient
+    ├── Clouds
+    ├── Sun/Moon
+    └── Atmospheric Glow
+</code></pre>
+                    <p><strong>Naming Convention:</strong> Use prefixes like FG_, MG_, BG_, FAR_ to keep layers organized even when collapsed!</p>
+                </div>
+
+                <h3>Common Depth Mistakes</h3>
+                
+                <div class="card" style="background: #fff3cd; border-left: 4px solid #ffc107; color: #856404;">
+                    <h4>⚠️ Depth Killers - Avoid These!</h4>
+                    <ul>
+                        <li><strong>Uniform Contrast:</strong> Same contrast level in all depth zones - kills depth instantly</li>
+                        <li><strong>Equal Detail:</strong> Too much detail in background - draws eye back incorrectly</li>
+                        <li><strong>Sharp Edges Throughout:</strong> All sharp edges flatten the image</li>
+                        <li><strong>Consistent Saturation:</strong> Bright colors in background destroy distance</li>
+                        <li><strong>Ignoring Atmosphere:</strong> No haze between layers looks fake</li>
+                        <li><strong>Wrong Color Temperature:</strong> Warm backgrounds when should be cool (or vice versa)</li>
+                        <li><strong>Inconsistent Scale:</strong> Objects don't diminish properly with distance</li>
+                        <li><strong>No Overlap:</strong> Elements don't clearly sit in front of each other</li>
+                        <li><strong>Flat Lighting:</strong> Same light quality on all depth zones</li>
+                        <li><strong>Too Many Layers:</strong> Over-complicated structure slows workflow</li>
+                    </ul>
+                </div>
+
+                <blockquote>
+                    <strong>📏 Depth Mastery:</strong> "When in doubt, push it back! New artists under-do atmospheric perspective. Professionals exaggerate it slightly. The camera adds contrast and saturation, so you need more separation than seems right. Trust the physics of air!"
+                </blockquote>
+            </section>
+
+            <!-- Section 3: Sky Replacement Techniques -->
+            <section id="sky-replacement" class="lesson-section">
+                <h2>Sky Replacement Techniques ☁️</h2>
+                
+                <p>The sky sets the <strong>entire mood, lighting, and atmosphere</strong> of your matte painting. A dramatic sky makes everything dramatic. A peaceful sky calms the scene. Master sky selection, replacement, and integration to control your painting's emotional impact!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Sky Principle</h3>
+                    <p><strong>The sky is your light source and mood setter!</strong> Everything in your scene is lit by the sky (directly or indirectly). The sky's color influences every surface. Its drama (or lack thereof) sets the emotional tone. Never underestimate sky importance!</p>
+                </div>
+
+                <h3>Choosing the Right Sky</h3>
+                
+                <div class="card">
+                    <h4>☁️ Sky Selection Criteria</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sky Type</th>
+                                <th>Mood</th>
+                                <th>Best For</th>
+                                <th>Lighting Quality</th>
+                                <th>Color Influence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Clear Blue</strong></td>
+                                <td>Peaceful, optimistic, calm</td>
+                                <td>Daytime scenes, positive vibes</td>
+                                <td>Hard, direct sunlight</td>
+                                <td>Cool blue ambient</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Overcast</strong></td>
+                                <td>Somber, neutral, melancholy</td>
+                                <td>Diffused lighting needed</td>
+                                <td>Soft, even light</td>
+                                <td>Cool gray, low saturation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dramatic Clouds</strong></td>
+                                <td>Epic, powerful, dynamic</td>
+                                <td>Hero shots, action scenes</td>
+                                <td>Varied, rim lighting</td>
+                                <td>Strong light/shadow contrast</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sunset/Sunrise</strong></td>
+                                <td>Romantic, hopeful, nostalgic</td>
+                                <td>Emotional scenes, endings/beginnings</td>
+                                <td>Warm, glowing, backlit</td>
+                                <td>Orange/pink everywhere</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Storm Clouds</strong></td>
+                                <td>Threatening, ominous, tense</td>
+                                <td>Conflict, danger, drama</td>
+                                <td>Dark, moody, spotlit</td>
+                                <td>Cool, desaturated</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nebula/Space</strong></td>
+                                <td>Alien, otherworldly, vast</td>
+                                <td>Sci-fi, fantasy scenes</td>
+                                <td>Unusual, creative lighting</td>
+                                <td>Any color possible</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Night Sky</strong></td>
+                                <td>Mysterious, intimate, quiet</td>
+                                <td>Night scenes, moonlit</td>
+                                <td>Minimal, cool moonlight</td>
+                                <td>Deep blue, very dark</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Foggy/Hazy</strong></td>
+                                <td>Mysterious, ethereal, soft</td>
+                                <td>Atmospheric scenes, depth</td>
+                                <td>Diffused, gentle</td>
+                                <td>Muted, monochromatic</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Sky Replacement Workflow</h3>
+                
+                <div class="card">
+                    <h4>🔄 Professional Sky Integration Process</h4>
+                    <ol>
+                        <li><strong>Evaluate Scene Requirements:</strong>
+                            <ul>
+                                <li>What time of day is this?</li>
+                                <li>What mood are we conveying?</li>
+                                <li>Where is the sun/light source?</li>
+                                <li>What's the weather condition?</li>
+                            </ul>
+                        </li>
+                        <li><strong>Find/Create Base Sky:</strong>
+                            <ul>
+                                <li>Search stock photography (HDRIHaven, Unsplash, personal library)</li>
+                                <li>Match approximate time of day and weather</li>
+                                <li>Consider horizon line position</li>
+                                <li>Get higher resolution than needed</li>
+                            </ul>
+                        </li>
+                        <li><strong>Scale & Position:</strong>
+                            <ul>
+                                <li>Sky should fill entire background</li>
+                                <li>Horizon line should match scene perspective</li>
+                                <li>Consider rule of thirds for horizon placement</li>
+                                <li>Transform/stretch as needed (sky is forgiving)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Color Grade Sky:</strong>
+                            <ul>
+                                <li>Match color temperature to scene lighting</li>
+                                <li>Adjust saturation to desired intensity</li>
+                                <li>Use curves to adjust overall brightness</li>
+                                <li>Add color overlay for mood consistency</li>
+                            </ul>
+                        </li>
+                        <li><strong>Enhance Sky Elements:</strong>
+                            <ul>
+                                <li>Add/remove clouds as needed</li>
+                                <li>Paint additional cloud formations</li>
+                                <li>Add atmospheric glow near horizon</li>
+                                <li>Paint sun/moon if visible</li>
+                            </ul>
+                        </li>
+                        <li><strong>Integrate with Foreground:</strong>
+                            <ul>
+                                <li>Sky color should influence entire scene</li>
+                                <li>Add sky color to shadows</li>
+                                <li>Match atmospheric haze to sky</li>
+                                <li>Ensure lighting direction matches</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Sky Painting Techniques</h3>
+                
+                <div class="card">
+                    <h4>🎨 When Photos Aren't Enough</h4>
+                    <p>Sometimes you need to paint your own sky elements:</p>
+                    
+                    <h5>Painting Clouds:</h5>
+                    <ul>
+                        <li><strong>Base Layer:</strong> Block in overall cloud shapes with soft brush</li>
+                        <li><strong>Light Side:</strong> Clouds facing sun are bright, almost white</li>
+                        <li><strong>Shadow Side:</strong> Clouds facing away are much darker (often dark gray/blue)</li>
+                        <li><strong>Edges:</strong> Soft, wispy edges for distant clouds; harder edges closer</li>
+                        <li><strong>Perspective:</strong> Clouds diminish toward horizon like everything else</li>
+                        <li><strong>Variety:</strong> Different cloud types at different altitudes</li>
+                        <li><strong>Atmosphere:</strong> Add blue sky showing through gaps</li>
+                    </ul>
+                    
+                    <h5>Sky Gradient:</h5>
+                    <ul>
+                        <li><strong>Horizon:</strong> Usually lighter/warmer near horizon (more atmosphere)</li>
+                        <li><strong>Zenith:</strong> Darkest/coolest at top of sky (less atmosphere)</li>
+                        <li><strong>Smooth Blend:</strong> Gradient should be gradual, no banding</li>
+                        <li><strong>Time of Day:</strong> Gradient changes dramatically dawn/dusk</li>
+                    </ul>
+                    
+                    <h5>Atmospheric Effects:</h5>
+                    <ul>
+                        <li><strong>Sun Glow:</strong> Bright area around sun, light rays</li>
+                        <li><strong>Haze:</strong> Light scattering creates glow near horizon</li>
+                        <li><strong>God Rays:</strong> Light beams through clouds (crepuscular rays)</li>
+                        <li><strong>Stars/Moon:</strong> For night skies, paint or composite</li>
+                    </ul>
+                </div>
+
+                <h3>Sky Perspective & Camera Lens</h3>
+                
+                <div class="card">
+                    <h4>📷 Matching Sky to Camera Lens</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Lens Type</th>
+                                <th>Focal Length</th>
+                                <th>Sky Appearance</th>
+                                <th>What to Do</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Wide Angle</strong></td>
+                                <td>14-35mm</td>
+                                <td>Sky takes up huge area, dramatic curves</td>
+                                <td>Use wide sky photos, enhance drama</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Normal</strong></td>
+                                <td>40-60mm</td>
+                                <td>Balanced, natural perspective</td>
+                                <td>Standard sky integration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Telephoto</strong></td>
+                                <td>70-200mm</td>
+                                <td>Compressed, sky feels closer, flatter</td>
+                                <td>Zoom into sky photos, reduce depth</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Super Telephoto</strong></td>
+                                <td>200mm+</td>
+                                <td>Very flat, minimal sky visible</td>
+                                <td>Extreme compression, tight crop</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Critical:</strong> Sky photo must match scene's apparent focal length or perspective feels wrong!</p>
+                </div>
+
+                <h3>Advanced Sky Techniques</h3>
+                
+                <div class="card">
+                    <h4>🌟 Professional Sky Tricks</h4>
+                    
+                    <p><strong>Sky Compositing:</strong></p>
+                    <ul>
+                        <li>Combine multiple sky photos for perfect result</li>
+                        <li>Base sky + dramatic clouds from another + color from third</li>
+                        <li>Use blend modes: Screen for bright clouds, Multiply for dark</li>
+                        <li>Layer masks to control where each element appears</li>
+                    </ul>
+                    
+                    <p><strong>Dynamic Range Control:</strong></p>
+                    <ul>
+                        <li>Real skies often have extreme brightness range</li>
+                        <li>Compress dynamic range for painting (not HDR photography)</li>
+                        <li>Darken sky if too bright compared to ground</li>
+                        <li>Lighten shadows in clouds for detail</li>
+                    </ul>
+                    
+                    <p><strong>Time of Day Transitions:</strong></p>
+                    <ul>
+                        <li>Create multiple sky versions for different times</li>
+                        <li>Same scene, different skies = different moods</li>
+                        <li>Useful for showing time passage</li>
+                        <li>Client often wants options - prepare multiple skies</li>
+                    </ul>
+                    
+                    <p><strong>Weather Effects in Sky:</strong></p>
+                    <ul>
+                        <li>Rain: Add dark clouds, rain streaks, wet surfaces below</li>
+                        <li>Snow: Overcast white sky, falling snow particles</li>
+                        <li>Fog: Gradual fade from sky to fog layer</li>
+                        <li>Storm: Dark dramatic clouds, possible lightning</li>
+                    </ul>
+                </div>
+
+                <blockquote>
+                    <strong>☁️ Sky Wisdom:</strong> "The sky is not just background - it's the single most important element in setting mood and lighting. A great sky makes an average scene epic. A poor sky ruins a great scene. Spend 20-30% of your time getting the sky perfect!"
+                </blockquote>
+            </section>
+
+            <!-- Section 4: Atmospheric Effects & Perspective -->
+            <section id="atmospheric-effects" class="lesson-section">
+                <h2>Atmospheric Effects & Perspective 🌫️</h2>
+                
+                <p>Atmosphere is the <strong>secret weapon of depth creation</strong>. Without atmospheric effects, even perfectly organized layers look flat. With proper atmosphere, a few simple layers create vast, believable worlds!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Atmospheric Principle</h3>
+                    <p><strong>Air is not invisible!</strong> Miles of air scatter and absorb light, creating haze that progressively lightens and desaturates distant objects. This is not optional for realism - it's physics. Master atmospheric perspective and your paintings gain instant depth and believability!</p>
+                </div>
+
+                <h3>Understanding Atmospheric Perspective</h3>
+                
+                <div class="card">
+                    <h4>🌍 The Science Behind the Effect</h4>
+                    <p><strong>What Actually Happens:</strong></p>
+                    <ul>
+                        <li><strong>Light Scattering:</strong> Air molecules scatter blue light more than red (Rayleigh scattering)</li>
+                        <li><strong>Particle Interference:</strong> Dust, water vapor, pollution scatter all light</li>
+                        <li><strong>Cumulative Effect:</strong> More distance = more air = more scattering</li>
+                        <li><strong>Result:</strong> Distant objects shift toward sky color (usually blue) and lighten</li>
+                    </ul>
+                    
+                    <p><strong>Visible Effects:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Distance</th>
+                                <th>Value Shift</th>
+                                <th>Color Shift</th>
+                                <th>Detail Loss</th>
+                                <th>Contrast Reduction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Near (0-100ft)</td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>0%</td>
+                                <td>0%</td>
+                            </tr>
+                            <tr>
+                                <td>Close Mid (100-500ft)</td>
+                                <td>5-10% lighter</td>
+                                <td>Slight cool shift</td>
+                                <td>10-20%</td>
+                                <td>10-20%</td>
+                            </tr>
+                            <tr>
+                                <td>Mid (500-1000ft)</td>
+                                <td>15-25% lighter</td>
+                                <td>Noticeable blue/gray</td>
+                                <td>30-50%</td>
+                                <td>30-50%</td>
+                            </tr>
+                            <tr>
+                                <td>Far Mid (1000-3000ft)</td>
+                                <td>30-45% lighter</td>
+                                <td>Strong sky color influence</td>
+                                <td>60-80%</td>
+                                <td>50-70%</td>
+                            </tr>
+                            <tr>
+                                <td>Background (3000-10000ft)</td>
+                                <td>50-70% lighter</td>
+                                <td>Nearly all sky color</td>
+                                <td>80-95%</td>
+                                <td>70-90%</td>
+                            </tr>
+                            <tr>
+                                <td>Far Background (10000ft+)</td>
+                                <td>70-85% lighter</td>
+                                <td>Silhouettes only, full sky color</td>
+                                <td>95-100%</td>
+                                <td>90-95%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Creating Atmospheric Layers</h3>
+                
+                <div class="card">
+                    <h4>💨 Building Convincing Atmosphere</h4>
+                    
+                    <p><strong>Method 1: Adjustment Layers</strong></p>
+                    <ol>
+                        <li>Group elements by depth zone</li>
+                        <li>Add curves/levels adjustment to each group</li>
+                        <li>Lighten values progressively (compress toward white)</li>
+                        <li>Shift colors toward sky color (blue/gray usually)</li>
+                        <li>Reduce saturation on distant groups</li>
+                    </ol>
+                    
+                    <p><strong>Method 2: Atmospheric Overlay Layers</strong></p>
+                    <ol>
+                        <li>Create new layer between each depth zone</li>
+                        <li>Fill with sky color (sample from sky)</li>
+                        <li>Set to Screen or Lighten blend mode</li>
+                        <li>Reduce opacity based on distance:
+                            <ul>
+                                <li>Near foreground to midground: 5-10%</li>
+                                <li>Midground to background: 15-30%</li>
+                                <li>Background to far background: 30-50%</li>
+                            </ul>
+                        </li>
+                        <li>Paint mask to control where atmosphere appears</li>
+                        <li>Stronger at horizon, less overhead</li>
+                    </ol>
+                    
+                    <p><strong>Method 3: Painted Haze Layers</strong></p>
+                    <ol>
+                        <li>New layer with Lighten or Screen blend mode</li>
+                        <li>Soft, large brush with sky color</li>
+                        <li>Paint atmospheric haze manually</li>
+                        <li>Focus on:
+                            <ul>
+                                <li>Horizon line (maximum haze)</li>
+                                <li>Between major depth zones</li>
+                                <li>Around distant objects</li>
+                                <li>Where fog/mist would naturally collect</li>
+                            </ul>
+                        </li>
+                        <li>Very soft edges, gradual transitions</li>
+                        <li>Multiple subtle layers better than one strong</li>
+                    </ol>
+                </div>
+
+                <h3>Special Atmospheric Conditions</h3>
+                
+                <div class="card">
+                    <h4>🌡️ Different Weather & Environment Effects</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Condition</th>
+                                <th>Visual Effect</th>
+                                <th>Color Shift</th>
+                                <th>Application</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Clear Day</strong></td>
+                                <td>Moderate blue haze</td>
+                                <td>Toward blue</td>
+                                <td>Standard atmospheric perspective</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Foggy/Misty</strong></td>
+                                <td>Heavy white/gray obscuring</td>
+                                <td>Toward gray/white</td>
+                                <td>Strong lightening, very short visible distance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Smog/Pollution</strong></td>
+                                <td>Brown/yellow haze</td>
+                                <td>Toward warm gray/brown</td>
+                                <td>Murky, unhealthy feeling, warm tint</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dust Storm</strong></td>
+                                <td>Orange/brown obscuring</td>
+                                <td>Toward orange/red</td>
+                                <td>Heavy particles, warm color cast</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rain</strong></td>
+                                <td>Gray haze, reduced visibility</td>
+                                <td>Toward cool gray</td>
+                                <td>Wet surfaces, darker overall</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Snow</strong></td>
+                                <td>White-out in distance</td>
+                                <td>Toward white/cool</td>
+                                <td>Very light values, high key</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sunset/Sunrise</strong></td>
+                                <td>Warm golden/orange haze</td>
+                                <td>Toward orange/pink</td>
+                                <td>Warm atmospheric perspective</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Night</strong></td>
+                                <td>Minimal haze, dark blue shift</td>
+                                <td>Toward deep blue/purple</td>
+                                <td>Atmosphere still present but darker</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Desert/Arid</strong></td>
+                                <td>Heat shimmer, pale haze</td>
+                                <td>Toward warm pale yellow</td>
+                                <td>Strong haze even short distances</td>
+                            </tr>
+                            <tr>
+                                <td><strong>High Altitude</strong></td>
+                                <td>Minimal haze, extreme clarity</td>
+                                <td>Less color shift</td>
+                                <td>Reduced atmospheric effect</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Atmospheric Particle Effects</h3>
+                
+                <div class="card">
+                    <h4>✨ Adding Life and Dimension</h4>
+                    
+                    <p><strong>Volumetric Effects:</strong></p>
+                    <ul>
+                        <li><strong>God Rays (Crepuscular Rays):</strong>
+                            <ul>
+                                <li>Light beams visible through atmosphere</li>
+                                <li>Radiate from light source (sun usually)</li>
+                                <li>Stronger with more particles (fog, dust)</li>
+                                <li>Paint with soft brush, light color, Lighten/Screen mode</li>
+                            </ul>
+                        </li>
+                        <li><strong>Light Shafts:</strong>
+                            <ul>
+                                <li>Beams of light through gaps (windows, trees)</li>
+                                <li>Show dust particles in air</li>
+                                <li>Cone/ray shape from source</li>
+                                <li>Subtle glow in atmosphere</li>
+                            </ul>
+                        </li>
+                        <li><strong>Aerial Perspective Glow:</strong>
+                            <ul>
+                                <li>Glow around bright objects (sun, lights)</li>
+                                <li>Scattered light in atmosphere</li>
+                                <li>Soft, gradual falloff</li>
+                                <li>Color matches light source</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <p><strong>Particle Systems:</strong></p>
+                    <ul>
+                        <li><strong>Dust Motes:</strong> Small particles visible in light shafts</li>
+                        <li><strong>Pollen/Seeds:</strong> Floating organic particles</li>
+                        <li><strong>Smoke/Steam:</strong> Rising wispy forms</li>
+                        <li><strong>Embers:</strong> Glowing particles from fire</li>
+                        <li><strong>Snowfall:</strong> Falling white particles</li>
+                        <li><strong>Rain:</strong> Streaking particles, motion blur</li>
+                    </ul>
+                    
+                    <p><strong>Application Tips:</strong></p>
+                    <ul>
+                        <li>Particles smaller and less visible with distance</li>
+                        <li>Vary size and opacity for realism</li>
+                        <li>Use motion blur on moving particles</li>
+                        <li>Layer multiple particle types</li>
+                        <li>Keep subtle - over-doing kills realism</li>
+                    </ul>
+                </div>
+
+
+                <blockquote>
+                    <strong>🌫️ Atmosphere Truth:</strong> "Atmosphere is like salt in cooking - you need it, but too much ruins the dish. Start subtle, then gradually increase until it feels right. You can always add more atmosphere, but removing it means repainting. Build it up slowly!"
+                </blockquote>
+            </section>
+
+            <!-- Section 5: Scale, Proportion & Camera Perspective -->
+            <section id="scale-proportion" class="lesson-section">
+                <h2>Scale, Proportion & Camera Perspective 📐</h2>
+                
+                <p>Nothing kills a matte painting faster than <strong>incorrect scale or perspective</strong>. A tree that's too small, a person that's too large, or perspective that doesn't match - these mistakes scream "fake" to the viewer's subconscious!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Scale & Perspective Principle</h3>
+                    <p><strong>Everything must obey the same perspective system!</strong> All elements in your painting share one camera, one horizon line, and one set of vanishing points. Break this rule and your brain immediately knows something is wrong, even if you can't articulate what!</p>
+                </div>
+
+                <h3>Understanding Scale in Matte Painting</h3>
+                
+                <div class="card">
+                    <h4>📏 Real-World Scale Reference</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Object</th>
+                                <th>Typical Size</th>
+                                <th>Use As Reference For</th>
+                                <th>Scale Indicator</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Average Human</strong></td>
+                                <td>5.5-6 feet (1.7-1.8m)</td>
+                                <td>Everything - main scale reference</td>
+                                <td>Gold standard</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Door</strong></td>
+                                <td>7 feet (2.1m) tall</td>
+                                <td>Building interiors, architecture</td>
+                                <td>Human scale indicator</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Car</strong></td>
+                                <td>15 feet (4.5m) long</td>
+                                <td>Streets, parking lots</td>
+                                <td>Transportation scale</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Story/Floor</strong></td>
+                                <td>10-12 feet (3-3.6m)</td>
+                                <td>Building height</td>
+                                <td>Architecture scale</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tree (mature)</strong></td>
+                                <td>40-80 feet (12-24m)</td>
+                                <td>Forest, landscape scale</td>
+                                <td>Natural scale</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Street Lane</strong></td>
+                                <td>10-12 feet (3-3.6m) wide</td>
+                                <td>Roads, urban planning</td>
+                                <td>Infrastructure scale</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Window</strong></td>
+                                <td>3-4 feet (0.9-1.2m) tall</td>
+                                <td>Building facades</td>
+                                <td>Architectural detail</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Stairs Step</strong></td>
+                                <td>7 inches (18cm) rise</td>
+                                <td>Staircases, terrain</td>
+                                <td>Human comfort scale</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Pro Tip:</strong> Always include at least one clear human-scale reference object (person, door, car) so viewers can judge scale of everything else!</p>
+                </div>
+
+                <h3>Scale Consistency Workflow</h3>
+                
+                <div class="card">
+                    <h4>✅ Ensuring Correct Scale</h4>
+                    <ol>
+                        <li><strong>Establish Scale Reference Early:</strong>
+                            <ul>
+                                <li>Place a human figure in your scene first</li>
+                                <li>Use this as measurement for everything else</li>
+                                <li>Keep reference visible even if you hide it later</li>
+                            </ul>
+                        </li>
+                        <li><strong>Use Perspective Grids:</strong>
+                            <ul>
+                                <li>Create or overlay perspective grid</li>
+                                <li>Each grid square = known measurement (10ft, 5m, etc.)</li>
+                                <li>Scale elements to match grid</li>
+                            </ul>
+                        </li>
+                        <li><strong>Measurement Guides:</strong>
+                            <ul>
+                                <li>Create vertical guides at different depths</li>
+                                <li>Mark human height on each guide</li>
+                                <li>Scale objects to match their depth's guide</li>
+                            </ul>
+                        </li>
+                        <li><strong>Comparison Testing:</strong>
+                            <ul>
+                                <li>Duplicate human figure, place at different depths</li>
+                                <li>Verify they diminish properly</li>
+                                <li>Use to judge if other elements are correct size</li>
+                            </ul>
+                        </li>
+                        <li><strong>Real-World Measurement Check:</strong>
+                            <ul>
+                                <li>"Could a person walk through that door?"</li>
+                                <li>"Is that car too small for people to fit?"</li>
+                                <li>"Would a person's head reach that window?"</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Camera Perspective Fundamentals</h3>
+                
+                <div class="card">
+                    <h4>📷 Perspective System Basics</h4>
+                    
+                    <p><strong>Essential Elements:</strong></p>
+                    <ul>
+                        <li><strong>Horizon Line (Eye Level):</strong>
+                            <ul>
+                                <li>Horizontal line at viewer's eye height</li>
+                                <li>All horizontal parallel lines converge to points on this line</li>
+                                <li>Low horizon = looking up (heroic, imposing)</li>
+                                <li>High horizon = looking down (overview, vulnerable)</li>
+                                <li>Middle horizon = neutral, eye-to-eye</li>
+                            </ul>
+                        </li>
+                        <li><strong>Vanishing Points:</strong>
+                            <ul>
+                                <li>Points where parallel lines converge</li>
+                                <li>Located on horizon line (for horizontal surfaces)</li>
+                                <li>1-point: One VP, simple scenes, looking straight</li>
+                                <li>2-point: Two VPs, most common, corner views</li>
+                                <li>3-point: Three VPs, extreme angles, vertical convergence</li>
+                            </ul>
+                        </li>
+                        <li><strong>Station Point:</strong>
+                            <ul>
+                                <li>Camera/viewer's position</li>
+                                <li>Determines horizon height and VP placement</li>
+                                <li>Stay consistent - don't move camera mid-painting!</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <h3>Matching Photo Perspectives</h3>
+                
+                <div class="card">
+                    <h4>🎯 Integration Perspective Strategy</h4>
+                    
+                    <p><strong>The Challenge:</strong> Each photo was taken from different camera position/angle. You must make them all appear shot from ONE camera!</p>
+                    
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol>
+                        <li><strong>Establish Master Perspective:</strong>
+                            <ul>
+                                <li>Choose or paint your base scene first</li>
+                                <li>Identify horizon line and vanishing points</li>
+                                <li>Mark these permanently (guide layer)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Analyze Photo Perspectives:</strong>
+                            <ul>
+                                <li>For each photo, find its horizon line</li>
+                                <li>Determine its vanishing points</li>
+                                <li>Identify its camera angle</li>
+                            </ul>
+                        </li>
+                        <li><strong>Match Through Transform:</strong>
+                            <ul>
+                                <li>Use perspective transform/warp tools</li>
+                                <li>Align photo horizon to master horizon</li>
+                                <li>Adjust photo VPs to match master VPs</li>
+                                <li>Scale appropriately for depth position</li>
+                            </ul>
+                        </li>
+                        <li><strong>Paint Corrections:</strong>
+                            <ul>
+                                <li>Some photos can't be transformed perfectly</li>
+                                <li>Paint over problematic areas</li>
+                                <li>Rebuild portions that don't fit</li>
+                                <li>Use photo for texture/reference only</li>
+                            </ul>
+                        </li>
+                        <li><strong>Verification:</strong>
+                            <ul>
+                                <li>Draw perspective lines over composition</li>
+                                <li>All horizontal parallels should converge correctly</li>
+                                <li>Vertical lines should be vertical (or converge to 3rd VP)</li>
+                                <li>Scale should feel consistent</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Focal Length & Lens Distortion</h3>
+                
+                <div class="card">
+                    <h4>📸 Understanding Camera Lens Effects</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Lens Type</th>
+                                <th>Focal Length</th>
+                                <th>Visual Effect</th>
+                                <th>Depth Feeling</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Super Wide</strong></td>
+                                <td>14-24mm</td>
+                                <td>Extreme distortion, curves, huge field</td>
+                                <td>Exaggerated depth</td>
+                                <td>Epic vistas, interiors</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wide Angle</strong></td>
+                                <td>24-35mm</td>
+                                <td>Mild distortion, dramatic perspective</td>
+                                <td>Strong depth</td>
+                                <td>Landscapes, architecture</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Normal</strong></td>
+                                <td>40-60mm</td>
+                                <td>Natural, like human eye</td>
+                                <td>Natural depth</td>
+                                <td>General scenes, portraits</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Telephoto</strong></td>
+                                <td>70-135mm</td>
+                                <td>Compressed, flattened</td>
+                                <td>Reduced depth</td>
+                                <td>Distant subjects, portraits</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Super Telephoto</strong></td>
+                                <td>200mm+</td>
+                                <td>Very flat, stacked look</td>
+                                <td>Minimal depth</td>
+                                <td>Very distant subjects</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Critical:</strong> All photos in your matte must appear shot with SAME focal length! Mix wide and telephoto and it looks immediately wrong!</p>
+                    
+                    <p><strong>Correction Strategy:</strong></p>
+                    <ul>
+                        <li>Choose one focal length for entire matte (usually 35-50mm)</li>
+                        <li>Photos too wide: crop center, reduce distortion</li>
+                        <li>Photos too telephoto: may be unusable or need extreme transformation</li>
+                        <li>When possible, shoot your own references at consistent focal length</li>
+                    </ul>
+                </div>
+
+                <h3>Common Scale & Perspective Mistakes</h3>
+                
+                <div class="card" style="background: #fff3cd; border-left: 4px solid #ffc107; color: #856404;">
+                    <h4>⚠️ Scale & Perspective Killers</h4>
+                    <ul>
+                        <li><strong>Giant People:</strong> Figures too large for background - looks miniature set</li>
+                        <li><strong>Tiny Trees:</strong> Trees too small - destroys landscape scale</li>
+                        <li><strong>Inconsistent Horizon:</strong> Elements converging to different horizons</li>
+                        <li><strong>Mixed Focal Lengths:</strong> Wide angle + telephoto in same scene</li>
+                        <li><strong>Wrong Eye Level:</strong> Looking up at ground-level objects</li>
+                        <li><strong>Floating Objects:</strong> No ground contact, ambiguous depth</li>
+                        <li><strong>Scale Reference Missing:</strong> No way for viewer to judge size</li>
+                        <li><strong>Unrealistic Sizes:</strong> Buildings too small, objects too large</li>
+                        <li><strong>Ignored Perspective Grid:</strong> Objects don't diminish with distance</li>
+                        <li><strong>Vertical Line Issues:</strong> Leaning buildings when shouldn't be</li>
+                    </ul>
+                </div>
+
+                <blockquote>
+                    <strong>📐 Scale Mastery:</strong> "When in doubt, put a person in it! A single human figure will tell you immediately if your scale is wrong. If they look like giants or ants, your scale is off. Trust the human figure - it's our most intuitive scale reference!"
+                </blockquote>
+            </section>
+
+            <!-- Section 6: Photorealistic Integration -->
+            <section id="photorealistic-integration" class="lesson-section">
+                <h2>Photorealistic Integration 🎨</h2>
+                
+                <p>The final test of matte painting mastery: making <strong>multiple elements from different sources appear photographed together</strong> in one cohesive scene. This is where technical skill meets artistic judgment!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Integration Principle</h3>
+                    <p><strong>Unity through consistency!</strong> Every element must share the same lighting direction, color temperature, atmospheric treatment, and technical quality. One mismatched element destroys the entire illusion. Perfect integration means invisible seams!</p>
+                </div>
+
+                <h3>The Integration Checklist</h3>
+                
+                <div class="card">
+                    <h4>✅ Critical Integration Elements</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>What to Match</th>
+                                <th>How to Check</th>
+                                <th>Fix Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Lighting Direction</strong></td>
+                                <td>Sun/main light angle</td>
+                                <td>Check shadow angles on all objects</td>
+                                <td>Paint/adjust shadows, flip elements</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Color Temperature</strong></td>
+                                <td>Warm/cool light quality</td>
+                                <td>Sample light areas - same color?</td>
+                                <td>Color balance adjustment layers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contrast Level</strong></td>
+                                <td>Black-to-white range</td>
+                                <td>Compare darkest darks, lightest lights</td>
+                                <td>Curves adjustment, paint over</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Saturation</strong></td>
+                                <td>Color intensity</td>
+                                <td>Does anything look too vivid/dull?</td>
+                                <td>Hue/saturation adjustment</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Atmospheric Treatment</strong></td>
+                                <td>Haze level for distance</td>
+                                <td>Objects at same depth same haziness?</td>
+                                <td>Add atmospheric layers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Edge Quality</strong></td>
+                                <td>Sharp/soft based on distance/focus</td>
+                                <td>Are edges consistent for depth?</td>
+                                <td>Selective blur, paint edges</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Resolution/Detail</strong></td>
+                                <td>Pixel density</td>
+                                <td>Low-res elements stand out</td>
+                                <td>Replace or paint over</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Grain/Noise</strong></td>
+                                <td>Texture consistency</td>
+                                <td>Does anything look too smooth/grainy?</td>
+                                <td>Add unified noise layer</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Perspective</strong></td>
+                                <td>Vanishing points, horizon</td>
+                                <td>Draw perspective lines</td>
+                                <td>Transform/warp, or repaint</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scale</strong></td>
+                                <td>Relative size</td>
+                                <td>Add human figure for reference</td>
+                                <td>Resize elements</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Advanced Integration Techniques</h3>
+                
+                <div class="card">
+                    <h4>🎨 Professional Integration Methods</h4>
+                    
+                    <p><strong>1. Contact Shadow Creation</strong></p>
+                    <ul>
+                        <li>Every object touching ground needs contact shadow</li>
+                        <li>Darkest directly under object, fades outward</li>
+                        <li>Matches main light direction</li>
+                        <li>Soft edges for elevated objects, harder for ground contact</li>
+                        <li>Paint on separate multiply layer, adjust opacity</li>
+                    </ul>
+                    
+                    <p><strong>2. Cast Shadow Integration</strong></p>
+                    <ul>
+                        <li>Objects should cast shadows on other objects</li>
+                        <li>Shadow follows receiving surface contours</li>
+                        <li>Softer edges = more diffused light</li>
+                        <li>Shadow color influenced by receiving surface + light</li>
+                        <li>Use multiply/darken blend modes</li>
+                    </ul>
+                    
+                    <p><strong>3. Reflection & Bounce Light</strong></p>
+                    <ul>
+                        <li>Reflective surfaces show nearby elements</li>
+                        <li>Bright surfaces bounce light onto nearby objects</li>
+                        <li>Add subtle reflected color on shadow sides</li>
+                        <li>Water reflects sky and surroundings</li>
+                        <li>Metal reflects environment</li>
+                    </ul>
+                    
+                    <p><strong>4. Edge Light (Rim Light)</strong></p>
+                    <ul>
+                        <li>Backlit edges glow slightly</li>
+                        <li>Separates foreground from background</li>
+                        <li>Paint thin light edge on away-from-camera side</li>
+                        <li>Color matches light source</li>
+                        <li>Creates depth and separation</li>
+                    </ul>
+                    
+                    <p><strong>5. Occlusion Ambient Darkening</strong></p>
+                    <ul>
+                        <li>Where objects meet, slight darkening</li>
+                        <li>Crevices, corners, contact points darker</li>
+                        <li>Simulate light inability to reach recessed areas</li>
+                        <li>Subtle but crucial for realism</li>
+                        <li>Paint with soft dark brush in crevices</li>
+                    </ul>
+                    
+                    <p><strong>6. Color Bleed/Interaction</strong></p>
+                    <ul>
+                        <li>Strongly colored objects influence nearby surfaces</li>
+                        <li>Red wall casts reddish light on nearby objects</li>
+                        <li>Grass reflects green into shadow areas</li>
+                        <li>Very subtle but increases realism</li>
+                        <li>Use color overlay layers with low opacity</li>
+                    </ul>
+                </div>
+
+                <h3>Unified Color Grading</h3>
+                
+                <div class="card">
+                    <h4>🎨 Final Color Harmony</h4>
+                    
+                    <p><strong>Why Color Grade:</strong></p>
+                    <ul>
+                        <li>Photos from different sources have different color casts</li>
+                        <li>Unified color grading makes everything feel photographed together</li>
+                        <li>Sets final mood and atmosphere</li>
+                        <li>Professional finish that ties everything together</li>
+                    </ul>
+                    
+                    <p><strong>Color Grading Workflow:</strong></p>
+                    <ol>
+                        <li><strong>Base Corrections:</strong>
+                            <ul>
+                                <li>Fix individual elements first</li>
+                                <li>Match white balance across elements</li>
+                                <li>Equalize contrast levels</li>
+                            </ul>
+                        </li>
+                        <li><strong>Global Adjustments:</strong>
+                            <ul>
+                                <li>Create adjustment layer over entire comp</li>
+                                <li>Curves: Adjust overall contrast and color</li>
+                                <li>Color Balance: Shift shadows/mids/highlights</li>
+                                <li>Hue/Saturation: Fine-tune specific colors</li>
+                            </ul>
+                        </li>
+                        <li><strong>Stylistic Choices:</strong>
+                            <ul>
+                                <li>Warm or cool overall cast for mood</li>
+                                <li>Crush blacks or lift them for style</li>
+                                <li>Desaturate for somber mood or saturate for vibrance</li>
+                                <li>Teal & orange look (film industry standard)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Final Polish:</strong>
+                            <ul>
+                                <li>Vignette (slight darkening at edges)</li>
+                                <li>Overall sharpening or slight blur</li>
+                                <li>Grain/noise for film look</li>
+                                <li>Chromatic aberration if desired</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Paintover Integration Strategy</h3>
+                
+                <div class="card">
+                    <h4>🖌️ The 40% Paint Rule</h4>
+                    
+                    <p><strong>Principle:</strong> Even with perfect photo-bashing, you need significant painted content for it to feel cohesive!</p>
+                    
+                    <p><strong>What to Paint Over:</strong></p>
+                    <ul>
+                        <li><strong>Seams & Edges:</strong> Where photos meet - paint transitions</li>
+                        <li><strong>Shadows:</strong> Almost always need painted shadows</li>
+                        <li><strong>Highlights:</strong> Add painted highlights for consistency</li>
+                        <li><strong>Details:</strong> Small details that tie elements together</li>
+                        <li><strong>Atmospheric Effects:</strong> Fog, haze, particles - mostly painted</li>
+                        <li><strong>Problem Areas:</strong> Anything that doesn't fit perfectly</li>
+                        <li><strong>Foreground:</strong> Heavy paintover for main focus areas</li>
+                        <li><strong>Unifying Touches:</strong> Brushstrokes across multiple elements</li>
+                    </ul>
+                    
+                    <p><strong>Paintover Layers Strategy:</strong></p>
+                    <ol>
+                        <li>Create new layer above photo elements</li>
+                        <li>Sample colors from photos below</li>
+                        <li>Paint with those colors to match</li>
+                        <li>Blend photo and paint seamlessly</li>
+                        <li>Goal: Can't tell where photo ends and paint begins</li>
+                    </ol>
+                </div>
+
+                <blockquote>
+                    <strong>🎨 Integration Wisdom:</strong> "The difference between photo collage and matte painting is the paintover! Spend 40-50% of your time painting over your photo elements. This transforms a collage into a cohesive, believable world. Don't skip this step!"
+                </blockquote>
+            </section>
+
+            <!-- Section 7: Complete Matte Painting Workflow -->
+            <section id="complete-workflow" class="lesson-section">
+                <h2>Complete Matte Painting Workflow 🎬</h2>
+                
+                <p>Now let's put it all together! Here's the <strong>professional start-to-finish workflow</strong> for creating a complete matte painting.</p>
+
+                <div class="mermaid">
+                    graph TD
+                        A[Matte Painting Workflow] --> B[Phase 1: Concept]
+                        A --> C[Phase 2: Asset Gathering]
+                        A --> D[Phase 3: Composition]
+                        A --> E[Phase 4: Integration]
+                        A --> F[Phase 5: Refinement]
+                        A --> G[Phase 6: Final Polish]
+                        
+                        B --> B1[Sketch thumbnails]
+                        B --> B2[Define mood & lighting]
+                        B --> B3[Establish perspective]
+                        B --> B4[Client/director approval]
+                        
+                        C --> C1[Photo references]
+                        C --> C2[Take custom photos if needed]
+                        C --> C3[3D elements if needed]
+                        C --> C4[Texture library]
+                        
+                        D --> D1[Sky placement]
+                        D --> D2[Far background]
+                        D --> D3[Background elements]
+                        D --> D4[Midground elements]
+                        D --> D5[Foreground elements]
+                        D --> D6[Rough depth organization]
+                        
+                        E --> E1[Match perspectives]
+                        E --> E2[Match lighting]
+                        E --> E3[Color harmony]
+                        E --> E4[Add shadows & reflections]
+                        E --> E5[Atmospheric layers]
+                        E --> E6[Paint over seams]
+                        
+                        F --> F1[Detail enhancement]
+                        F --> F2[Paintover for unity]
+                        F --> F3[Fix scale issues]
+                        F --> F4[Add atmospheric effects]
+                        F --> F5[Edge refinement]
+                        
+                        G --> G1[Color grading]
+                        G --> G2[Final contrast]
+                        G --> G3[Noise/grain unity]
+                        G --> G4[Vignette & effects]
+                        G --> G5[Export/delivery]
+                </div>
+
+
+                <h3>Detailed Phase-by-Phase Workflow</h3>
+                
+                <div class="card">
+                    <h4>📋 Phase 1: Concept & Planning (10% of time)</h4>
+                    <p><strong>Goal:</strong> Clear vision before you start building</p>
+                    <ol>
+                        <li><strong>Thumbnail Sketches:</strong>
+                            <ul>
+                                <li>Create 3-5 quick composition options (10-15 min each)</li>
+                                <li>Focus on silhouette and major shapes</li>
+                                <li>Test different camera angles</li>
+                                <li>Don't worry about details yet</li>
+                            </ul>
+                        </li>
+                        <li><strong>Value Study:</strong>
+                            <ul>
+                                <li>Choose best thumbnail</li>
+                                <li>Create grayscale value study</li>
+                                <li>Establish lighting and depth</li>
+                                <li>Ensure clear focal point</li>
+                            </ul>
+                        </li>
+                        <li><strong>Color Mood Study:</strong>
+                            <ul>
+                                <li>Small color study of chosen concept</li>
+                                <li>Test color palette</li>
+                                <li>Establish time of day</li>
+                                <li>Capture intended mood</li>
+                            </ul>
+                        </li>
+                        <li><strong>Technical Planning:</strong>
+                            <ul>
+                                <li>Define horizon line and vanishing points</li>
+                                <li>Decide on focal length/lens</li>
+                                <li>List required elements</li>
+                                <li>Note potential problem areas</li>
+                            </ul>
+                        </li>
+                        <li><strong>Approval:</strong>
+                            <ul>
+                                <li>Get client/director sign-off on concept</li>
+                                <li>Clarify any uncertainties</li>
+                                <li>Lock in major design decisions</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Deliverable:</strong> Approved color concept study, technical specs documented</p>
+                </div>
+
+                <div class="card">
+                    <h4>📦 Phase 2: Asset Gathering (15% of time)</h4>
+                    <p><strong>Goal:</strong> Collect all visual elements needed</p>
+                    <ol>
+                        <li><strong>Photo Reference Search:</strong>
+                            <ul>
+                                <li>Search stock sites, personal library</li>
+                                <li>Gather 2-3 options for each major element</li>
+                                <li>Prioritize matching perspective/lighting</li>
+                                <li>Verify legal usage rights</li>
+                                <li>Save high-resolution versions</li>
+                            </ul>
+                        </li>
+                        <li><strong>Custom Photography:</strong>
+                            <ul>
+                                <li>If no good refs exist, shoot your own</li>
+                                <li>Match time of day/lighting to concept</li>
+                                <li>Shoot at consistent focal length</li>
+                                <li>Capture multiple angles</li>
+                            </ul>
+                        </li>
+                        <li><strong>Texture Gathering:</strong>
+                            <ul>
+                                <li>Collect surface textures needed</li>
+                                <li>Organize by type (stone, wood, metal, etc.)</li>
+                                <li>Prefer seamless/tileable textures</li>
+                            </ul>
+                        </li>
+                        <li><strong>3D Elements (if applicable):</strong>
+                            <ul>
+                                <li>Model simple 3D shapes for complex perspective</li>
+                                <li>Render from matching camera angle</li>
+                                <li>Use as underlay/guide for painting</li>
+                            </ul>
+                        </li>
+                        <li><strong>Organization:</strong>
+                            <ul>
+                                <li>Create project folder structure</li>
+                                <li>Name files clearly</li>
+                                <li>Keep source credits documented</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Deliverable:</strong> Organized library of all assets needed</p>
+                </div>
+
+                <div class="card">
+                    <h4>🏗️ Phase 3: Composition & Layout (20% of time)</h4>
+                    <p><strong>Goal:</strong> Block in entire scene, rough but readable</p>
+                    <ol>
+                        <li><strong>Set Up Document:</strong>
+                            <ul>
+                                <li>Create working file at production resolution (4K minimum)</li>
+                                <li>16-bit color depth for maximum latitude</li>
+                                <li>Draw perspective guides</li>
+                                <li>Mark horizon line clearly</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sky Placement (Foundation):</strong>
+                            <ul>
+                                <li>Place/create sky first</li>
+                                <li>This sets mood and lighting for everything</li>
+                                <li>Adjust colors to match concept</li>
+                                <li>Don't perfect yet - just block in</li>
+                            </ul>
+                        </li>
+                        <li><strong>Far Background:</strong>
+                            <ul>
+                                <li>Distant mountains, horizon elements</li>
+                                <li>Establish maximum distance</li>
+                                <li>Very atmospheric, low detail</li>
+                            </ul>
+                        </li>
+                        <li><strong>Background Layer:</strong>
+                            <ul>
+                                <li>Distant buildings, landscape features</li>
+                                <li>Rough placement, don't worry about perfect masks</li>
+                                <li>Check scale against perspective guides</li>
+                            </ul>
+                        </li>
+                        <li><strong>Midground Layer:</strong>
+                            <ul>
+                                <li>Main environment elements</li>
+                                <li>Hero architecture or landscape</li>
+                                <li>This is usually where story happens</li>
+                            </ul>
+                        </li>
+                        <li><strong>Foreground Layer:</strong>
+                            <ul>
+                                <li>Closest elements, frame the scene</li>
+                                <li>Establish foreground interest</li>
+                                <li>Leave room for atmospheric layers later</li>
+                            </ul>
+                        </li>
+                        <li><strong>Initial Depth Organization:</strong>
+                            <ul>
+                                <li>Group layers by depth zone</li>
+                                <li>Apply rough atmospheric treatment</li>
+                                <li>Check overall composition flow</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Checkpoint:</strong> Entire scene blocked in, reads clearly, composition works. Seams visible, no refinement yet.</p>
+                </div>
+
+                <div class="card">
+                    <h4>🎨 Phase 4: Integration (30% of time)</h4>
+                    <p><strong>Goal:</strong> Make all elements appear shot together</p>
+                    <ol>
+                        <li><strong>Perspective Matching:</strong>
+                            <ul>
+                                <li>Check every element against perspective guides</li>
+                                <li>Transform/warp photos to match horizon/VPs</li>
+                                <li>Fix any perspective mismatches</li>
+                                <li>Verify scale consistency</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lighting Unification:</strong>
+                            <ul>
+                                <li>Ensure all shadows point same direction</li>
+                                <li>Match light color temperature across elements</li>
+                                <li>Adjust brightness of elements based on lighting</li>
+                                <li>Paint contact shadows under objects</li>
+                                <li>Add cast shadows between elements</li>
+                            </ul>
+                        </li>
+                        <li><strong>Color Harmony Pass:</strong>
+                            <ul>
+                                <li>Match color balance across all elements</li>
+                                <li>Equalize saturation levels</li>
+                                <li>Add unified color overlay for harmony</li>
+                                <li>Sky color should influence everything</li>
+                            </ul>
+                        </li>
+                        <li><strong>Atmospheric Depth Layers:</strong>
+                            <ul>
+                                <li>Create haze layers between depth zones</li>
+                                <li>Lighten/desaturate distant elements progressively</li>
+                                <li>Add atmospheric glow near horizon</li>
+                                <li>Paint fog/mist where appropriate</li>
+                            </ul>
+                        </li>
+                        <li><strong>Edge Blending:</strong>
+                            <ul>
+                                <li>Refine all masks for clean edges</li>
+                                <li>Paint transitions between elements</li>
+                                <li>No visible seams anywhere</li>
+                                <li>Vary edge softness by distance</li>
+                            </ul>
+                        </li>
+                        <li><strong>Initial Paintover:</strong>
+                            <ul>
+                                <li>Paint over obvious photo elements</li>
+                                <li>Unify with brushstrokes</li>
+                                <li>Start breaking up photo-collage look</li>
+                                <li>Add small connecting details</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Checkpoint:</strong> Scene looks cohesive, elements integrated, no obvious seams, lighting consistent.</p>
+                </div>
+
+                <div class="card">
+                    <h4>✨ Phase 5: Refinement & Detail (25% of time)</h4>
+                    <p><strong>Goal:</strong> Elevate from good to great</p>
+                    <ol>
+                        <li><strong>Detail Enhancement:</strong>
+                            <ul>
+                                <li>Add painted details in focus areas</li>
+                                <li>Enhance foreground with extra detail</li>
+                                <li>Paint important story elements carefully</li>
+                                <li>Don't over-detail background (kills depth)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Heavy Paintover Pass:</strong>
+                            <ul>
+                                <li>40%+ of visible surface should be painted now</li>
+                                <li>Paint over most obvious photo elements</li>
+                                <li>Unifying brushstrokes across elements</li>
+                                <li>Add artistic interpretation</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lighting Refinement:</strong>
+                            <ul>
+                                <li>Add subtle rim lights</li>
+                                <li>Enhance highlights</li>
+                                <li>Deepen shadows where needed</li>
+                                <li>Add light rays/god rays if appropriate</li>
+                                <li>Paint bounce light effects</li>
+                            </ul>
+                        </li>
+                        <li><strong>Atmospheric Effects:</strong>
+                            <ul>
+                                <li>Add volumetric fog if needed</li>
+                                <li>Paint dust motes in light shafts</li>
+                                <li>Add weather effects (rain, snow, etc.)</li>
+                                <li>Enhance atmospheric glow</li>
+                            </ul>
+                        </li>
+                        <li><strong>Scale & Proportion Check:</strong>
+                            <ul>
+                                <li>Add human figure temporarily to verify scale</li>
+                                <li>Fix any scale issues discovered</li>
+                                <li>Ensure everything feels correct size</li>
+                            </ul>
+                        </li>
+                        <li><strong>Edge Refinement:</strong>
+                            <ul>
+                                <li>Sharp edges in foreground/focus</li>
+                                <li>Soft edges in background/out of focus</li>
+                                <li>Painted edge variations for realism</li>
+                            </ul>
+                        </li>
+                        <li><strong>Problem Area Fixes:</strong>
+                            <ul>
+                                <li>Address any remaining issues</li>
+                                <li>Repaint problematic areas</li>
+                                <li>Ensure everything reads correctly</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Checkpoint:</strong> Scene is detailed, polished, convincing. Passes as photograph at normal viewing distance.</p>
+                </div>
+
+                <div class="card">
+                    <h4>🎬 Phase 6: Final Polish (10% of time)</h4>
+                    <p><strong>Goal:</strong> Perfect finish, delivery ready</p>
+                    <ol>
+                        <li><strong>Global Color Grading:</strong>
+                            <ul>
+                                <li>Unified color adjustment over entire comp</li>
+                                <li>Final mood adjustment</li>
+                                <li>Curves for overall contrast</li>
+                                <li>Color balance tweaks</li>
+                                <li>Saturation refinement</li>
+                            </ul>
+                        </li>
+                        <li><strong>Contrast & Value Final Pass:</strong>
+                            <ul>
+                                <li>Ensure proper value hierarchy</li>
+                                <li>Brightest brights in focal point</li>
+                                <li>Proper contrast for depth</li>
+                                <li>No muddy mid-tones</li>
+                            </ul>
+                        </li>
+                        <li><strong>Noise/Grain Unity:</strong>
+                            <ul>
+                                <li>Add subtle grain/noise over everything</li>
+                                <li>Unifies disparate photo sources</li>
+                                <li>Can add film-look grain</li>
+                                <li>Very subtle - 2-5% opacity usually</li>
+                            </ul>
+                        </li>
+                        <li><strong>Vignette (Optional):</strong>
+                            <ul>
+                                <li>Subtle darkening at edges</li>
+                                <li>Draws eye to center</li>
+                                <li>Very gentle - shouldn't be obvious</li>
+                            </ul>
+                        </li>
+                        <li><strong>Final Effects:</strong>
+                            <ul>
+                                <li>Chromatic aberration (if desired)</li>
+                                <li>Lens flares (sparingly!)</li>
+                                <li>Motion blur (if camera moving)</li>
+                                <li>Depth of field blur (if needed)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Quality Check:</strong>
+                            <ul>
+                                <li>View at 100% - check for artifacts</li>
+                                <li>View at 50% - overall composition</li>
+                                <li>View at 25% - reads as thumbnail?</li>
+                                <li>Check on different monitors if possible</li>
+                                <li>Fresh eyes - take break then review</li>
+                            </ul>
+                        </li>
+                        <li><strong>Export & Delivery:</strong>
+                            <ul>
+                                <li>Save layered master file (PSD/PST)</li>
+                                <li>Export flattened TIFF (production)</li>
+                                <li>Export JPG (preview/approval)</li>
+                                <li>Match client-specified formats</li>
+                                <li>Backup all files</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Deliverable:</strong> Final matte painting, production-ready, multiple formats</p>
+                </div>
+
+                <h3>Time Management</h3>
+                
+                <div class="card">
+                    <h4>⏱️ Professional Time Allocation</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Phase</th>
+                                <th>Time %</th>
+                                <th>Example (20hr project)</th>
+                                <th>Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Concept & Planning</td>
+                                <td>10%</td>
+                                <td>2 hours</td>
+                                <td>Critical - sets direction</td>
+                            </tr>
+                            <tr>
+                                <td>Asset Gathering</td>
+                                <td>15%</td>
+                                <td>3 hours</td>
+                                <td>Important - quality sources</td>
+                            </tr>
+                            <tr>
+                                <td>Composition & Layout</td>
+                                <td>20%</td>
+                                <td>4 hours</td>
+                                <td>High - foundation work</td>
+                            </tr>
+                            <tr>
+                                <td>Integration</td>
+                                <td>30%</td>
+                                <td>6 hours</td>
+                                <td>Critical - makes or breaks</td>
+                            </tr>
+                            <tr>
+                                <td>Refinement & Detail</td>
+                                <td>25%</td>
+                                <td>5 hours</td>
+                                <td>High - quality level</td>
+                            </tr>
+                            <tr>
+                                <td>Final Polish</td>
+                                <td>10%</td>
+                                <td>2 hours</td>
+                                <td>Medium - last 10%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Pro Tip:</strong> Beginners spend too much time gathering and not enough integrating. Reverse this! 60% of time should be in integration + refinement!</p>
+                </div>
+
+                <blockquote>
+                    <strong>🎬 Workflow Wisdom:</strong> "Matte painting is 20% collecting ingredients and 80% cooking. You can't rush integration - that's where amateur becomes professional. Be patient, check your work constantly, and don't skip steps!"
+                </blockquote>
+            </section>
+
+            <!-- Section 8: Practice Exercise -->
+            <section id="practice" class="lesson-section">
+                <h2>Practice Exercise 🏋️</h2>
+                
+                <div class="exercise-card">
+                    <h3>🏔️ Project: Fantasy Landscape Matte Painting</h3>
+                    
+                    <p><strong>Your Mission:</strong> Create a complete fantasy landscape matte painting from concept to finish, applying all techniques learned!</p>
+                    
+                    <h4>Project Specifications:</h4>
+                    <ul>
+                        <li><strong>Theme:</strong> Choose one:
+                            <ul>
+                                <li>Ancient ruins in mystical forest</li>
+                                <li>Floating islands in the clouds</li>
+                                <li>Crystal cavern with underground city</li>
+                                <li>Mountain temple at sunset</li>
+                                <li>Alien landscape with two suns</li>
+                            </ul>
+                        </li>
+                        <li><strong>Resolution:</strong> Minimum 3000px wide (4K recommended)</li>
+                        <li><strong>Aspect Ratio:</strong> Cinematic (2.35:1 or 16:9)</li>
+                        <li><strong>Required Elements:</strong>
+                            <ul>
+                                <li>Clear foreground, midground, background separation</li>
+                                <li>At least 3 distinct depth zones</li>
+                                <li>Custom sky (painted or heavily modified photo)</li>
+                                <li>One scale reference object (person, structure, vehicle)</li>
+                                <li>Dramatic lighting (time of day clearly defined)</li>
+                                <li>Atmospheric effects (haze, fog, or similar)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Minimum Quality Standards:</strong>
+                            <ul>
+                                <li>40% or more painted content (not pure photo-bash)</li>
+                                <li>No visible seams between elements</li>
+                                <li>Consistent lighting direction throughout</li>
+                                <li>Proper atmospheric perspective applied</li>
+                                <li>Believable scale and perspective</li>
+                                <li>Unified color grading</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <h4>Week-by-Week Breakdown (20 hours total):</h4>
+                    
+                    <p><strong>Week 1: Planning & Setup (4 hours)</strong></p>
+                    <ul>
+                        <li>Day 1-2: Create 3-5 thumbnail concepts (30 min each)</li>
+                        <li>Day 3: Detailed value study of chosen concept (2 hours)</li>
+                        <li>Day 4: Color mood study (1 hour)</li>
+                        <li>Day 5: Gather all photo references and assets (2 hours)</li>
+                        <li>Weekend: Set up working file, perspective guides (30 min)</li>
+                    </ul>
+                    
+                    <p><strong>Week 2: Composition & Blocking (6 hours)</strong></p>
+                    <ul>
+                        <li>Day 1: Sky placement and far background (1.5 hours)</li>
+                        <li>Day 2: Background elements (1.5 hours)</li>
+                        <li>Day 3: Midground elements (1.5 hours)</li>
+                        <li>Day 4: Foreground elements (1.5 hours)</li>
+                        <li>Weekend: Rough atmospheric layers and organization</li>
+                    </ul>
+                    
+                    <p><strong>Week 3: Integration (6 hours)</strong></p>
+                    <ul>
+                        <li>Day 1: Perspective and scale matching (1.5 hours)</li>
+                        <li>Day 2: Lighting unification, shadows (1.5 hours)</li>
+                        <li>Day 3: Color harmony and atmospheric depth (1.5 hours)</li>
+                        <li>Day 4: Edge blending and initial paintover (1.5 hours)</li>
+                        <li>Weekend: Review and fix integration issues</li>
+                    </ul>
+                    
+                    <p><strong>Week 4: Refinement & Polish (4 hours)</strong></p>
+                    <ul>
+                        <li>Day 1: Detail enhancement and heavy paintover (2 hours)</li>
+                        <li>Day 2: Atmospheric effects and lighting refinement (1 hour)</li>
+                        <li>Day 3: Color grading and final polish (1 hour)</li>
+                        <li>Weekend: Final review, export, celebrate! 🎉</li>
+                    </ul>
+                    
+                    <h4>Deliverables:</h4>
+                    <ol>
+                        <li><strong>Process Documentation:</strong>
+                            <ul>
+                                <li>Thumbnail concepts (at least 3)</li>
+                                <li>Final value study</li>
+                                <li>Color mood study</li>
+                                <li>Screenshot of rough composition phase</li>
+                                <li>Screenshot showing atmospheric layers</li>
+                            </ul>
+                        </li>
+                        <li><strong>Final Matte Painting:</strong>
+                            <ul>
+                                <li>High-resolution final image (JPG, 100% quality)</li>
+                                <li>Layered working file (PSD/PST)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Source Documentation:</strong>
+                            <ul>
+                                <li>List of all photo sources used</li>
+                                <li>License information</li>
+                                <li>Credit for any textures/assets</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <h4>Evaluation Checklist:</h4>
+                    <ul>
+                        <li>□ Strong composition with clear focal point</li>
+                        <li>□ Proper atmospheric perspective (distance = lighter/bluer)</li>
+                        <li>□ Consistent lighting direction and quality</li>
+                        <li>□ No visible seams between photo elements</li>
+                        <li>□ Unified color palette and grading</li>
+                        <li>□ Correct scale and proportion throughout</li>
+                        <li>□ Proper perspective (all elements to same horizon/VPs)</li>
+                        <li>□ At least 40% painted content visible</li>
+                        <li>□ Atmospheric effects enhance depth</li>
+                        <li>□ Clear foreground/midground/background separation</li>
+                        <li>□ Believable as photograph at thumbnail size</li>
+                        <li>□ Professional quality details and refinement</li>
+                        <li>□ Mood and lighting clearly defined</li>
+                        <li>□ No obvious photo sources identifiable</li>
+                        <li>□ Cohesive, unified final image</li>
+                    </ul>
+                    
+                    <h4>Bonus Challenges (Optional):</h4>
+                    <ul>
+                        <li>🌟 Create alternate lighting version (dawn/dusk/night)</li>
+                        <li>🌟 Add weather effects (rain, snow, storm)</li>
+                        <li>🌟 Include character or creature in scene</li>
+                        <li>🌟 Paint entirely custom sky from scratch</li>
+                        <li>🌟 Create camera projection-ready version (layered depth)</li>
+                        <li>🌟 Make animated element (clouds, water, particles)</li>
+                    </ul>
+                </div>
+
+                <h3>Common Student Mistakes to Avoid</h3>
+                
+                <div class="card" style="background: #fff3cd; border-left: 4px solid #ffc107; color: #856404;">
+                    <h4>⚠️ Watch Out For These!</h4>
+                    <ul>
+                        <li><strong>Rushing Asset Gathering:</strong> Using first photo found instead of searching for best match</li>
+                        <li><strong>Skipping Concept Phase:</strong> Starting to build without clear plan</li>
+                        <li><strong>Under-Painting:</strong> Relying too heavily on photos, not enough paintover</li>
+                        <li><strong>Inconsistent Atmosphere:</strong> Some elements hazed, others not</li>
+                        <li><strong>Weak Depth Separation:</strong> All layers too similar in contrast/color</li>
+                        <li><strong>Scale Errors:</strong> Not using human reference to check sizes</li>
+                        <li><strong>Perspective Mixing:</strong> Elements from different camera angles</li>
+                        <li><strong>Visible Seams:</strong> Not spending enough time on edge blending</li>
+                        <li><strong>Lighting Inconsistency:</strong> Shadows pointing different directions</li>
+                        <li><strong>Over-Detailing Background:</strong> Too much detail far away kills depth</li>
+                        <li><strong>No Color Grading:</strong> Skipping final unifying color pass</li>
+                        <li><strong>Working Too Small:</strong> File resolution too low for detail work</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 9: Summary & Next Steps -->
+            <section id="summary" class="lesson-section">
+                <h2>Summary & Next Steps 🎉</h2>
+                
+                <div class="card" style="background: #e8f5e9; border-left: 4px solid #4CAF50;">
+                    <h3>🎯 What You've Mastered</h3>
+                    <ul>
+                        <li>Understanding matte painting history and modern applications</li>
+                        <li>Creating convincing depth through layer organization</li>
+                        <li>Sky replacement and integration techniques</li>
+                        <li>Atmospheric effects and perspective principles</li>
+                        <li>Scale, proportion, and camera perspective mastery</li>
+                        <li>Photorealistic integration of disparate elements</li>
+                        <li>Complete professional matte painting workflow</li>
+                        <li>Time management and quality standards</li>
+                    </ul>
+                </div>
+
+                <p>You've now mastered the fundamentals of <strong>matte painting</strong>! This is one of the most technically demanding disciplines in digital art, combining photography, painting, perspective, and color theory into photorealistic environmental art. These skills are highly valued in film, games, and advertising!</p>
+
+                <blockquote>
+                    <strong>🌟 Master's Wisdom:</strong> "Matte painting is not about tricking people - it's about creating believable worlds. The goal isn't to fool the eye, it's to transport the imagination. When viewers forget they're looking at a painting and start wondering about that world... you've succeeded!"
+                </blockquote>
+
+                <h3>Quick Reference: Matte Painting Essentials</h3>
+                
+                <div class="card">
+                    <pre><code>MATTE PAINTING WORKFLOW:
+Phase 1: Concept & Planning (10%)
+Phase 2: Asset Gathering (15%)
+Phase 3: Composition & Layout (20%)
+Phase 4: Integration (30%)
+Phase 5: Refinement & Detail (25%)
+Phase 6: Final Polish (10%)
+
+DEPTH LAYER SYSTEM:
+- Sky (infinite distance)
+- Far Background (5000ft+): 70-85% lighter, silhouettes
+- Background (1000-5000ft): 50-70% lighter, low detail
+- Far Midground (500-1000ft): 30-45% lighter
+- Midground (100-500ft): 15-25% lighter
+- Foreground (0-100ft): Minimal haze, full detail
+- Atmospheric Layers between each
+
+SKY INTEGRATION:
+✓ Sets mood and lighting for entire scene
+✓ Choose/create sky first
+✓ Everything influenced by sky color
+✓ Dramatic sky = dramatic scene
+✓ Peaceful sky = calm scene
+✓ Match weather conditions throughout
+
+ATMOSPHERIC PERSPECTIVE:
+Distance creates these effects:
+- Value: Progressively lighter
+- Color: Shifts toward sky color (usually cool)
+- Saturation: Reduces with distance
+- Contrast: Compresses toward midtones
+- Detail: Less visible far away
+- Edges: Softer with distance
+
+SCALE & PROPORTION:
+✓ Use human figure as scale reference (5.5-6ft)
+✓ All elements share one horizon line
+✓ All elements share same vanishing points
+✓ Perspective grid helps verify scale
+✓ Match focal length across all photos
+✓ Double-check with "could person fit?" test
+
+PHOTOREALISTIC INTEGRATION:
+Must match these across all elements:
+✓ Lighting direction and quality
+✓ Color temperature (warm/cool)
+✓ Contrast levels
+✓ Saturation intensity
+✓ Atmospheric treatment for depth
+✓ Edge quality (sharp/soft)
+✓ Resolution and detail level
+✓ Perspective and scale
+
+INTEGRATION TECHNIQUES:
+- Contact shadows (darkest under objects)
+- Cast shadows (on receiving surfaces)
+- Bounce light (reflected color)
+- Rim light (backlit edges)
+- Ambient occlusion (darkening in crevices)
+- Color bleed (colored surfaces influence nearby)
+- 40%+ painted content for unity
+
+COLOR GRADING:
+1. Match individual elements
+2. Global adjustment layers
+3. Unified color cast for mood
+4. Final contrast/saturation refinement
+5. Vignette and grain for unity
+
+QUALITY CHECKLIST:
+□ Strong composition, clear focal point
+□ Proper atmospheric perspective
+□ Consistent lighting throughout
+□ No visible seams
+□ Unified color grading
+□ Correct scale and proportion
+□ Matching perspective system
+□ 40%+ painted content
+□ Atmospheric effects present
+□ Clear depth separation
+□ Photorealistic at distance
+□ Professional refinement level
+□ Sources not identifiable
+□ Cohesive final image
+
+TIME ALLOCATION (Professional):
+- Don't over-spend on gathering (15% max)
+- Invest heavily in integration (30%)
+- Don't skip refinement (25%)
+- Integration makes or breaks quality
+- Paintover is what separates amateurs from pros</code></pre>
+                </div>
+
+                <h3>Resources for Continued Learning</h3>
+                
+                <div class="card">
+                    <h4>📚 Recommended Study Materials</h4>
+                    
+                    <p><strong>Books:</strong></p>
+                    <ul>
+                        <li>"The Digital Matte Painting Handbook" by David B. Mattingly</li>
+                        <li>"How to Draw" by Scott Robertson (perspective mastery)</li>
+                        <li>"Color and Light" by James Gurney (atmospheric principles)</li>
+                    </ul>
+                    
+                    <p><strong>Online Resources:</strong></p>
+                    <ul>
+                        <li>HDRIHaven.com - Free HDRI skies and environments</li>
+                        <li>TextureHaven.com - Free PBR textures</li>
+                        <li>Unsplash.com / Pexels.com - Free stock photography</li>
+                        <li>FZD School of Design (YouTube) - Professional concept art workflows</li>
+                    </ul>
+                    
+                    <p><strong>Study Real Mattes:</strong></p>
+                    <ul>
+                        <li>VFX breakdowns on YouTube (ILM, Weta, Framestore)</li>
+                        <li>Art of books from major films</li>
+                        <li>ArtStation matte painting tag</li>
+                        <li>Behind-the-scenes film documentaries</li>
+                    </ul>
+                </div>
+
+                <h3>Next in Your Journey</h3>
+                
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h4>📚 Continue Your Advanced Training</h4>
+                    <p>Matte painting mastered! Build on these skills:</p>
+                    <ul>
+                        <li><strong>Lesson 4.3: Speed Painting</strong> - Apply matte skills faster for concept work</li>
+                        <li><strong>Module 5: Character Art</strong> - Add characters to your environments</li>
+                        <li><strong>Module 6: Professional Workflows</strong> - Polish for client work</li>
+                    </ul>
+                    <p>Each skill compounds - you're building a complete digital art toolkit!</p>
+                </div>
+
+                <h3>30-Day Matte Painting Challenge</h3>
+                
+                <div class="card">
+                    <h4>🏆 Master Matte Painting in 30 Days</h4>
+                    
+                    <p><strong>Week 1: Fundamentals</strong></p>
+                    <ul>
+                        <li>Day 1-2: Depth layer practice - create 3 simple scenes with clear FG/MG/BG</li>
+                        <li>Day 3-4: Sky studies - paint/modify 5 different sky types</li>
+                        <li>Day 5-6: Atmospheric perspective - same scene at different distances</li>
+                        <li>Day 7: Combine all - simple landscape with proper depth</li>
+                    </ul>
+                    
+                    <p><strong>Week 2: Integration Skills</strong></p>
+                    <ul>
+                        <li>Day 8-9: Perspective matching - integrate photos with matching VPs</li>
+                        <li>Day 10-11: Lighting unification - make 5 photos share one light</li>
+                        <li>Day 12-13: Color grading practice - unify disparate photos</li>
+                        <li>Day 14: Complete integration - 5+ photo seamless blend</li>
+                    </ul>
+                    
+                    <p><strong>Week 3: Complete Mattes</strong></p>
+                    <ul>
+                        <li>Day 15-17: Natural landscape matte (forest, mountains, etc.)</li>
+                        <li>Day 18-20: Architectural matte (city, ruins, buildings)</li>
+                        <li>Day 21: Review and critique both mattes</li>
+                    </ul>
+                    
+                    <p><strong>Week 4: Portfolio Piece</strong></p>
+                    <ul>
+                        <li>Day 22-23: Concept and planning for portfolio matte</li>
+                        <li>Day 24-26: Execution - full matte painting workflow</li>
+                        <li>Day 27-28: Refinement and polish</li>
+                        <li>Day 29-30: Final review, export, and celebrate mastery! 🎉</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="background: #e3f2fd; border-left: 4px solid #2196f3;">
+                    <h4>💡 Final Thought</h4>
+                    <p>Matte painting is one of the most rewarding skills in digital art. You're not just making pretty pictures - you're building entire worlds! Every matte is a story, a place viewers can imagine stepping into. That power to create believable impossible places... that's magic. Keep practicing, keep pushing your skills, and most importantly: keep creating worlds that inspire wonder!</p>
+                </div>
+            </section>
+
+            <!-- Lesson Navigation -->
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="photo_integration.html" class="prev-lesson">← Previous: Photo Integration</a>
+                <a href="index.html" class="home-link">🏠 Course Home</a>
+                <a href="speed_painting.html" class="next-lesson">Next: Speed Painting →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid var(--border-color);">
+        <p>&copy; 2024 Paintstorm Studio Intermediate Tutorial Series. Created with 💖 for advancing digital artists.</p>
+    </footer>
+
+    <script>
+        // Table of Contents Toggle
+        function toggleTOC() {
+            const tocList = document.getElementById('toc-list');
+            const tocIcon = document.getElementById('toc-toggle-icon');
+            if (tocList.style.maxHeight === '0px' || tocList.style.maxHeight === '') {
+                tocList.style.maxHeight = '500px';
+                tocIcon.style.transform = 'rotate(0deg)';
+                localStorage.setItem('tocState', 'expanded');
+            } else {
+                tocList.style.maxHeight = '0px';
+                tocIcon.style.transform = 'rotate(-90deg)';
+                localStorage.setItem('tocState', 'collapsed');
+            }
+        }
+        
+        // Restore TOC state on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const tocState = localStorage.getItem('tocState');
+            if (tocState === 'collapsed') {
+                const tocList = document.getElementById('toc-list');
+                const tocIcon = document.getElementById('toc-toggle-icon');
+                tocList.style.maxHeight = '0px';
+                tocIcon.style.transform = 'rotate(-90deg)';
+            }
+        });
+        
+        // Progress bar on scroll
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            document.querySelector('.progress-bar').style.width = `${Math.min(progress, 100)}%`;
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isOpen = navLinks.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                navLinks.setAttribute('aria-hidden', !isOpen);
+            });
+        }
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+            
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                const newTheme = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+            });
+        }
+
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Highlight active section in TOC
+        const sections = document.querySelectorAll('.lesson-section');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        function highlightTOC() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightTOC);
+
+        // Mark lesson as completed
+        function markLessonComplete() {
+            localStorage.setItem('lesson_matte_painting_completed', 'true');
+            updateProgressDisplay();
+        }
+
+        function updateProgressDisplay() {
+            const completed = localStorage.getItem('lesson_matte_painting_completed') === 'true';
+            const completeButton = document.getElementById('mark-complete-btn');
+            if (completeButton) {
+                if (completed) {
+                    completeButton.textContent = '✅ Lesson Completed';
+                    completeButton.disabled = true;
+                    completeButton.style.opacity = '0.6';
+                }
+            }
+        }
+
+        // Check if lesson already completed on load
+        document.addEventListener('DOMContentLoaded', updateProgressDisplay);
+
+        // Reading time estimation
+        function estimateReadingTime() {
+            const text = document.querySelector('.container').innerText;
+            const wordsPerMinute = 200;
+            const words = text.trim().split(/\s+/).length;
+            const readingTime = Math.ceil(words / wordsPerMinute);
+            
+            const readingTimeElement = document.createElement('div');
+            readingTimeElement.style.cssText = 'text-align: center; color: #666; font-size: 0.9rem; margin: 1rem 0;';
+            readingTimeElement.textContent = `📚 Estimated reading time: ${readingTime} minutes`;
+            
+            const header = document.querySelector('header');
+            if (header) {
+                header.appendChild(readingTimeElement);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', estimateReadingTime);
+
+        // Print functionality
+        function printLesson() {
+            window.print();
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Alt + T: Toggle TOC
+            if (e.altKey && e.key === 't') {
+                e.preventDefault();
+                toggleTOC();
+            }
+            
+            // Alt + D: Toggle theme (Dark/Light)
+            if (e.altKey && e.key === 'd') {
+                e.preventDefault();
+                themeToggle.click();
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.createElement('button');
+        backToTopButton.innerHTML = '↑';
+        backToTopButton.setAttribute('aria-label', 'Back to top');
+        backToTopButton.style.cssText = `
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        `;
+
+        document.body.appendChild(backToTopButton);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopButton.style.opacity = '1';
+            } else {
+                backToTopButton.style.opacity = '0';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        backToTopButton.addEventListener('mouseenter', () => {
+            backToTopButton.style.transform = 'scale(1.1)';
+        });
+
+        backToTopButton.addEventListener('mouseleave', () => {
+            backToTopButton.style.transform = 'scale(1)';
+        });
+
+        // Copy code blocks functionality
+        document.querySelectorAll('pre code').forEach(codeBlock => {
+            const button = document.createElement('button');
+            button.textContent = '📋 Copy';
+            button.style.cssText = `
+                position: absolute;
+                top: 0.5rem;
+                right: 0.5rem;
+                padding: 0.5rem 1rem;
+                background: rgba(255,255,255,0.9);
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                transition: all 0.3s;
+            `;
+
+            const pre = codeBlock.parentElement;
+            pre.style.position = 'relative';
+            pre.appendChild(button);
+
+            button.addEventListener('click', () => {
+                navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                    button.textContent = '✅ Copied!';
+                    setTimeout(() => {
+                        button.textContent = '📋 Copy';
+                    }, 2000);
+                });
+            });
+
+            button.addEventListener('mouseenter', () => {
+                button.style.background = 'rgba(102, 126, 234, 0.9)';
+                button.style.color = 'white';
+            });
+
+            button.addEventListener('mouseleave', () => {
+                button.style.background = 'rgba(255,255,255,0.9)';
+                button.style.color = 'initial';
+            });
+        });
+
+        // Image zoom functionality for figures
+        document.querySelectorAll('img').forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                const overlay = document.createElement('div');
+                overlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.9);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 10000;
+                    cursor: zoom-out;
+                `;
+
+                const zoomedImg = document.createElement('img');
+                zoomedImg.src = img.src;
+                zoomedImg.style.cssText = `
+                    max-width: 90%;
+                    max-height: 90%;
+                    object-fit: contain;
+                `;
+
+                overlay.appendChild(zoomedImg);
+                document.body.appendChild(overlay);
+
+                overlay.addEventListener('click', () => {
+                    document.body.removeChild(overlay);
+                });
+            });
+        });
+
+        // Lesson completion tracking
+        function trackProgress() {
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            
+            if (scrollPercentage > 90) {
+                localStorage.setItem('lesson_matte_painting_viewed', 'true');
+            }
+        }
+
+        window.addEventListener('scroll', trackProgress);
+
+        // Add completion button at end of summary section
+        const summarySection = document.getElementById('summary');
+        if (summarySection) {
+            const completeButton = document.createElement('button');
+            completeButton.id = 'mark-complete-btn';
+            completeButton.textContent = '✓ Mark Lesson as Complete';
+            completeButton.style.cssText = `
+                display: block;
+                margin: 2rem auto;
+                padding: 1rem 2rem;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                border-radius: 2rem;
+                font-size: 1.1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: transform 0.3s, box-shadow 0.3s;
+            `;
+
+            completeButton.addEventListener('click', markLessonComplete);
+            completeButton.addEventListener('mouseenter', () => {
+                completeButton.style.transform = 'translateY(-2px)';
+                completeButton.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+            });
+            completeButton.addEventListener('mouseleave', () => {
+                completeButton.style.transform = 'translateY(0)';
+                completeButton.style.boxShadow = 'none';
+            });
+
+            summarySection.appendChild(completeButton);
+        }
+
+        // Print styles injection
+        const printStyles = `
+            @media print {
+                nav, .breadcrumb, .lesson-nav, footer, button, .progress-indicator {
+                    display: none !important;
+                }
+                
+                body {
+                    background: white;
+                    color: black;
+                }
+                
+                .card {
+                    border: 1px solid #ddd;
+                    break-inside: avoid;
+                }
+                
+                h1, h2, h3 {
+                    break-after: avoid;
+                }
+                
+                table {
+                    break-inside: avoid;
+                }
+                
+                a {
+                    text-decoration: underline;
+                    color: black;
+                }
+                
+                a[href]:after {
+                    content: " (" attr(href) ")";
+                    font-size: 0.8em;
+                }
+            }
+        `;
+
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = printStyles;
+        document.head.appendChild(styleSheet);
+
+        // Accessibility: Skip link focus
+        document.querySelector('.skip-to-main').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('main-content').focus();
+        });
+
+        // Console easter egg for curious learners
+        console.log('%c🎨 Matte Painting Mastery! 🏔️', 'font-size: 20px; font-weight: bold; color: #667eea;');
+        console.log('%cYou\'re learning one of the most technically demanding art forms!', 'font-size: 14px; color: #764ba2;');
+        console.log('%cKeep practicing and you\'ll create worlds that don\'t exist! 🌍', 'font-size: 14px; color: #666;');
+        console.log('%c\nKeyboard Shortcuts:', 'font-size: 12px; font-weight: bold;');
+        console.log('%cAlt + T: Toggle Table of Contents', 'font-size: 12px;');
+        console.log('%cAlt + D: Toggle Dark/Light Theme', 'font-size: 12px;');
+
+        // Performance: Lazy load images (if any heavy images added in future)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Fun motivational messages based on scroll depth
+        let motivationShown = false;
+        window.addEventListener('scroll', () => {
+            if (!motivationShown) {
+                const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                
+                if (scrollPercentage > 50 && scrollPercentage < 55) {
+                    console.log('%c🎉 Halfway through! You\'re doing great!', 'font-size: 14px; color: #4CAF50; font-weight: bold;');
+                    motivationShown = true;
+                } else if (scrollPercentage > 95) {
+                    console.log('%c🏆 You made it to the end! Ready to create amazing matte paintings!', 'font-size: 14px; color: #FF9800; font-weight: bold;');
+                    motivationShown = true;
+                }
+            }
+        });
+
+        // Add lesson metadata for tracking
+        const lessonMetadata = {
+            lessonId: 'matte_painting_basics',
+            module: 'module_4_digital_painting_techniques',
+            title: 'Matte Painting Basics',
+            duration: '60-90 minutes',
+            difficulty: 'intermediate-advanced',
+            completionDate: null
+        };
+
+        // Save metadata
+        if (localStorage.getItem('lesson_matte_painting_completed') === 'true') {
+            lessonMetadata.completionDate = localStorage.getItem('lesson_matte_painting_completion_date');
+        }
+
+        // Update completion date when marked complete
+        function markLessonComplete() {
+            const now = new Date().toISOString();
+            localStorage.setItem('lesson_matte_painting_completed', 'true');
+            localStorage.setItem('lesson_matte_painting_completion_date', now);
+            lessonMetadata.completionDate = now;
+            updateProgressDisplay();
+            
+            // Show success message
+            const message = document.createElement('div');
+            message.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 2rem 3rem;
+                border-radius: 12px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+                z-index: 10001;
+                text-align: center;
+                animation: fadeIn 0.3s ease-out;
+            `;
+            message.innerHTML = `
+                <h3 style="color: #667eea; margin-bottom: 1rem;">🎉 Lesson Complete!</h3>
+                <p style="margin-bottom: 1.5rem;">Great work mastering matte painting basics!</p>
+                <button onclick="this.parentElement.remove()" style="
+                    padding: 0.75rem 2rem;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    border: none;
+                    border-radius: 2rem;
+                    cursor: pointer;
+                    font-weight: bold;
+                ">Continue Learning →</button>
+            `;
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                if (message.parentElement) {
+                    message.remove();
+                }
+            }, 5000);
+        }
+
+        // Add fade-in animation
+        const fadeInAnimation = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translate(-50%, -45%); }
+                to { opacity: 1; transform: translate(-50%, -50%); }
+            }
+        `;
+        const animationStyle = document.createElement('style');
+        animationStyle.textContent = fadeInAnimation;
+        document.head.appendChild(animationStyle);
+    </script>
+</body>
+</html>

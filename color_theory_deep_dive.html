@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master advanced color theory in Paintstorm Studio - Color harmonies, temperature, psychology, and limited palettes">
+    <meta name="author" content="Paintstorm Intermediate Tutorial">
+    <title>Color Theory Deep Dive - Advanced Paintstorm Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Progress indicator -->
+    <div class="progress-indicator" role="progressbar" aria-label="Page scroll progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🎨 Paintstorm Studio - Intermediate</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">
+                ☰
+            </button>
+            <div class="nav-links" id="nav-links" aria-hidden="false">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Lessons</a>
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Advanced Color & Lighting</a></li>
+            <li aria-current="page">Color Theory Deep Dive</li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+            <!-- Lesson Header -->
+            <header>
+                <h1>🎨 Color Theory Deep Dive</h1>
+                <p class="lead">Move beyond basic color wheels! Master advanced color harmonies, temperature theory, atmospheric effects, and the psychology of color to create paintings that resonate emotionally.</p>
+                
+                <!-- Learning objectives -->
+                <div class="card">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this lesson, you will master:</p>
+                    <ul>
+                        <li>Advanced color harmony schemes beyond the basics</li>
+                        <li>Color temperature theory and its atmospheric effects</li>
+                        <li>Subsurface scattering and translucency in color</li>
+                        <li>Atmospheric perspective and color shifts</li>
+                        <li>Color psychology and emotional impact</li>
+                        <li>Limited palette mastery for color unity</li>
+                        <li>Creating mood through color relationships</li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Table of Contents -->
+            <nav class="card" aria-label="Table of Contents">
+                <h2 style="cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center;" onclick="toggleTOC()">
+                    <span>📑 Table of Contents</span>
+                    <span id="toc-toggle-icon" style="transition: transform 0.3s;">▼</span>
+                </h2>
+                <ol id="toc-list" style="overflow: hidden; transition: max-height 0.3s ease-out; max-height: 300px; margin: 0; padding-left: 1.5rem;">
+                    <li><a href="#advanced-harmonies" class="toc-link">Advanced Color Harmonies</a></li>
+                    <li><a href="#temperature-theory" class="toc-link">Color Temperature in Depth</a></li>
+                    <li><a href="#subsurface-scattering" class="toc-link">Subsurface Scattering</a></li>
+                    <li><a href="#atmospheric-color" class="toc-link">Atmospheric Color Shifts</a></li>
+                    <li><a href="#color-psychology" class="toc-link">Color and Emotion Psychology</a></li>
+                    <li><a href="#limited-palettes" class="toc-link">Limited Palette Mastery</a></li>
+                    <li><a href="#practice" class="toc-link">Practice Exercise</a></li>
+                    <li><a href="#summary" class="toc-link">Summary & Next Steps</a></li>
+                </ol>
+            </nav>
+
+            <!-- Section 1: Advanced Harmonies -->
+            <section id="advanced-harmonies" class="lesson-section">
+                <h2>Advanced Color Harmonies 🎭</h2>
+                
+                <p>Beyond the basic complementary and triadic schemes lies a world of sophisticated color relationships. These advanced harmonies are what separate <strong>good paintings from unforgettable ones</strong>.</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Secret of Master Colorists</h3>
+                    <p>Great artists don't just pick colors - they create <strong>color conversations</strong>. Every color in your painting should have a relationship with every other color, creating a unified whole that's greater than its parts.</p>
+                </div>
+
+                <canvas id="harmony-wheel" width="800" height="600" style="max-width: 100%; height: auto; border: 2px solid #ddd; border-radius: 8px; background: white;"></canvas>
+                
+                <script>
+                    const harmonyCanvas = document.getElementById('harmony-wheel');
+                    const hCtx = harmonyCanvas.getContext('2d');
+                    
+                    // Handle high DPI
+                    const hScale = window.devicePixelRatio || 1;
+                    harmonyCanvas.width = 800 * hScale;
+                    harmonyCanvas.height = 600 * hScale;
+                    hCtx.scale(hScale, hScale);
+                    
+                    // Title
+                    hCtx.fillStyle = '#333';
+                    hCtx.font = 'bold 18px Arial';
+                    hCtx.textAlign = 'center';
+                    hCtx.fillText('Advanced Color Harmony Schemes', 400, 30);
+                    
+                    // Function to draw color wheel segment
+                    function drawColorWheel(cx, cy, radius, scheme) {
+                        // Draw full color wheel
+                        for(let i = 0; i < 360; i += 2) {
+                            hCtx.beginPath();
+                            hCtx.arc(cx, cy, radius, (i - 90) * Math.PI / 180, (i + 2 - 90) * Math.PI / 180);
+                            hCtx.lineTo(cx, cy);
+                            hCtx.closePath();
+                            hCtx.fillStyle = `hsl(${i}, 70%, 50%)`;
+                            hCtx.fill();
+                        }
+                        
+                        // Inner circle (white)
+                        hCtx.beginPath();
+                        hCtx.arc(cx, cy, radius * 0.3, 0, Math.PI * 2);
+                        hCtx.fillStyle = 'white';
+                        hCtx.fill();
+                    }
+                    
+                    // Draw different harmony schemes
+                    // Split Complementary
+                    drawColorWheel(150, 150, 60);
+                    hCtx.fillStyle = '#333';
+                    hCtx.font = 'bold 12px Arial';
+                    hCtx.fillText('Split Complementary', 150, 230);
+                    
+                    // Draw connection lines
+                    hCtx.strokeStyle = '#333';
+                    hCtx.lineWidth = 2;
+                    hCtx.setLineDash([5, 5]);
+                    // Primary
+                    hCtx.beginPath();
+                    hCtx.moveTo(150, 150);
+                    hCtx.lineTo(150, 90);
+                    hCtx.stroke();
+                    // Split complements
+                    hCtx.beginPath();
+                    hCtx.moveTo(150, 150);
+                    hCtx.lineTo(190, 195);
+                    hCtx.stroke();
+                    hCtx.beginPath();
+                    hCtx.moveTo(150, 150);
+                    hCtx.lineTo(110, 195);
+                    hCtx.stroke();
+                    
+                    // Double Complementary
+                    drawColorWheel(400, 150, 60);
+                    hCtx.fillText('Double Complementary', 400, 230);
+                    hCtx.setLineDash([]);
+                    // Draw square
+                    hCtx.beginPath();
+                    hCtx.moveTo(400, 90);
+                    hCtx.lineTo(460, 150);
+                    hCtx.lineTo(400, 210);
+                    hCtx.lineTo(340, 150);
+                    hCtx.closePath();
+                    hCtx.stroke();
+                    
+                    // Tetradic
+                    drawColorWheel(650, 150, 60);
+                    hCtx.fillText('Tetradic (Square)', 650, 230);
+                    // Draw rectangle
+                    hCtx.beginPath();
+                    hCtx.moveTo(620, 110);
+                    hCtx.lineTo(680, 110);
+                    hCtx.lineTo(680, 190);
+                    hCtx.lineTo(620, 190);
+                    hCtx.closePath();
+                    hCtx.stroke();
+                    
+                    // Analogous Extended
+                    drawColorWheel(150, 380, 60);
+                    hCtx.fillText('Analogous Extended', 150, 460);
+                    // Draw arc
+                    hCtx.beginPath();
+                    hCtx.arc(150, 380, 50, -Math.PI/2, -Math.PI/6);
+                    hCtx.strokeStyle = '#e74c3c';
+                    hCtx.lineWidth = 8;
+                    hCtx.stroke();
+                    
+                    // Monochromatic Plus
+                    drawColorWheel(400, 380, 60);
+                    hCtx.fillText('Monochromatic Plus', 400, 460);
+                    // Draw single hue with accent
+                    hCtx.beginPath();
+                    hCtx.moveTo(400, 380);
+                    hCtx.lineTo(400, 320);
+                    hCtx.strokeStyle = '#3498db';
+                    hCtx.lineWidth = 8;
+                    hCtx.stroke();
+                    // Small accent
+                    hCtx.beginPath();
+                    hCtx.arc(440, 420, 3, 0, Math.PI * 2);
+                    hCtx.fillStyle = '#e74c3c';
+                    hCtx.fill();
+                    
+                    // Custom Harmony
+                    drawColorWheel(650, 380, 60);
+                    hCtx.fillText('Custom Harmony', 650, 460);
+                    // Draw custom selection
+                    const customPoints = [
+                        {angle: 0, color: '#e74c3c'},
+                        {angle: 60, color: '#f39c12'},
+                        {angle: 200, color: '#3498db'},
+                        {angle: 280, color: '#9b59b6'}
+                    ];
+                    customPoints.forEach(point => {
+                        const x = 650 + Math.cos((point.angle - 90) * Math.PI / 180) * 50;
+                        const y = 380 + Math.sin((point.angle - 90) * Math.PI / 180) * 50;
+                        hCtx.beginPath();
+                        hCtx.arc(x, y, 5, 0, Math.PI * 2);
+                        hCtx.fillStyle = point.color;
+                        hCtx.fill();
+                        hCtx.strokeStyle = '#333';
+                        hCtx.lineWidth = 2;
+                        hCtx.stroke();
+                    });
+                    
+                    // Color relationship examples
+                    hCtx.fillStyle = '#333';
+                    hCtx.font = '14px Arial';
+                    hCtx.textAlign = 'left';
+                    hCtx.fillText('Harmony Characteristics:', 50, 510);
+                    hCtx.font = '12px Arial';
+                    hCtx.fillText('• Split Comp: Vibrant but balanced', 50, 530);
+                    hCtx.fillText('• Double Comp: Dynamic and energetic', 50, 550);
+                    hCtx.fillText('• Tetradic: Rich and varied', 50, 570);
+                    hCtx.fillText('• Analogous Ext: Harmonious flow', 420, 530);
+                    hCtx.fillText('• Mono Plus: Unified with pop', 420, 550);
+                    hCtx.fillText('• Custom: Unique personality', 420, 570);
+                </script>
+
+                <h3>Advanced Harmony Principles</h3>
+                
+                <div class="card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Harmony Type</th>
+                                <th>Color Count</th>
+                                <th>Emotional Impact</th>
+                                <th>Best Used For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Split Complementary</strong></td>
+                                <td>3 colors</td>
+                                <td>Vibrant yet balanced</td>
+                                <td>Character art, focal points</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Double Complementary</strong></td>
+                                <td>4 colors</td>
+                                <td>Dynamic, energetic</td>
+                                <td>Action scenes, complex compositions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tetradic (Square)</strong></td>
+                                <td>4 colors</td>
+                                <td>Rich, varied</td>
+                                <td>Environments, diverse scenes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Analogous Extended</strong></td>
+                                <td>5-7 colors</td>
+                                <td>Harmonious, flowing</td>
+                                <td>Landscapes, gradients</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Monochromatic Plus</strong></td>
+                                <td>1 hue + accent</td>
+                                <td>Unified with surprise</td>
+                                <td>Mood pieces, stylized art</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <blockquote>
+                    <strong>💡 Pro Tip:</strong> The 60-30-10 Rule still applies to complex harmonies! Use your dominant color for 60% of the painting, secondary for 30%, and accent colors for the final 10%. This creates hierarchy even in complex schemes.
+                </blockquote>
+            </section>
+
+            <!-- Section 2: Temperature Theory -->
+            <section id="temperature-theory" class="lesson-section">
+                <h2>Color Temperature in Depth 🌡️</h2>
+                
+                <p>Temperature isn't just warm vs. cool - it's a <strong>relative relationship that creates depth, form, and atmosphere</strong>. Master temperature shifts and your paintings will breathe with life!</p>
+
+                <div class="mermaid">
+                    graph LR
+                        A[Light Source] --> B[Surface Color]
+                        B --> C[Reflected Light]
+                        C --> D[Ambient Color]
+                        
+                        A --> A1[Temperature]
+                        B --> B1[Local Color]
+                        C --> C1[Bounce Light]
+                        D --> D1[Atmosphere]
+                        
+                        A1 --> E[Final Color]
+                        B1 --> E
+                        C1 --> E
+                        D1 --> E
+                </div>
+
+                <h3>Temperature Relationships</h3>
+                
+                <canvas id="temperature-demo" width="800" height="400" style="max-width: 100%; height: auto; border: 2px solid #ddd; border-radius: 8px; background: #f8f9fa;"></canvas>
+                
+                <script>
+                    const tempCanvas = document.getElementById('temperature-demo');
+                    const tCtx = tempCanvas.getContext('2d');
+                    
+                    // Handle high DPI
+                    const tScale = window.devicePixelRatio || 1;
+                    tempCanvas.width = 800 * tScale;
+                    tempCanvas.height = 400 * tScale;
+                    tCtx.scale(tScale, tScale);
+                    
+                    // Title
+                    tCtx.fillStyle = '#333';
+                    tCtx.font = 'bold 18px Arial';
+                    tCtx.textAlign = 'center';
+                    tCtx.fillText('Color Temperature in Different Lighting', 400, 30);
+                    
+                    // Draw spheres with different lighting
+                    function drawSphere(x, y, radius, lightColor, shadowColor, title) {
+                        // Create gradient for sphere
+                        const gradient = tCtx.createRadialGradient(x - radius/3, y - radius/3, 0, x, y, radius);
+                        gradient.addColorStop(0, lightColor);
+                        gradient.addColorStop(0.7, '#808080');
+                        gradient.addColorStop(1, shadowColor);
+                        
+                        // Draw sphere
+                        tCtx.beginPath();
+                        tCtx.arc(x, y, radius, 0, Math.PI * 2);
+                        tCtx.fillStyle = gradient;
+                        tCtx.fill();
+                        
+                        // Add title
+                        tCtx.fillStyle = '#333';
+                        tCtx.font = '12px Arial';
+                        tCtx.textAlign = 'center';
+                        tCtx.fillText(title, x, y + radius + 20);
+                    }
+                    
+                    // Different lighting scenarios
+                    drawSphere(150, 150, 50, '#fff5e6', '#4a5568', 'Warm Light/Cool Shadow');
+                    drawSphere(400, 150, 50, '#e6f3ff', '#8b7355', 'Cool Light/Warm Shadow');
+                    drawSphere(650, 150, 50, '#ffffff', '#606060', 'Neutral Light');
+                    
+                    // Temperature scale
+                    tCtx.font = 'bold 14px Arial';
+                    tCtx.fillText('Temperature Scale', 400, 270);
+                    
+                    // Draw temperature gradient
+                    const tempGradient = tCtx.createLinearGradient(100, 300, 700, 300);
+                    tempGradient.addColorStop(0, '#001f3f');     // Very cool
+                    tempGradient.addColorStop(0.25, '#0074D9');  // Cool
+                    tempGradient.addColorStop(0.5, '#DDDDDD');   // Neutral
+                    tempGradient.addColorStop(0.75, '#FF851B');  // Warm
+                    tempGradient.addColorStop(1, '#FF4136');     // Very warm
+                    
+                    tCtx.fillStyle = tempGradient;
+                    tCtx.fillRect(100, 290, 600, 40);
+                    
+                    // Labels
+                    tCtx.fillStyle = '#333';
+                    tCtx.font = '11px Arial';
+                    tCtx.fillText('2000K', 100, 350);
+                    tCtx.fillText('4000K', 250, 350);
+                    tCtx.fillText('5500K', 400, 350);
+                    tCtx.fillText('7000K', 550, 350);
+                    tCtx.fillText('10000K', 700, 350);
+                    
+                    tCtx.fillText('Candle', 100, 365);
+                    tCtx.fillText('Sunset', 250, 365);
+                    tCtx.fillText('Daylight', 400, 365);
+                    tCtx.fillText('Overcast', 550, 365);
+                    tCtx.fillText('Blue Sky', 700, 365);
+                </script>
+
+                <h3>The Temperature Rules</h3>
+                
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h4>🌡️ Universal Temperature Principles</h4>
+                    <ul>
+                        <li><strong>Warm light = Cool shadows</strong> (and vice versa)</li>
+                        <li><strong>Distance cools colors</strong> (atmospheric perspective)</li>
+                        <li><strong>Skin in shadow</strong> tends toward purple/green, not just darker</li>
+                        <li><strong>Reflected light</strong> is always cooler than direct light</li>
+                        <li><strong>Sky influence</strong> cools all upward-facing shadows</li>
+                        <li><strong>Ground bounce</strong> warms downward-facing shadows</li>
+                    </ul>
+                </div>
+
+                <h3>Temperature in Practice</h3>
+                
+                <div class="card">
+                    <h4>🎨 Applying Temperature Theory</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Light Temp</th>
+                                <th>Shadow Temp</th>
+                                <th>Reflected Light</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Golden Hour</strong></td>
+                                <td>Very warm (orange)</td>
+                                <td>Cool (blue-purple)</td>
+                                <td>Warm but muted</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Overcast Day</strong></td>
+                                <td>Cool (blue-gray)</td>
+                                <td>Slightly warm</td>
+                                <td>Very subtle</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Indoor Lamp</strong></td>
+                                <td>Warm (yellow)</td>
+                                <td>Cool (blue-gray)</td>
+                                <td>Depends on walls</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Moonlight</strong></td>
+                                <td>Cool (blue-white)</td>
+                                <td>Warm (brown)</td>
+                                <td>Very cool</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fire/Candle</strong></td>
+                                <td>Extreme warm</td>
+                                <td>Deep cool</td>
+                                <td>Orange glow</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <blockquote>
+                    <strong>🔥 Temperature Secret:</strong> Never use black for shadows! Always shift the temperature instead. Cool shadows? Add blue/purple. Warm shadows? Add red/brown. This single change will revolutionize your color work!
+                </blockquote>
+            </section>
+
+            <!-- Section 3: Subsurface Scattering -->
+            <section id="subsurface-scattering" class="lesson-section">
+                <h2>Subsurface Scattering 💎</h2>
+                
+                <p>Light doesn't just bounce off surfaces - it <strong>penetrates, scatters, and emerges transformed</strong>. This is why skin glows, leaves appear translucent, and wax looks different from plastic.</p>
+
+                <div class="card" style="background: #e8f5e9; border-left: 4px solid #4CAF50;">
+                    <h4>✨ What is Subsurface Scattering (SSS)?</h4>
+                    <p>When light enters a translucent material, it bounces around inside before exiting. This creates a soft, glowing quality that's essential for realistic rendering of organic materials.</p>
+                </div>
+
+                <h3>Materials and SSS</h3>
+                
+                <canvas id="sss-demo" width="800" height="400" style="max-width: 100%; height: auto; border: 2px solid #ddd; border-radius: 8px; background: #2a2a2a;"></canvas>
+                
+                <script>
+                    const sssCanvas = document.getElementById('sss-demo');
+                    const sCtx = sssCanvas.getContext('2d');
+                    
+                    // Handle high DPI
+                    const sScale = window.devicePixelRatio || 1;
+                    sssCanvas.width = 800 * sScale;
+                    sssCanvas.height = 400 * sScale;
+                    sCtx.scale(sScale, sScale);
+                    
+                    // Dark background
+                    sCtx.fillStyle = '#2a2a2a';
+                    sCtx.fillRect(0, 0, 800, 400);
+                    
+                    // Title
+                    sCtx.fillStyle = '#fff';
+                    sCtx.font = 'bold 18px Arial';
+                    sCtx.textAlign = 'center';
+                    sCtx.fillText('Subsurface Scattering in Different Materials', 400, 30);
+                    
+                    // Draw examples
+                    function drawSSS(x, y, material, color1, color2, glow) {
+                        // Backlight effect
+                        if(glow) {
+                            const glowGradient = sCtx.createRadialGradient(x, y, 30, x, y, 80);
+                            glowGradient.addColorStop(0, glow + '40');
+                            glowGradient.addColorStop(1, glow + '00');
+                            sCtx.fillStyle = glowGradient;
+                            sCtx.beginPath();
+                            sCtx.arc(x, y, 80, 0, Math.PI * 2);
+                            sCtx.fill();
+                        }
+                        
+                        // Main object
+                        const gradient = sCtx.createRadialGradient(x - 20, y - 20, 0, x, y, 50);
+                        gradient.addColorStop(0, color1);
+                        gradient.addColorStop(0.7, color2);
+                        gradient.addColorStop(1, color2 + '80');
+                        
+                        sCtx.beginPath();
+                        sCtx.arc(x, y, 50, 0, Math.PI * 2);
+                        sCtx.fillStyle = gradient;
+                        sCtx.fill();
+                        
+                        // Edge glow (SSS effect)
+                        sCtx.strokeStyle = glow || color1;
+                        sCtx.lineWidth = 3;
+                        sCtx.globalAlpha = 0.5;
+                        sCtx.stroke();
+                        sCtx.globalAlpha = 1;
+                        
+                        // Label
+                        sCtx.fillStyle = '#fff';
+                        sCtx.font = '12px Arial';
+                        sCtx.fillText(material, x, y + 80);
+                    }
+                    
+                    // Different materials
+                    drawSSS(150, 150, 'Skin', '#ffdbac', '#f1c27d', '#ff6b6b');
+                    drawSSS(300, 150, 'Wax', '#fff8e7', '#ffd4a3', '#ffeb3b');
+                    drawSSS(450, 150, 'Marble', '#f5f5f5', '#d4d4d4', '#e8e8e8');
+                    drawSSS(600, 150, 'Leaves', '#90ee90', '#228b22', '#adff2f');
+                    
+                    // Ear example (classic SSS)
+                    sCtx.fillStyle = '#fff';
+                    sCtx.font = '14px Arial';
+                    sCtx.fillText('Classic Example: Backlit Ear', 400, 270);
+                    
+                    // Draw ear shape
+                    sCtx.beginPath();
+                    sCtx.ellipse(400, 330, 30, 50, 0, 0, Math.PI * 2);
+                    const earGradient = sCtx.createRadialGradient(380, 330, 0, 400, 330, 50);
+                    earGradient.addColorStop(0, '#ffdbac');
+                    earGradient.addColorStop(0.5, '#ff9999');
+                    earGradient.addColorStop(1, '#ff6666');
+                    sCtx.fillStyle = earGradient;
+                    sCtx.fill();
+                    
+                    // Inner ear details
+                    sCtx.strokeStyle = '#ff4444';
+                    sCtx.lineWidth = 2;
+                    sCtx.globalAlpha = 0.6;
+                    sCtx.beginPath();
+                    sCtx.ellipse(400, 330, 15, 25, 0, 0, Math.PI * 2);
+                    sCtx.stroke();
+                    sCtx.globalAlpha = 1;
+                </script>
+
+                <h3>Painting SSS Effects</h3>
+                
+                <div class="card">
+                    <h4>🎨 SSS Painting Technique</h4>
+                    <ol>
+                        <li><strong>Base Color:</strong> Paint the local color of the object</li>
+                        <li><strong>Shadow Color:</strong> Add cooler, less saturated shadows</li>
+                        <li><strong>SSS Zone:</strong> Where light meets shadow, add a band of saturated warm color</li>
+                        <li><strong>Edge Glow:</strong> Thin areas get brighter, warmer color</li>
+                        <li><strong>Internal Color:</strong> Show the "inside" color (red for skin, green for leaves)</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="background: #fff3cd; border-left: 4px solid #ffc107; color: #856404;">
+                    <h4>⚠️ Common SSS Materials</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>SSS Color</th>
+                                <th>Intensity</th>
+                                <th>Key Areas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Human Skin</strong></td>
+                                <td>Red-orange</td>
+                                <td>Medium</td>
+                                <td>Ears, nose, fingers</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Candle Wax</strong></td>
+                                <td>Yellow-white</td>
+                                <td>High</td>
+                                <td>Edges, thin areas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Leaves</strong></td>
+                                <td>Yellow-green</td>
+                                <td>High</td>
+                                <td>Entire leaf when backlit</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Milk/Jade</strong></td>
+                                <td>Blue-green</td>
+                                <td>Low</td>
+                                <td>Thick areas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fruit</strong></td>
+                                <td>Depends on fruit</td>
+                                <td>Medium-High</td>
+                                <td>Thin slices, edges</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 4: Atmospheric Color -->
+            <section id="atmospheric-color" class="lesson-section">
+                <h2>Atmospheric Color Shifts 🌫️</h2>
+                
+                <p>Distance doesn't just make things smaller - it <strong>transforms their color</strong>. Understanding atmospheric perspective will add miles of depth to your paintings!</p>
+
+                <div class="mermaid">
+                    graph TD
+                        A[Object Color] --> B{Distance}
+                        B -->|Near| C[Full Saturation]
+                        B -->|Mid| D[Reduced Saturation]
+                        B -->|Far| E[Sky Color Influence]
+                        
+                        C --> F[High Contrast]
+                        D --> G[Medium Contrast]
+                        E --> H[Low Contrast]
+                        
+                        F --> I[Sharp Details]
+                        G --> J[Soft Details]
+                        H --> K[Lost Edges]
+                </div>
+
+                <h3>The Layers of Atmosphere</h3>
+                
+                <div class="card">
+                    <h4>🏔️ Distance Zones</h4>
+                    <ul>
+                        <li><strong>Foreground (0-10m):</strong> Full color, maximum contrast, sharp details</li>
+                        <li><strong>Midground (10-100m):</strong> Slightly cooler, reduced saturation, softer edges</li>
+                        <li><strong>Background (100m-1km):</strong> Noticeably blue-shifted, low saturation, soft forms</li>
+                        <li><strong>Far Distance (1km+):</strong> Approaches sky color, minimal contrast, silhouettes</li>
+                    </ul>
+                </div>
+
+                <blockquote>
+                    <strong>🌄 Atmosphere Formula:</strong> For each "layer" of distance, add 10% sky color and reduce saturation by 20%. This simple rule creates convincing depth every time!
+                </blockquote>
+            </section>
+
+            <!-- Section 5: Color Psychology -->
+            <section id="color-psychology" class="lesson-section">
+                <h2>Color and Emotion Psychology 🧠</h2>
+                
+                <p>Colors don't just look different - they <strong>feel different</strong>. Master the emotional language of color and your paintings will speak directly to the viewer's heart.</p>
+
+                <canvas id="emotion-wheel" width="800" height="500" style="max-width: 100%; height: auto; border: 2px solid #ddd; border-radius: 8px; background: white;"></canvas>
+                
+                <script>
+                    const emotionCanvas = document.getElementById('emotion-wheel');
+                    const eCtx = emotionCanvas.getContext('2d');
+                    
+                    // Handle high DPI
+                    const eScale = window.devicePixelRatio || 1;
+                    emotionCanvas.width = 800 * eScale;
+                    emotionCanvas.height = 500 * eScale;
+                    eCtx.scale(eScale, eScale);
+                    
+                    // Title
+                    eCtx.fillStyle = '#333';
+                    eCtx.font = 'bold 18px Arial';
+                    eCtx.textAlign = 'center';
+                    eCtx.fillText('Color Psychology and Emotional Impact', 400, 30);
+                    
+                    // Color emotion boxes
+                    const emotions = [
+                        {color: '#ff4444', emotion: 'Passion/Anger', desc: 'Energy, urgency, love, danger', x: 100, y: 80},
+                        {color: '#ff9944', emotion: 'Warmth/Joy', desc: 'Happiness, creativity, enthusiasm', x: 300, y: 80},
+                        {color: '#ffdd44', emotion: 'Optimism', desc: 'Hope, clarity, intelligence', x: 500, y: 80},
+                        {color: '#44ff44', emotion: 'Growth', desc: 'Nature, health, tranquility', x: 700, y: 80},
+                        {color: '#4444ff', emotion: 'Trust/Calm', desc: 'Stability, depth, wisdom', x: 100, y: 240},
+                        {color: '#9944ff', emotion: 'Mystery', desc: 'Luxury, creativity, magic', x: 300, y: 240},
+                        {color: '#ff44ff', emotion: 'Playfulness', desc: 'Youth, imagination, romance', x: 500, y: 240},
+                        {color: '#444444', emotion: 'Sophistication', desc: 'Elegance, power, formality', x: 700, y: 240}
+                    ];
+                    
+                    emotions.forEach(item => {
+                        // Color box
+                        eCtx.fillStyle = item.color;
+                        eCtx.fillRect(item.x - 40, item.y, 80, 80);
+                        
+                        // Label
+                        eCtx.fillStyle = '#333';
+                        eCtx.font = 'bold 12px Arial';
+                        eCtx.textAlign = 'center';
+                        eCtx.fillText(item.emotion, item.x, item.y + 100);
+                        
+                        // Description
+                        eCtx.font = '10px Arial';
+                        eCtx.fillText(item.desc, item.x, item.y + 115);
+                    });
+                    
+                    // Cultural variations
+                    eCtx.font = 'bold 14px Arial';
+                    eCtx.textAlign = 'left';
+                    eCtx.fillText('Cultural Color Associations:', 50, 400);
+                    
+                    eCtx.font = '12px Arial';
+                    eCtx.fillText('• Red: Good luck (China) vs Warning (West)', 50, 425);
+                    eCtx.fillText('• White: Purity (West) vs Mourning (East Asia)', 50, 445);
+                    eCtx.fillText('• Black: Elegance (Fashion) vs Death (Traditional)', 50, 465);
+                    
+                    eCtx.fillText('• Green: Money (USA) vs Islam (Middle East)', 420, 425);
+                    eCtx.fillText('• Purple: Royalty (Europe) vs Mourning (Thailand)', 420, 445);
+                    eCtx.fillText('• Orange: Sacred (Hinduism) vs Caution (Industry)', 420, 465);
+                </script>
+
+                <h3>Emotional Color Strategies</h3>
+                
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h4>🎭 Color Mood Formulas</h4>
+                    <table style="color: white;">
+                        <thead>
+                            <tr>
+                                <th>Desired Mood</th>
+                                <th>Color Recipe</th>
+                                <th>Avoid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Peaceful</strong></td>
+                                <td>Blues, greens, low saturation</td>
+                                <td>High contrast, warm reds</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Energetic</strong></td>
+                                <td>Warm colors, high saturation</td>
+                                <td>Grays, muted tones</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mysterious</strong></td>
+                                <td>Deep purples, dark blues</td>
+                                <td>Bright yellows, clear whites</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Romantic</strong></td>
+                                <td>Soft pinks, purples, warm lights</td>
+                                <td>Harsh greens, cold blues</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Threatening</strong></td>
+                                <td>Dark reds, blacks, sickly greens</td>
+                                <td>Pastels, bright blues</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 6: Limited Palettes -->
+            <section id="limited-palettes" class="lesson-section">
+                <h2>Limited Palette Mastery 🎨</h2>
+                
+                <p>Less is more! Working with limited palettes forces you to <strong>truly understand color relationships</strong> and creates naturally harmonious paintings.</p>
+
+                <div class="card" style="background: #e8f5e9; border-left: 4px solid #4CAF50;">
+                    <h4>✅ Benefits of Limited Palettes</h4>
+                    <ul>
+                        <li><strong>Color Harmony:</strong> Impossible to clash when all colors are mixed from the same source</li>
+                        <li><strong>Faster Decisions:</strong> Fewer choices = quicker painting</li>
+                        <li><strong>Better Understanding:</strong> Learn to mix any color from basics</li>
+                        <li><strong>Unified Look:</strong> Creates a consistent mood throughout</li>
+                        <li><strong>Cost Effective:</strong> Professional results with minimal colors</li>
+                    </ul>
+                </div>
+
+                <h3>Classic Limited Palettes</h3>
+                
+                <div class="card">
+                    <h4>🎨 Proven Palette Combinations</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Palette Name</th>
+                                <th>Colors</th>
+                                <th>Strengths</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Zorn Palette</strong></td>
+                                <td>Yellow Ochre, Cad Red, Ivory Black, White</td>
+                                <td>Skin tones, portraits</td>
+                                <td>Figure painting</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Triad</strong></td>
+                                <td>Red, Yellow, Blue, White</td>
+                                <td>Full spectrum possible</td>
+                                <td>Learning color mixing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Earth Palette</strong></td>
+                                <td>Sienna, Umber, Ochre, White</td>
+                                <td>Natural, muted tones</td>
+                                <td>Landscapes, still life</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cool/Warm</strong></td>
+                                <td>Warm color, Cool color, White</td>
+                                <td>Temperature control</td>
+                                <td>Atmospheric scenes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Monochrome Plus</strong></td>
+                                <td>One color + Complement + White</td>
+                                <td>Vibrant yet unified</td>
+                                <td>Stylized work</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <blockquote>
+                    <strong>🎯 Palette Challenge:</strong> Try painting the same subject with three different limited palettes. You'll be amazed how the mood completely changes while the subject remains the same!
+                </blockquote>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section id="practice" class="lesson-section">
+                <h2>Practice Exercise 🏋️</h2>
+                
+                <div class="exercise-card">
+                    <h3>🎨 Project: Four Moods, One Scene</h3>
+                    
+                    <p><strong>Your mission:</strong> Paint the same simple landscape four times, each with a different color mood and lighting scenario!</p>
+                    
+                    <h4>The Base Scene:</h4>
+                    <ul>
+                        <li>Simple landscape with: Foreground tree, rolling hills, distant mountains, sky</li>
+                        <li>Keep composition identical in all four versions</li>
+                        <li>Focus entirely on color to create mood</li>
+                    </ul>
+                    
+                    <h4>Four Color Moods:</h4>
+                    
+                    <ol>
+                        <li><strong>Dawn Hope (Cool to Warm)</strong>
+                            <ul>
+                                <li>Time: Early morning, sun just rising</li>
+                                <li>Palette: Cool blues transitioning to warm pinks/oranges</li>
+                                <li>Mood: Hopeful, fresh, new beginnings</li>
+                                <li>Temperature: Cool shadows, warm highlights emerging</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Noon Vitality (High Saturation)</strong>
+                            <ul>
+                                <li>Time: Bright midday sun</li>
+                                <li>Palette: Full saturation, clear colors</li>
+                                <li>Mood: Energetic, vibrant, alive</li>
+                                <li>Temperature: Warm light, cool blue shadows</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Storm Drama (Contrasting)</strong>
+                            <ul>
+                                <li>Time: Approaching storm</li>
+                                <li>Palette: Dark grays with dramatic light breaks</li>
+                                <li>Mood: Tense, dramatic, powerful</li>
+                                <li>Temperature: Mix of warm and cool in conflict</li>
+                            </ul>
+                        </li>
+                        
+                        <li><strong>Twilight Mystery (Analogous)</strong>
+                            <ul>
+                                <li>Time: Blue hour after sunset</li>
+                                <li>Palette: Purples, blues, deep magentas</li>
+                                <li>Mood: Mysterious, calm, contemplative</li>
+                                <li>Temperature: Cool overall with warm accent lights</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <h4>Technical Requirements:</h4>
+                    <ul>
+                        <li>Each painting: 30 minutes maximum</li>
+                        <li>Limited palette: 5 colors max (including white)</li>
+                        <li>Document your color choices for each</li>
+                        <li>Pay attention to atmospheric perspective</li>
+                        <li>Include subsurface scattering on foliage</li>
+                    </ul>
+                    
+                    <h4>Evaluation Checklist:</h4>
+                    <ul>
+                        <li>✓ Each mood is clearly different</li>
+                        <li>✓ Color temperature relationships are correct</li>
+                        <li>✓ Atmospheric perspective is visible</li>
+                        <li>✓ No muddy colors despite limited palette</li>
+                        <li>✓ Emotional impact matches intention</li>
+                    </ul>
+                </div>
+
+                <h3>Color Analysis Sheet</h3>
+                
+                <div class="card" style="background: #fff3cd; border-left: 4px solid #ffc107; color: #856404;">
+                    <h4>📊 Document Your Color Decisions</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mood</th>
+                                <th>Dominant Color</th>
+                                <th>Secondary</th>
+                                <th>Accent</th>
+                                <th>Shadow Color</th>
+                                <th>Success?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dawn</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>□ Yes □ No</td>
+                            </tr>
+                            <tr>
+                                <td>Noon</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>□ Yes □ No</td>
+                            </tr>
+                            <tr>
+                                <td>Storm</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>□ Yes □ No</td>
+                            </tr>
+                            <tr>
+                                <td>Twilight</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>_______</td>
+                                <td>□ Yes □ No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Summary -->
+            <section id="summary" class="lesson-section">
+                <h2>Summary & Next Steps 🎉</h2>
+                
+                <div class="card" style="background: #e8f5e9; border-left: 4px solid #4CAF50;">
+                    <h3>🎯 What You've Mastered</h3>
+                    <ul>
+                        <li>Advanced color harmony schemes beyond basic complementary</li>
+                        <li>Color temperature relationships in various lighting conditions</li>
+                        <li>Subsurface scattering effects in translucent materials</li>
+                        <li>Atmospheric perspective and color shifts over distance</li>
+                        <li>Color psychology and emotional impact of color choices</li>
+                        <li>Limited palette techniques for color unity</li>
+                    </ul>
+                </div>
+
+                <p>You've now unlocked the <strong>secret language of color</strong>! These advanced concepts will transform your paintings from merely accurate to emotionally powerful. Remember, color is not just what we see - it's what we feel.</p>
+
+                <blockquote>
+                    <strong>🌟 Master's Wisdom:</strong> "Color is the keyboard, the eyes are the harmonies, the soul is the piano with many strings. The artist is the hand that plays, touching one key or another, to cause vibrations in the soul." - Wassily Kandinsky
+                </blockquote>
+
+                <h3>Quick Reference: Color Formulas</h3>
+                
+                <div class="card">
+                    <pre><code>TEMPERATURE RULES:
+- Warm light → Cool shadows
+- Cool light → Warm shadows
+- Distance → Add sky color
+- SSS zones → Saturated warm
+
+HARMONY FORMULAS:
+- 60% Dominant color
+- 30% Secondary color
+- 10% Accent color
+
+ATMOSPHERIC LAYERS:
+- Each layer: +10% sky color
+- Each layer: -20% saturation
+- Each layer: -30% contrast
+
+MOOD COLORS:
+- Energy: Warm + Saturated
+- Calm: Cool + Desaturated
+- Mystery: Purple + Dark
+- Joy: Yellow + Light</code></pre>
+                </div>
+
+                <h3>Coming Next</h3>
+                
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h4>📚 Next Lesson: Complex Lighting Scenarios</h4>
+                    <p>Now that you understand color, we'll explore how light behaves in complex situations:</p>
+                    <ul>
+                        <li>Multiple light sources and their interactions</li>
+                        <li>Colored lighting effects</li>
+                        <li>Bounce light and ambient occlusion</li>
+                        <li>Rim lighting and contre-jour techniques</li>
+                        <li>Underwater and filtered light</li>
+                    </ul>
+                </div>
+
+                <p>Take time to practice these color concepts - they're the foundation for everything we'll learn about lighting. When you're ready, let's illuminate your artistic journey even further!</p>
+            </section>
+
+            <!-- Lesson Navigation -->
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="brush_efficiency_workflows.html" class="prev-lesson">← Previous Module: Brush Workflows</a>
+                <a href="index.html" class="home-link">🏠 Course Home</a>
+                <a href="complex_lighting_scenarios.html" class="next-lesson">Next: Complex Lighting →</a>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid var(--border-color);">
+        <p>&copy; 2024 Paintstorm Studio Intermediate Tutorial Series. Created with 💖 for advancing digital artists.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Toggle Table of Contents
+        function toggleTOC() {
+            const tocList = document.getElementById('toc-list');
+            const tocIcon = document.getElementById('toc-toggle-icon');
+            
+            if (tocList.style.maxHeight === '0px' || tocList.style.maxHeight === '') {
+                // Expand
+                tocList.style.maxHeight = '300px';
+                tocIcon.style.transform = 'rotate(0deg)';
+                localStorage.setItem('tocState', 'expanded');
+            } else {
+                // Collapse
+                tocList.style.maxHeight = '0px';
+                tocIcon.style.transform = 'rotate(-90deg)';
+                localStorage.setItem('tocState', 'collapsed');
+            }
+        }
+        
+        // Initialize TOC state from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const tocState = localStorage.getItem('tocState');
+            if (tocState === 'collapsed') {
+                const tocList = document.getElementById('toc-list');
+                const tocIcon = document.getElementById('toc-toggle-icon');
+                tocList.style.maxHeight = '0px';
+                tocIcon.style.transform = 'rotate(-90deg)';
+            }
+        });
+        
+        // Progress indicator
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            document.querySelector('.progress-bar').style.width = `${Math.min(progress, 100)}%`;
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isOpen = navLinks.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                navLinks.setAttribute('aria-hidden', !isOpen);
+            });
+        }
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+            
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                const newTheme = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+            });
+        }
+
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

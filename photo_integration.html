@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master photo integration in Paintstorm Studio - Photo-bashing, reference use, texture integration, and avoiding photo dependency">
+    <meta name="author" content="Paintstorm Intermediate Tutorial">
+    <title>Photo Integration & Reference Use - Paintstorm Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <div class="progress-indicator" role="progressbar" aria-label="Page scroll progress"><div class="progress-bar"></div></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🎨 Paintstorm Studio - Intermediate</a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+            <div class="nav-links" id="nav-links" aria-hidden="false">
+                <a href="index.html">Home</a>
+                <a href="index.html#modules">All Lessons</a>
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#modules">Advanced Techniques</a></li>
+            <li aria-current="page">Photo Integration & Reference Use</li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <header>
+                <h1>📷 Photo Integration & Reference Use</h1>
+                <p class="lead">Harness the power of photography without becoming dependent on it! Learn professional photo-bashing techniques, smart reference use, texture integration, and how to maintain your artistic voice while using photographic elements.</p>
+                
+                <div class="card">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this lesson, you will master:</p>
+                    <ul>
+                        <li>Professional photo-bashing techniques and workflows</li>
+                        <li>Integrating photographic textures seamlessly into paintings</li>
+                        <li>Using photo references effectively without copying</li>
+                        <li>Understanding copyright and ethical reference use</li>
+                        <li>Avoiding photo dependency while maintaining quality</li>
+                        <li>Blending photos with painted elements convincingly</li>
+                        <li>When to use photos vs when to paint from imagination</li>
+                    </ul>
+                </div>
+            </header>
+
+            <nav class="card" aria-label="Table of Contents">
+                <h2 style="cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center;" onclick="toggleTOC()">
+                    <span>📑 Table of Contents</span>
+                    <span id="toc-toggle-icon" style="transition: transform 0.3s;">▼</span>
+                </h2>
+                <ol id="toc-list" style="overflow: hidden; transition: max-height 0.3s ease-out; max-height: 300px; margin: 0; padding-left: 1.5rem;">
+                    <li><a href="#photobashing-basics" class="toc-link">Photo-Bashing Fundamentals</a></li>
+                    <li><a href="#texture-integration" class="toc-link">Texture Integration Techniques</a></li>
+                    <li><a href="#reference-use" class="toc-link">Smart Reference Use</a></li>
+                    <li><a href="#blending-methods" class="toc-link">Blending Photos with Paint</a></li>
+                    <li><a href="#copyright-ethics" class="toc-link">Copyright & Ethical Use</a></li>
+                    <li><a href="#avoiding-dependency" class="toc-link">Avoiding Photo Dependency</a></li>
+                    <li><a href="#practice" class="toc-link">Practice Exercise</a></li>
+                    <li><a href="#summary" class="toc-link">Summary & Next Steps</a></li>
+                </ol>
+            </nav>
+
+            <!-- Section 1: Photo-Bashing Fundamentals -->
+            <section id="photobashing-basics" class="lesson-section">
+                <h2>Photo-Bashing Fundamentals 🔨</h2>
+                
+                <p>Photo-bashing is the art of <strong>combining multiple photographs with digital painting</strong> to create finished artwork. It's a professional technique used in concept art, matte painting, and illustration!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Photo-Bashing Principle</h3>
+                    <p><strong>Photos are ingredients, not the final dish!</strong> Good photo-bashing transforms source photos so completely that they become something new. Bad photo-bashing just collages photos together. The goal: speed + quality while maintaining artistic control!</p>
+                </div>
+
+                <div class="mermaid">
+                    graph TD
+                        A[Photo-Bashing Workflow] --> B[Source Collection]
+                        A --> C[Composition]
+                        A --> D[Integration]
+                        A --> E[Paintover]
+                        
+                        B --> B1[Gather photos]
+                        B --> B2[Consider perspective]
+                        B --> B3[Match lighting]
+                        
+                        C --> C1[Arrange elements]
+                        C --> C2[Mask & crop]
+                        C --> C3[Transform & fit]
+                        
+                        D --> D1[Color matching]
+                        D --> D2[Edge blending]
+                        D --> D3[Value adjustment]
+                        
+                        E --> E1[Add painted details]
+                        E --> E2[Unify with brushwork]
+                        E --> E3[Final polish]
+                </div>
+
+                <h3>When to Use Photo-Bashing</h3>
+                
+                <div class="card">
+                    <h4>✅ Ideal Photo-Bashing Scenarios</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Situation</th>
+                                <th>Why Photo-Bash</th>
+                                <th>Best Approach</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tight Deadlines</strong></td>
+                                <td>Speed is critical, quality must remain high</td>
+                                <td>Photo base + painted details</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Complex Textures</strong></td>
+                                <td>Organic textures (bark, rust, fabric) take forever to paint</td>
+                                <td>Photo textures + painted form</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Photorealistic Work</strong></td>
+                                <td>Client wants photo-real quality</td>
+                                <td>Heavy photo use + selective painting</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Concept Art</strong></td>
+                                <td>Ideas need to be communicated quickly</td>
+                                <td>Photo blocking + painted atmosphere</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Matte Painting</strong></td>
+                                <td>Film-quality realism required</td>
+                                <td>Multiple photos seamlessly blended</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Background Elements</strong></td>
+                                <td>Focus should be on foreground subjects</td>
+                                <td>Photo backgrounds + painted focus</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Photo-Bashing Workflow Steps</h3>
+                
+                <div class="card">
+                    <h4>🔄 Professional Photo-Bash Process</h4>
+                    <ol>
+                        <li><strong>Concept & Planning (10% time):</strong>
+                            <ul>
+                                <li>Sketch thumbnail composition</li>
+                                <li>Identify what needs photos vs painting</li>
+                                <li>Plan perspective and lighting</li>
+                            </ul>
+                        </li>
+                        <li><strong>Photo Collection (15% time):</strong>
+                            <ul>
+                                <li>Gather multiple options for each element</li>
+                                <li>Match perspective angles</li>
+                                <li>Match lighting direction</li>
+                                <li>Consider resolution needs</li>
+                            </ul>
+                        </li>
+                        <li><strong>Rough Composition (20% time):</strong>
+                            <ul>
+                                <li>Place photos quickly, don't perfect yet</li>
+                                <li>Test composition and scale</li>
+                                <li>Rough masks, no clean edges yet</li>
+                            </ul>
+                        </li>
+                        <li><strong>Integration & Blending (30% time):</strong>
+                            <ul>
+                                <li>Match colors between elements</li>
+                                <li>Blend edges carefully</li>
+                                <li>Adjust lighting consistency</li>
+                                <li>Add shadows and highlights</li>
+                            </ul>
+                        </li>
+                        <li><strong>Paintover & Details (25% time):</strong>
+                            <ul>
+                                <li>Paint over obvious photo elements</li>
+                                <li>Add details photos can't provide</li>
+                                <li>Unify style with brushwork</li>
+                                <li>Add atmospheric effects</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Photo-Bashing Tools & Techniques</h3>
+                
+                <div class="card">
+                    <h4>🛠️ Essential Techniques</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Technique</th>
+                                <th>Purpose</th>
+                                <th>When to Use</th>
+                                <th>Paintstorm Approach</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Layer Masking</strong></td>
+                                <td>Isolate elements from photos</td>
+                                <td>Every photo element needs clean mask</td>
+                                <td>Use selection tools + mask layer</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Transform Tools</strong></td>
+                                <td>Match perspective and scale</td>
+                                <td>Fitting photos into composition</td>
+                                <td>Free transform, warp, perspective</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adjustment Layers</strong></td>
+                                <td>Color/value matching</td>
+                                <td>Making elements look cohesive</td>
+                                <td>Curves, hue/saturation, color balance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Blend Modes</strong></td>
+                                <td>Integrate textures and lighting</td>
+                                <td>Overlay, multiply, screen effects</td>
+                                <td>Experiment with layer blend modes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Clone Stamp</strong></td>
+                                <td>Extend or modify photo areas</td>
+                                <td>Fixing perspective or removing elements</td>
+                                <td>Clone tool for seamless extension</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Blur Tools</strong></td>
+                                <td>Match depth of field</td>
+                                <td>Creating atmospheric depth</td>
+                                <td>Gaussian blur, motion blur</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card" style="background: #fff3cd; border-left: 4px solid #ffc107; color: #856404;">
+                    <h4>⚠️ Photo-Bashing Pitfalls</h4>
+                    <ul>
+                        <li><strong>Visible Seams:</strong> Poor masking shows obvious edges - spend time on clean masks!</li>
+                        <li><strong>Lighting Mismatch:</strong> Elements lit from different directions look fake</li>
+                        <li><strong>Perspective Clash:</strong> Photos taken at different angles don't fit together</li>
+                        <li><strong>Color Disharmony:</strong> Unmatched color temperatures scream "photo collage"</li>
+                        <li><strong>Resolution Inconsistency:</strong> Mixing high and low res photos looks amateurish</li>
+                        <li><strong>No Paintover:</strong> Pure photo collage without painting looks lazy</li>
+                        <li><strong>Over-Reliance:</strong> Using photos when painting would be faster/better</li>
+                    </ul>
+                </div>
+
+                <blockquote>
+                    <strong>🔨 Photo-Bash Mastery:</strong> The rule of thumb: spend 60% of your time integrating and 40% gathering photos. Most beginners spend 80% gathering and 20% integrating - that's why it looks like a collage! The magic is in the blending, not the collecting!
+                </blockquote>
+
+                <h3>Photo-Bashing Quality Checklist</h3>
+                
+                <div class="card">
+                    <h4>✅ Professional Quality Standards</h4>
+                    <p>Your photo-bash is ready when:</p>
+                    <ul>
+                        <li>□ All elements share consistent lighting direction</li>
+                        <li>□ Perspective lines match across all photo elements</li>
+                        <li>□ Colors are harmonized (unified color temperature)</li>
+                        <li>□ No visible seams or hard edges between elements</li>
+                        <li>□ Atmospheric perspective applied (foreground sharp, background soft)</li>
+                        <li>□ Cast shadows added where elements meet</li>
+                        <li>□ Reflections and interactions painted where needed</li>
+                        <li>□ At least 30% painted content over photos</li>
+                        <li>□ Can't identify the original source photos easily</li>
+                        <li>□ Looks cohesive when zoomed out</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2: Texture Integration -->
+            <section id="texture-integration" class="lesson-section">
+                <h2>Texture Integration Techniques 🎨</h2>
+                
+                <p>Photographic textures can add <strong>instant realism and detail</strong> to your paintings. The key is making them look painted, not pasted!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Texture Integration Principle</h3>
+                    <p><strong>Textures should enhance form, not replace it!</strong> Apply photo textures AFTER establishing solid form, value, and lighting. Texture is the final 10% that adds believability, not the foundation you build on!</p>
+                </div>
+
+                <h3>Types of Texture Application</h3>
+                
+                <div class="card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Texture Type</th>
+                                <th>Best For</th>
+                                <th>Application Method</th>
+                                <th>Blend Mode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Surface Texture</strong></td>
+                                <td>Bark, rust, fabric, concrete</td>
+                                <td>Overlay on painted form</td>
+                                <td>Overlay, Soft Light (30-60%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Detail Texture</strong></td>
+                                <td>Scratches, pores, grain</td>
+                                <td>Subtle layer over painting</td>
+                                <td>Overlay (10-30%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pattern Texture</strong></td>
+                                <td>Tiles, bricks, fabric weave</td>
+                                <td>Map to perspective, blend edges</td>
+                                <td>Multiply, Normal (40-70%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Grunge Texture</strong></td>
+                                <td>Age, wear, weathering</td>
+                                <td>Selective application</td>
+                                <td>Multiply, Overlay (20-50%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Normal Maps</strong></td>
+                                <td>Bump/depth simulation</td>
+                                <td>Advanced 3D-style rendering</td>
+                                <td>Special normal map blend</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Texture Integration Workflow</h3>
+                
+                <div class="card">
+                    <h4>🎨 Step-by-Step Texture Application</h4>
+                    <ol>
+                        <li><strong>Paint Foundation First:</strong>
+                            <ul>
+                                <li>Complete base painting with proper values</li>
+                                <li>Establish form, lighting, and shadows</li>
+                                <li>Get 80-90% finished before adding texture</li>
+                            </ul>
+                        </li>
+                        <li><strong>Choose Appropriate Texture:</strong>
+                            <ul>
+                                <li>Match lighting angle of texture to painting</li>
+                                <li>Similar color temperature</li>
+                                <li>Appropriate scale/resolution</li>
+                            </ul>
+                        </li>
+                        <li><strong>Desaturate Texture (Usually):</strong>
+                            <ul>
+                                <li>Reduce saturation by 50-80%</li>
+                                <li>Let painting's colors dominate</li>
+                                <li>Texture adds detail, not color</li>
+                            </ul>
+                        </li>
+                        <li><strong>Transform to Match Perspective:</strong>
+                            <ul>
+                                <li>Warp texture to follow surface curves</li>
+                                <li>Match perspective of underlying form</li>
+                                <li>Use distort/warp tools extensively</li>
+                            </ul>
+                        </li>
+                        <li><strong>Apply with Appropriate Blend Mode:</strong>
+                            <ul>
+                                <li>Start with Overlay or Soft Light</li>
+                                <li>Reduce opacity (usually 20-60%)</li>
+                                <li>Test different modes for best result</li>
+                            </ul>
+                        </li>
+                        <li><strong>Mask for Form:</strong>
+                            <ul>
+                                <li>Texture should fade in shadows</li>
+                                <li>Stronger in highlights</li>
+                                <li>Use painted values as mask guide</li>
+                            </ul>
+                        </li>
+                        <li><strong>Paint Over Texture:</strong>
+                            <ul>
+                                <li>Add painted details over texture</li>
+                                <li>Break up obvious patterns</li>
+                                <li>Unify with brush strokes</li>
+                            </ul>
+                        </li>
+                        <li><strong>Edge Treatment:</strong>
+                            <ul>
+                                <li>Soft edges where texture fades</li>
+                                <li>No hard cutoffs</li>
+                                <li>Blend into surrounding elements</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Common Texture Sources</h3>
+                
+                <div class="card">
+                    <h4>📦 Building Your Texture Library</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Source</th>
+                                <th>Quality</th>
+                                <th>Cost</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Your Own Photos</strong></td>
+                                <td>Variable</td>
+                                <td>Free</td>
+                                <td>Custom needs, legal safety</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Texture.com</strong></td>
+                                <td>High</td>
+                                <td>Subscription</td>
+                                <td>Professional seamless textures</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Unsplash/Pexels</strong></td>
+                                <td>High</td>
+                                <td>Free</td>
+                                <td>Reference photos, not purpose-made textures</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TextureHaven</strong></td>
+                                <td>Very High</td>
+                                <td>Free (CC0)</td>
+                                <td>PBR textures, seamless, public domain</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3D Scanned</strong></td>
+                                <td>Excellent</td>
+                                <td>Expensive</td>
+                                <td>Ultra-realistic, proper normal maps</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <blockquote>
+                    <strong>🎨 Texture Secret:</strong> The best texture integration is invisible! If someone says "nice textures," you failed - they should say "nice painting!" Textures should support, not dominate. Always ask: "Does this enhance my painting or replace it?"
+                </blockquote>
+
+<!-- PART B CONTINUES FROM PART A -->
+
+                <h3>Texture Application Tips by Material</h3>
+                
+                <div class="card">
+                    <h4>🔧 Material-Specific Texture Techniques</h4>
+                    <ul>
+                        <li><strong>Metal:</strong> Use very subtle texture, focus on reflection patterns instead</li>
+                        <li><strong>Wood:</strong> Follow grain direction, use warp tool to bend with form</li>
+                        <li><strong>Fabric:</strong> Distort heavily to show folds, weave should follow curves</li>
+                        <li><strong>Stone:</strong> Layer multiple textures at different scales for depth</li>
+                        <li><strong>Skin:</strong> Extremely subtle, mostly in pores/wrinkles, fade in highlights</li>
+                        <li><strong>Rust/Grime:</strong> Use multiply mode, concentrate in crevices and edges</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 3: Smart Reference Use -->
+            <section id="reference-use" class="lesson-section">
+                <h2>Smart Reference Use 📚</h2>
+                
+                <p>References are <strong>learning tools, not crutches</strong>. Professional artists use references intelligently to understand reality, then translate it into their art!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Reference Principle</h3>
+                    <p><strong>References inform, they don't dictate!</strong> Use photos to understand lighting, anatomy, perspective, and detail - then interpret that understanding in your own style. Copy what you learn, not what you see!</p>
+                </div>
+
+                <h3>Types of Reference Use</h3>
+                
+                <div class="card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Reference Type</th>
+                                <th>Purpose</th>
+                                <th>How to Use</th>
+                                <th>Danger Zone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Anatomy Reference</strong></td>
+                                <td>Understanding structure</td>
+                                <td>Study proportions, draw from memory, check reference</td>
+                                <td>Copying pose exactly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lighting Reference</strong></td>
+                                <td>How light behaves</td>
+                                <td>Observe patterns, apply principles to your scene</td>
+                                <td>Tracing light and shadow</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Costume/Props Reference</strong></td>
+                                <td>Specific detail accuracy</td>
+                                <td>Study details, reconstruct in your style</td>
+                                <td>Copy-pasting costume details</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pose Reference</strong></td>
+                                <td>Dynamic movement ideas</td>
+                                <td>Understand weight/balance, modify pose</td>
+                                <td>Tracing or exact copying</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Environment Reference</strong></td>
+                                <td>Setting authenticity</td>
+                                <td>Capture mood/atmosphere, reimagine</td>
+                                <td>Photo-bashing without transformation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Texture Reference</strong></td>
+                                <td>Surface detail understanding</td>
+                                <td>Learn patterns, paint your own version</td>
+                                <td>Direct texture overlay without painting</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Color Reference</strong></td>
+                                <td>Realistic color schemes</td>
+                                <td>Sample palette, adjust to your needs</td>
+                                <td>Color-picking every pixel</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>The Reference Workflow</h3>
+                
+                <div class="card">
+                    <h4>📖 Professional Reference Process</h4>
+                    <ol>
+                        <li><strong>Gather Multiple References:</strong> Never rely on single photo
+                            <ul>
+                                <li>3-5 different angles of same subject</li>
+                                <li>Different lighting conditions</li>
+                                <li>Various examples of same concept</li>
+                            </ul>
+                        </li>
+                        <li><strong>Study, Don't Copy:</strong> Understand what you're seeing
+                            <ul>
+                                <li>How does light wrap around this form?</li>
+                                <li>What's the underlying structure?</li>
+                                <li>Why does it look this way?</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sketch from Memory First:</strong> Test your understanding
+                            <ul>
+                                <li>Draw what you remember</li>
+                                <li>Check reference only after attempting</li>
+                                <li>Note what you got wrong</li>
+                            </ul>
+                        </li>
+                        <li><strong>Combine Multiple Sources:</strong> Create something new
+                            <ul>
+                                <li>Pose from Photo A</li>
+                                <li>Lighting from Photo B</li>
+                                <li>Details from Photo C</li>
+                                <li>Your own interpretation throughout</li>
+                            </ul>
+                        </li>
+                        <li><strong>Add Your Style:</strong> Don't be photorealistic unless required
+                            <ul>
+                                <li>Exaggerate for effect</li>
+                                <li>Simplify unnecessary details</li>
+                                <li>Stylize to match your aesthetic</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Reference Do's and Don'ts</h3>
+                
+                <div class="card">
+                    <h4>✅ DO:</h4>
+                    <ul>
+                        <li>Use multiple references for one subject</li>
+                        <li>Study references to understand principles</li>
+                        <li>Take your own reference photos when possible</li>
+                        <li>Modify poses and combine elements</li>
+                        <li>Use references for learning and verification</li>
+                        <li>Credit photographers when appropriate</li>
+                        <li>Build personal reference libraries</li>
+                    </ul>
+                    
+                    <h4>❌ DON'T:</h4>
+                    <ul>
+                        <li>Trace photos (except for learning exercises)</li>
+                        <li>Copy a single photo exactly</li>
+                        <li>Use references as a crutch for poor fundamentals</li>
+                        <li>Ignore perspective/anatomy rules because "the photo shows it"</li>
+                        <li>Use copyrighted images without permission</li>
+                        <li>Become dependent on having perfect reference</li>
+                        <li>Let photo quality dictate painting quality</li>
+                    </ul>
+                </div>
+
+                <blockquote>
+                    <strong>📚 Reference Wisdom:</strong> The goal of using references is to eventually NOT need them! Each reference teaches you something. Once learned, that knowledge is yours. Professional artists use fewer references over time because they've internalized the principles!
+                </blockquote>
+            </section>
+
+            <!-- Section 4: Blending Methods -->
+            <section id="blending-methods" class="lesson-section">
+                <h2>Blending Photos with Paint 🖌️</h2>
+                
+                <p>The magic happens where photo meets paint! <strong>Seamless blending</strong> is what separates professional photo integration from amateur collage.</p>
+
+                <div class="card">
+                    <h4>🎨 Blend Mode Quick Reference</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Blend Mode</th>
+                                <th>Effect</th>
+                                <th>Best For</th>
+                                <th>Opacity Range</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Normal</strong></td>
+                                <td>No blending, opaque coverage</td>
+                                <td>Main photo elements</td>
+                                <td>100% or masked</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Multiply</strong></td>
+                                <td>Darkens, like ink layers</td>
+                                <td>Shadows, dark textures, grime</td>
+                                <td>30-70%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Screen</strong></td>
+                                <td>Lightens, adds light</td>
+                                <td>Highlights, glows, light effects</td>
+                                <td>20-60%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Overlay</strong></td>
+                                <td>Contrast boost, blends with base</td>
+                                <td>Textures, enhancing details</td>
+                                <td>20-60%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Soft Light</strong></td>
+                                <td>Gentle overlay, subtle effect</td>
+                                <td>Soft textures, lighting adjustments</td>
+                                <td>30-70%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hard Light</strong></td>
+                                <td>Strong overlay, dramatic</td>
+                                <td>Dramatic textures, hard effects</td>
+                                <td>40-80%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Color</strong></td>
+                                <td>Only affects hue, keeps luminosity</td>
+                                <td>Color grading, tinting</td>
+                                <td>50-100%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Luminosity</strong></td>
+                                <td>Only affects brightness, keeps color</td>
+                                <td>Value adjustments</td>
+                                <td>50-100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Edge Blending Techniques</h3>
+                
+                <div class="card">
+                    <h4>🔪 Making Seams Disappear</h4>
+                    <ol>
+                        <li><strong>Soft Brush Masking:</strong>
+                            <ul>
+                                <li>Use large, soft brush on mask edges</li>
+                                <li>Gradually fade elements into each other</li>
+                                <li>Vary edge softness based on focus</li>
+                            </ul>
+                        </li>
+                        <li><strong>Painted Transitions:</strong>
+                            <ul>
+                                <li>Paint over edges with sampled colors</li>
+                                <li>Blend between photo elements</li>
+                                <li>Add transitional details</li>
+                            </ul>
+                        </li>
+                        <li><strong>Texture Overlap:</strong>
+                            <ul>
+                                <li>Extend textures across boundaries</li>
+                                <li>Use clone stamp to blend</li>
+                                <li>Add noise/grain consistently</li>
+                            </ul>
+                        </li>
+                        <li><strong>Atmospheric Haze:</strong>
+                            <ul>
+                                <li>Add subtle fog/haze layer</li>
+                                <li>Unifies distant elements</li>
+                                <li>Softens harsh edges naturally</li>
+                            </ul>
+                        </li>
+                        <li><strong>Color Harmony:</strong>
+                            <ul>
+                                <li>Apply unified color adjustment</li>
+                                <li>Match color temperature across elements</li>
+                                <li>Use color overlay layers</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>Color Matching Strategies</h3>
+                
+                <div class="card">
+                    <h4>🎨 Unified Color Workflow</h4>
+                    <ul>
+                        <li><strong>Match Lighting Color:</strong> All photos should share light temperature (warm/cool)</li>
+                        <li><strong>Curves Adjustment:</strong> Use curves to match contrast and color balance</li>
+                        <li><strong>Color Grading Layer:</strong> Apply unified color grade over entire composition</li>
+                        <li><strong>Desaturate Selectively:</strong> Reduce photo saturation, repaint with your colors</li>
+                        <li><strong>Global Hue Shift:</strong> Slight hue adjustment can unify diverse photos</li>
+                    </ul>
+                </div>
+
+                <blockquote>
+                    <strong>🖌️ Blending Truth:</strong> The final 20% painted content unifies the first 80% photo content! Always budget significant time for painting over your photo-bash. That's where amateur becomes professional!
+                </blockquote>
+            </section>
+
+            <!-- Section 5: Copyright & Ethics -->
+            <section id="copyright-ethics" class="lesson-section">
+                <h2>Copyright & Ethical Use ⚖️</h2>
+                
+                <p>Using photos in your art comes with <strong>legal and ethical responsibilities</strong>. Understanding these protects you and respects other creators!</p>
+
+                <div class="card" style="background: #fff3cd; border-left: 4px solid #ffc107; color: #856404;">
+                    <h4>⚠️ Legal Reality</h4>
+                    <p><strong>IMPORTANT:</strong> Photographs are copyrighted by default! Just because a photo is on the internet doesn't mean you can use it. Understanding copyright isn't optional - it's essential for professional work.</p>
+                </div>
+
+                <h3>Copyright Basics for Artists</h3>
+                
+                <div class="card">
+                    <h4>⚖️ What You Need to Know</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>License Type</th>
+                                <th>Can You Use?</th>
+                                <th>Conditions</th>
+                                <th>Commercial OK?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>All Rights Reserved</strong></td>
+                                <td>NO</td>
+                                <td>Need explicit permission</td>
+                                <td>Only with license</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CC0 (Public Domain)</strong></td>
+                                <td>YES</td>
+                                <td>No restrictions</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CC BY (Attribution)</strong></td>
+                                <td>YES</td>
+                                <td>Must credit creator</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CC BY-NC (Non-Commercial)</strong></td>
+                                <td>YES</td>
+                                <td>Credit + non-commercial only</td>
+                                <td>NO</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CC BY-SA (Share-Alike)</strong></td>
+                                <td>YES</td>
+                                <td>Credit + same license for derivative</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Royalty-Free Stock</strong></td>
+                                <td>YES</td>
+                                <td>Read specific license terms</td>
+                                <td>Usually yes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rights-Managed</strong></td>
+                                <td>YES</td>
+                                <td>Pay per use, specific terms</td>
+                                <td>Depends on purchase</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Safe Photo Sources</h3>
+                
+                <div class="card">
+                    <h4>✅ Legally Safe Options</h4>
+                    <ul>
+                        <li><strong>Your Own Photos:</strong> 100% safe, you own copyright</li>
+                        <li><strong>CC0 Sites:</strong> Unsplash, Pexels, Pixabay (verify license per image)</li>
+                        <li><strong>Purchased Stock:</strong> Shutterstock, Adobe Stock, Getty (read license!)</li>
+                        <li><strong>Texture Sites:</strong> Textures.com, TextureHaven (check specific license)</li>
+                        <li><strong>Commissioned Photos:</strong> Hire photographer, get usage rights in writing</li>
+                        <li><strong>Model Released:</strong> Photos with model releases for recognizable people</li>
+                    </ul>
+                </div>
+
+                <h3>Fair Use Misconceptions</h3>
+                
+                <div class="card" style="background: #ffebee; border-left: 4px solid #f44336;">
+                    <h4>🚫 Common Myths - These DON'T Protect You:</h4>
+                    <ul>
+                        <li><strong>MYTH:</strong> "I transformed it enough" - Transformation alone doesn't guarantee fair use</li>
+                        <li><strong>MYTH:</strong> "It's just for my portfolio" - Personal use can still be infringement</li>
+                        <li><strong>MYTH:</strong> "No one will notice" - Not a legal defense</li>
+                        <li><strong>MYTH:</strong> "I'm not making money" - Non-commercial doesn't equal legal</li>
+                        <li><strong>MYTH:</strong> "I credited the photographer" - Credit ≠ permission</li>
+                        <li><strong>MYTH:</strong> "It's only a small part" - Percentage doesn't determine legality</li>
+                        <li><strong>MYTH:</strong> "Fair use for artists" - Fair use is case-by-case, not automatic</li>
+                    </ul>
+                </div>
+
+                <h3>Ethical Best Practices</h3>
+                
+                <div class="card">
+                    <h4>🤝 Being a Responsible Artist</h4>
+                    <ol>
+                        <li><strong>Default to Permission:</strong> When in doubt, ask the photographer</li>
+                        <li><strong>Credit When Required:</strong> Follow license attribution requirements exactly</li>
+                        <li><strong>Build Your Library:</strong> Invest in creating/buying your own reference collection</li>
+                        <li><strong>Support Photographers:</strong> Buy licenses when you can afford it</li>
+                        <li><strong>Be Transparent:</strong> Don't claim 100% original if you used photos</li>
+                        <li><strong>Learn to Shoot:</strong> Basic photography skills make you independent</li>
+                        <li><strong>Respect Models:</strong> People in photos have rights too (personality rights)</li>
+                        <li><strong>Document Sources:</strong> Keep records of where photos came from</li>
+                    </ol>
+                </div>
+
+                <blockquote>
+                    <strong>⚖️ Copyright Golden Rule:</strong> If you wouldn't want someone using YOUR art without permission, don't use someone else's photos without permission. When building a professional career, legal safety isn't optional - it's essential!</p>
+                </blockquote>
+            </section>
+
+<!-- PART C FINAL - Avoiding Dependency, Practice, Summary, Scripts -->
+
+            <!-- Section 6: Avoiding Photo Dependency -->
+            <section id="avoiding-dependency" class="lesson-section">
+                <h2>Avoiding Photo Dependency 🎯</h2>
+                
+                <p>Photos are powerful tools, but <strong>dependency kills creativity</strong>. Learning when NOT to use photos is as important as learning how to use them!</p>
+
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3>🔑 The Independence Principle</h3>
+                    <p><strong>The best artists use photos when helpful, not when necessary!</strong> Photo dependency means you can't work without perfect reference. True mastery means photos enhance your already solid skills, not replace them!</p>
+                </div>
+
+                <h3>Signs of Photo Dependency</h3>
+                
+                <div class="card" style="background: #ffebee; border-left: 4px solid #f44336;">
+                    <h4>⚠️ Warning Signs You're Too Dependent</h4>
+                    <ul>
+                        <li>Can't start painting without finding perfect reference first</li>
+                        <li>Panic when reference doesn't show exact angle you need</li>
+                        <li>Work looks photorealistic but lacks artistic voice</li>
+                        <li>Can't improvise or imagine anything not in photos</li>
+                        <li>Spend more time searching for references than painting</li>
+                        <li>Feel lost when asked to paint from imagination</li>
+                        <li>Every element in painting comes from different photo</li>
+                        <li>Can't complete sketch without reference in front of you</li>
+                        <li>Avoid subjects you don't have photos for</li>
+                        <li>Work stops completely if reference is imperfect</li>
+                    </ul>
+                </div>
+
+                <h3>Building Independence</h3>
+                
+                <div class="card">
+                    <h4>💪 Exercises to Break Photo Dependency</h4>
+                    
+                    <p><strong>Week 1: Memory Training</strong></p>
+                    <ol>
+                        <li>Study reference for 5 minutes</li>
+                        <li>Put reference away</li>
+                        <li>Paint from memory for 30 minutes</li>
+                        <li>Compare result</li>
+                        <li>Note what you got wrong, study WHY</li>
+                    </ol>
+                    
+                    <p><strong>Week 2: Imagination Warm-ups</strong></p>
+                    <ol>
+                        <li>Daily 15-minute paintings from pure imagination</li>
+                        <li>Random prompts (fantasy creatures, impossible objects)</li>
+                        <li>No references allowed</li>
+                        <li>Focus on fun, not perfection</li>
+                    </ol>
+                    
+                    <p><strong>Week 3: Combining Sources</strong></p>
+                    <ol>
+                        <li>Use 3+ references for one painting</li>
+                        <li>Take elements from each</li>
+                        <li>Invent connections between them</li>
+                        <li>Create something no single photo shows</li>
+                    </ol>
+                    
+                    <p><strong>Week 4: The 80/20 Challenge</strong></p>
+                    <ol>
+                        <li>Paint 80% from imagination</li>
+                        <li>Use references only for final 20% verification</li>
+                        <li>Check anatomy, lighting, details</li>
+                        <li>Don't copy - just verify</li>
+                    </ol>
+                </div>
+
+                <h3>When to Paint Without Photos</h3>
+                
+                <div class="card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Why Skip Photos</th>
+                                <th>What to Do Instead</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Stylized Work</strong></td>
+                                <td>Photos encourage realism, kill style</td>
+                                <td>Study principles, then exaggerate freely</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fantasy Subjects</strong></td>
+                                <td>No reference exists for dragons</td>
+                                <td>Combine animal anatomy knowledge creatively</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dynamic Action</strong></td>
+                                <td>Static photos kill motion energy</td>
+                                <td>Gesture drawing, understand momentum</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Expressive Art</strong></td>
+                                <td>Photos ground you in reality too much</td>
+                                <td>Feel the emotion, paint the feeling</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Speed Painting</strong></td>
+                                <td>No time to search references</td>
+                                <td>Trust your studies and fundamentals</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Unique Perspectives</strong></td>
+                                <td>Rare angles hard to find</td>
+                                <td>Understand 3D form, construct view</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>The Balance: Photos + Fundamentals</h3>
+                
+                <div class="card" style="background: #e8f5e9; border-left: 4px solid #4CAF50;">
+                    <h4>✅ Healthy Photo-Art Relationship</h4>
+                    <p><strong>Goal:</strong> Photos accelerate your workflow WITHOUT limiting your creativity</p>
+                    <ul>
+                        <li><strong>Learn Fundamentals First:</strong> Anatomy, perspective, lighting independent of photos</li>
+                        <li><strong>Use Photos Selectively:</strong> For complex details, not every element</li>
+                        <li><strong>Start from Imagination:</strong> Sketch first, reference later</li>
+                        <li><strong>Transform Always:</strong> Never copy photos directly</li>
+                        <li><strong>Build Visual Library:</strong> Study so much you remember without looking</li>
+                        <li><strong>Practice Both Ways:</strong> Some pieces with references, some without</li>
+                        <li><strong>Trust Your Instincts:</strong> If it feels right, it probably is</li>
+                    </ul>
+                </div>
+
+                <blockquote>
+                    <strong>🎯 Independence Wisdom:</strong> The mark of a master is being able to work with OR without references at will. Photos should be like training wheels - use them while learning, but eventually you ride free!
+                </blockquote>
+            </section>
+
+            <!-- Practice Exercise -->
+            <section id="practice" class="lesson-section">
+                <h2>Practice Exercise 🏋️</h2>
+                
+                <div class="exercise-card">
+                    <h3>🎨 Project: Photo-Bash to Pure Paint Transformation</h3>
+                    
+                    <p><strong>Your mission:</strong> Create THREE versions of the same composition showing the progression from photo-heavy to paint-dominant work!</p>
+                    
+                    <h4>The Project Concept:</h4>
+                    <p>Choose ONE of these subjects:</p>
+                    <ul>
+                        <li>A character in an interior environment (room, café, library)</li>
+                        <li>A landscape with architectural elements (ruins, bridge, castle)</li>
+                        <li>A creature in its natural habitat (dragon in cave, robot in factory)</li>
+                    </ul>
+                    
+                    <h4>Three Versions to Create:</h4>
+                    
+                    <p><strong>Version 1: Photo-Bash Foundation (2 hours)</strong></p>
+                    <ul>
+                        <li>Use 5-10 photo elements</li>
+                        <li>Focus on quick composition</li>
+                        <li>Rough integration - visible seams OK</li>
+                        <li>Goal: Block in the scene fast</li>
+                        <li>Paintover: 20% painted, 80% photos</li>
+                    </ul>
+                    
+                    <p><strong>Version 2: Integrated Photo-Paint (3 hours)</strong></p>
+                    <ul>
+                        <li>Start from Version 1</li>
+                        <li>Blend all edges seamlessly</li>
+                        <li>Match colors and lighting across all elements</li>
+                        <li>Paint over obvious photo elements</li>
+                        <li>Add painted details and effects</li>
+                        <li>Goal: Professional photo-bash quality</li>
+                        <li>Paintover: 40% painted, 60% photos</li>
+                    </ul>
+                    
+                    <p><strong>Version 3: Paint-Dominant (4 hours)</strong></p>
+                    <ul>
+                        <li>Start fresh OR heavily paint over Version 2</li>
+                        <li>Use photos only for texture/reference</li>
+                        <li>Paint all major elements</li>
+                        <li>Photos barely visible if at all</li>
+                        <li>Your artistic voice dominates</li>
+                        <li>Goal: Looks hand-painted with subtle photo assists</li>
+                        <li>Paintover: 80% painted, 20% photos</li>
+                    </ul>
+                    
+                    <h4>Requirements:</h4>
+                    <ul>
+                        <li>✅ Same composition across all three versions</li>
+                        <li>✅ Use only legally licensed photos (CC0 or your own)</li>
+                        <li>✅ Document your photo sources</li>
+                        <li>✅ Show clear progression of paint integration</li>
+                        <li>✅ Final version must feel cohesive, not collage-like</li>
+                    </ul>
+                    
+                    <h4>Analysis Questions:</h4>
+                    <ol>
+                        <li>Which version was most enjoyable to create? Why?</li>
+                        <li>Which version looks most professional?</li>
+                        <li>At what point did photos become a hindrance vs help?</li>
+                        <li>What percentage of photos feels right for your style?</li>
+                        <li>Did painting over photos teach you anything about the subject?</li>
+                        <li>Could you now paint this subject without any photos?</li>
+                        <li>Which elements worked best as photos? As painting?</li>
+                        <li>How did your artistic voice emerge in Version 3?</li>
+                        <li>What would you do differently next time?</li>
+                        <li>When would you use each approach professionally?</li>
+                    </ol>
+                    
+                    <h4>Evaluation Checklist:</h4>
+                    <ul>
+                        <li>□ Version 1: Fast composition, rough but readable</li>
+                        <li>□ Version 2: Seamless blending, professional integration</li>
+                        <li>□ Version 3: Paint-dominant, personal artistic voice</li>
+                        <li>□ Clear progression visible across three versions</li>
+                        <li>□ All photo sources are legal/documented</li>
+                        <li>□ Lighting consistent across elements</li>
+                        <li>□ No obvious seams in Versions 2 & 3</li>
+                        <li>□ Color harmony achieved</li>
+                        <li>□ Composition works in all three versions</li>
+                        <li>□ Version 3 has distinct artistic personality</li>
+                    </ul>
+                </div>
+
+                <h3>Photo Integration Resource List</h3>
+                
+                <div class="card">
+                    <h4>📚 Recommended Resources</h4>
+                    
+                    <p><strong>Free Photo Sources (CC0):</strong></p>
+                    <ul>
+                        <li>Unsplash.com - High quality, curated</li>
+                        <li>Pexels.com - Large variety, good search</li>
+                        <li>Pixabay.com - Mixed quality, huge library</li>
+                        <li>TextureHaven.com - PBR textures, public domain</li>
+                    </ul>
+                    
+                    <p><strong>Paid/Premium Sources:</strong></p>
+                    <ul>
+                        <li>Adobe Stock - Integrated with Photoshop</li>
+                        <li>Shutterstock - Huge library, reliable</li>
+                        <li>Textures.com - Professional texture library</li>
+                        <li>Envato Elements - Subscription, unlimited downloads</li>
+                    </ul>
+                    
+                    <p><strong>Learning Resources:</strong></p>
+                    <ul>
+                        <li>"The Digital Matte Painting Handbook" - Industry techniques</li>
+                        <li>"Photobashing in Photoshop" courses - Technique tutorials</li>
+                        <li>Ctrl+Paint (website) - Free digital painting fundamentals</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Summary -->
+            <section id="summary" class="lesson-section">
+                <h2>Summary & Next Steps 🎉</h2>
+                
+                <div class="card" style="background: #e8f5e9; border-left: 4px solid #4CAF50;">
+                    <h3>🎯 What You've Mastered</h3>
+                    <ul>
+                        <li>Professional photo-bashing workflows and techniques</li>
+                        <li>Seamless texture integration that enhances, not replaces</li>
+                        <li>Smart reference use that informs rather than dictates</li>
+                        <li>Blending methods that make photos and paint unified</li>
+                        <li>Copyright awareness and ethical practices</li>
+                        <li>Strategies to avoid photo dependency</li>
+                        <li>When to use photos vs when to paint from imagination</li>
+                    </ul>
+                </div>
+
+                <p>You've now mastered <strong>photo integration</strong>! This skill accelerates your workflow while maintaining artistic integrity. Use photos as tools, not crutches, and your work will show both speed AND soul!</p>
+
+                <blockquote>
+                    <strong>🌟 Master's Wisdom:</strong> "Photos are like spices in cooking - a little enhances the dish, too much overwhelms it. The meal should taste like your cooking, not like the spice jar. Master the balance and you master the craft!"
+                </blockquote>
+
+                <h3>Quick Reference: Photo Integration Formulas</h3>
+                
+                <div class="card">
+                    <pre><code>PHOTO-BASHING WORKFLOW:
+1. Concept & Planning (10%)
+2. Photo Collection (15%)
+3. Rough Composition (20%)
+4. Integration & Blending (30%)
+5. Paintover & Details (25%)
+
+TEXTURE INTEGRATION STEPS:
+1. Paint foundation first (80-90% done)
+2. Choose appropriate texture
+3. Desaturate texture (50-80%)
+4. Transform to match perspective
+5. Apply with blend mode (20-60% opacity)
+6. Mask for form
+7. Paint over texture
+8. Blend edges
+
+SMART REFERENCE USE:
+✓ Multiple references per subject
+✓ Study to understand principles
+✓ Sketch from memory first
+✓ Combine multiple sources
+✓ Add your artistic style
+✗ Don't trace or exact copy
+✗ Don't rely on single photo
+✗ Don't copy pose exactly
+
+BLEND MODES GUIDE:
+- Normal: 100% or masked
+- Multiply: Shadows, dark textures (30-70%)
+- Screen: Highlights, glows (20-60%)
+- Overlay: Textures, details (20-60%)
+- Soft Light: Gentle effects (30-70%)
+- Hard Light: Dramatic effects (40-80%)
+- Color: Hue only (50-100%)
+- Luminosity: Value only (50-100%)
+
+COPYRIGHT ESSENTIALS:
+✓ CC0: Free, no restrictions
+✓ Your own photos: 100% safe
+✓ Licensed stock: Read terms carefully
+✓ Model releases for recognizable people
+✗ All Rights Reserved: Need explicit permission
+✗ "Fair use" is NOT automatic for artists
+✗ Credit ≠ permission to use
+✗ Non-commercial use ≠ legal automatically
+
+AVOIDING DEPENDENCY:
+- Learn fundamentals independently first
+- Memory painting exercises weekly
+- Daily imagination warm-ups (15 min)
+- Use photos selectively, not for everything
+- Start from imagination, verify with reference
+- Practice both with AND without refs
+- Trust your accumulated knowledge
+
+PHOTO-BASH QUALITY CHECKLIST:
+□ Consistent lighting direction
+□ Matched perspective across elements
+□ Unified color temperature
+□ No visible seams or hard edges
+□ Atmospheric perspective applied
+□ Cast shadows added where elements meet
+□ Reflections and interactions painted
+□ At least 30% painted content over photos
+□ Can't easily identify source photos
+□ Cohesive appearance when zoomed out
+□ Artistic voice present throughout</code></pre>
+                </div>
+
+                <h3>Coming Next</h3>
+                
+                <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h4>📚 Next in Module 4: Advanced Techniques</h4>
+                    <p>You've mastered photo integration! Continue building your advanced technique toolkit:</p>
+                    <ul>
+                        <li><strong>Lesson 4.2:</strong> Speed Painting Techniques - Create finished work fast</li>
+                        <li><strong>Lesson 4.3:</strong> Style Development - Find your unique artistic voice</li>
+                    </ul>
+                    <p>Each lesson builds on your growing mastery. Keep pushing forward!</p>
+                </div>
+
+                <h3>30-Day Photo Integration Challenge</h3>
+                
+                <div class="card">
+                    <h4>🏆 Master Photo Integration in 30 Days</h4>
+                    
+                    <p><strong>Week 1: Photo-Bash Fundamentals</strong></p>
+                    <ul>
+                        <li>Day 1-2: Gather and organize 50+ photos for library</li>
+                        <li>Day 3-4: Create simple 2-photo blended composition</li>
+                        <li>Day 5-6: Create complex 5+ photo composition</li>
+                        <li>Day 7: Polish one photo-bash to portfolio quality</li>
+                    </ul>
+                    
+                    <p><strong>Week 2: Texture Integration</strong></p>
+                    <ul>
+                        <li>Day 8-9: Apply textures to painted objects (5 different materials)</li>
+                        <li>Day 10-11: Create painted base, add photo textures</li>
+                        <li>Day 12-13: Blend textures seamlessly into painting</li>
+                        <li>Day 14: Complete piece: 70% paint, 30% texture</li>
+                    </ul>
+                    
+                    <p><strong>Week 3: Reference Mastery</strong></p>
+                    <ul>
+                        <li>Day 15-16: Paint from 3+ references combined</li>
+                        <li>Day 17-18: Study reference 10 min, paint from memory 50 min</li>
+                        <li>Day 19-20: Paint imaginative piece, verify with reference</li>
+                        <li>Day 21: Paint complex subject with minimal reference use</li>
+                    </ul>
+                    
+                    <p><strong>Week 4: Independence & Integration</strong></p>
+                    <ul>
+                        <li>Day 22-23: Paint completely from imagination</li>
+                        <li>Day 24-25: Create photo-bash, paint over 50%</li>
+                        <li>Day 26-27: Create photo-bash, paint over 80%</li>
+                        <li>Day 28-30: Portfolio piece combining all techniques</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Lesson Navigation -->
+            <nav class="lesson-nav" aria-label="Lesson Navigation">
+                <a href="perspective_mastery.html" class="prev-lesson">← Previous: Perspective Mastery</a>
+                <a href="index.html" class="home-link">🏠 Course Home</a>
+                <a href="speed_painting.html" class="next-lesson">Next: Speed Painting Techniques →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid var(--border-color);">
+        <p>&copy; 2024 Paintstorm Studio Intermediate Tutorial Series. Created with 💖 for advancing digital artists.</p>
+    </footer>
+
+    <script>
+        function toggleTOC() {
+            const tocList = document.getElementById('toc-list');
+            const tocIcon = document.getElementById('toc-toggle-icon');
+            if (tocList.style.maxHeight === '0px' || tocList.style.maxHeight === '') {
+                tocList.style.maxHeight = '300px';
+                tocIcon.style.transform = 'rotate(0deg)';
+                localStorage.setItem('tocState', 'expanded');
+            } else {
+                tocList.style.maxHeight = '0px';
+                tocIcon.style.transform = 'rotate(-90deg)';
+                localStorage.setItem('tocState', 'collapsed');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const tocState = localStorage.getItem('tocState');
+            if (tocState === 'collapsed') {
+                const tocList = document.getElementById('toc-list');
+                const tocIcon = document.getElementById('toc-toggle-icon');
+                tocList.style.maxHeight = '0px';
+                tocIcon.style.transform = 'rotate(-90deg)';
+            }
+        });
+        
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            document.querySelector('.progress-bar').style.width = `${Math.min(progress, 100)}%`;
+        });
+
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const isOpen = navLinks.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                navLinks.setAttribute('aria-hidden', !isOpen);
+            });
+        }
+
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            themeToggle.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+            
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                const newTheme = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeToggle.textContent = newTheme === 'light' ? '🌙' : '☀️';
+            });
+        }
+
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

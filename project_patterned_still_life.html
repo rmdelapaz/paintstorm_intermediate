@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paintstorm Studio — Project: Patterned Still Life</title>
+  <link rel="icon" href="/favicon.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+  <style>
+    :root { --maxw: 1100px; --ink: #0f172a; --muted: #475569; --code-bg: #f5f5f7; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: var(--ink); background: #ffffff; }
+    header, nav, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
+    .title { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+    .tag { display: inline-block; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 999px; padding: .1rem .6rem; font-size: .85rem; }
+    .subtitle { color: var(--muted); }
+    .hero { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; }
+    .breadcrumbs { font-size: .9rem; color: var(--muted); padding: 0 1rem; max-width: var(--maxw); margin: 0 auto; }
+    .breadcrumbs a { color: inherit; text-decoration: none; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } .grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; background: #fff; }
+    .card h3 { margin-top: 0; }
+    .btn { display: inline-block; padding: .6rem .9rem; border-radius: 8px; border: 1px solid #e5e7eb; text-decoration: none; color: inherit; }
+    pre { overflow: auto; background: var(--code-bg); color: #111; padding: .75rem; border-radius: 8px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .figure { text-align: center; margin: 1rem 0; }
+    .figure figcaption { font-size: .9rem; color: var(--muted); }
+    svg { max-width: 100%; height: auto; }
+    canvas { max-width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff; }
+    nav a { margin-right: .5rem; }
+    .footer-note { font-size: .9rem; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #e5e7eb; padding: .5rem; text-align: left; }
+    th { background: #f8fafc; }
+    .control { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+    .control label { font-size: .9rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>Paintstorm Studio — Project: Patterned Still Life</h1>
+      <span class="tag">🎨 Paintstorm</span>
+      <span class="tag">🧵 Pattern</span>
+      <span class="tag">🍐 Still Life</span>
+    </div>
+    <p class="subtitle">Bring pattern and texture into a traditional still life. We’ll design a motif, tile it, then wrap it onto ceramics or cloth using light-aware layers.</p>
+    <div class="hero">
+      <p><strong>Goal:</strong> A finished still life with tasteful patterning integrated into the scene — not slapped on like a sticker.</p>
+    </div>
+  </header>
+
+  <nav aria-label="Primary">
+    <a class="btn" href="paintstorm_intermediate_index.html">⬅ Back to Intermediate Index</a>
+    <a class="btn" href="#plan">Plan</a>
+    <a class="btn" href="#steps">Steps</a>
+    <a class="btn" href="#demos">Demos</a>
+    <a class="btn" href="#export">Export</a>
+  </nav>
+
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="paintstorm_intermediate_index.html">Home</a> › <span>Project: Patterned Still Life</span>
+  </div>
+
+  <main>
+    <section id="plan">
+      <h2>Project plan</h2>
+      <figure class="figure">
+        <div class="mermaid">
+flowchart TB
+  Composition["Sketch &amp; Composition"] --> Values["Values (grayscale)"]
+  Values --> Base["Local Color (Base)"]
+  Base --> Pattern["Design Motif (Symmetry/Kaleido)"]
+  Pattern --> Tile["Seamless Tile Test"]
+  Tile --> Apply["Apply to Object (warp/mesh)"]
+  Apply --> Integrate["Integrate with Lighting (Multiply/Overlay)"]
+  Integrate --> Polish["Polish &amp; Texture Pass"]
+  Polish --> Export["Export"]
+        </div>
+        <figcaption>Same backbone as basic still life — with a pattern branch inserted after base colors.</figcaption>
+      </figure>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Subject &amp; layout</h3>
+          <p>Pick a vase or bowl to receive the pattern, plus two fruits. Use a neutral cloth or wall so the motif has room to shine.</p>
+          <pre><code>&lt;!-- Canvas suggestion (escaped) --&gt;
+Size: 3000 &times; 2000 px @ 300 DPI
+Color space: sRGB
+Background: mid-neutral gray</code></pre>
+        </article>
+        <article class="card">
+          <h3>Motif direction</h3>
+          <p>Choose a simple seed: a leaf, petal, or geometric wedge. Build a radial rosette, then try kaleidoscope for variants.</p>
+          <pre><code>&lt;!-- Motif notes --&gt;
+Arms: 6–8 (start)
+Offset: 0–10&deg;
+Mirror per arm: optional</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section id="steps">
+      <h2>Step-by-step</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Design &amp; tile</h3>
+          <p>Create a 512&times;512 tile, test with canvas offset, fix seams, and export as PNG.</p>
+          <pre><code>&lt;!-- Tiling checklist --&gt;
+Canvas: 512 &times; 512
+Offset: 256 px both axes
+Paint across seams, re-test
+Export: PNG (transparent if needed)</code></pre>
+        </article>
+        <article class="card">
+          <h3>Wrap on form</h3>
+          <p>Paste the tile onto a new layer and transform to match curvature. Use gentle warps; avoid stretching motifs near edges.</p>
+          <pre><code>&lt;!-- Placement recipe --&gt;
+1) Paste tile on layer
+2) Transform: warp/mesh to fit
+3) Shadows: Multiply (clipped)
+4) Highlights: Overlay (clipped)</code></pre>
+        </article>
+      </div>
+
+      <article class="card">
+        <h3>Integrate with light</h3>
+        <p>Glaze shadows and highlights so the pattern inherits the object’s light. Add micro-texture last to marry everything.</p>
+        <pre><code>&lt;!-- Integration notes --&gt;
+Contact shadow: darkest at touch
+Bounce light: faint, color-tinted
+Texture pass: low depth, low flow</code></pre>
+      </article>
+    </section>
+
+    <section id="demos">
+      <h2>Demos &amp; visual aids</h2>
+
+      <figure class="figure">
+        <svg viewBox="0 0 560 220" role="img" aria-label="Pattern on vase demo">
+          <rect x="0" y="0" width="560" height="220" fill="#ffffff"/>
+          <ellipse cx="200" cy="110" rx="50" ry="70" fill="#f8fafc" stroke="#cbd5e1"/>
+          <ellipse cx="200" cy="76" rx="28" ry="10" fill="#ffffff" stroke="#cbd5e1"/>
+          <rect x="160" y="100" width="80" height="20" fill="#fde68a" opacity="0.7"/>
+          <text x="150" y="95" font-size="12" fill="#111827">Pattern Layer</text>
+          <rect x="40" y="170" width="80" height="14" fill="#111827" opacity="0.2"/>
+          <text x="40" y="166" font-size="12" fill="#111827">Shadow</text>
+          Sorry, your browser does not support inline SVG.
+        </svg>
+        <figcaption>Pattern layer sits on form; Multiply/Overlay layers integrate it with lighting.</figcaption>
+      </figure>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Integration flow</h3>
+          <div class="mermaid">
+flowchart TB
+  Place[Place tile] --> Warp[Warp to curvature]
+  Warp --> Multiply[Multiply shadows]
+  Multiply --> Overlay[Overlay highlights]
+  Overlay --> Texture[Texture pass]
+  Texture --> Done[Final polish]
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Interactive — tile painter</h3>
+          <p>Draw a small motif; the canvas repeats it as a tile preview. Adjust scale and rotation.</p>
+          <div class="control">
+            <label>Scale <input id="tile_scale" type="range" min="50" max="200" value="100"></label>
+            <span id="tile_scale_val">100%</span>
+            <label>Rotation&deg; <input id="tile_rot" type="range" min="0" max="359" value="0"></label>
+            <span id="tile_rot_val">0&deg;</span>
+            <button id="tile_clear" class="btn">Clear</button>
+          </div>
+          <canvas id="ps_intermediate_canvas_tile" width="560" height="300"></canvas>
+        </article>
+      </div>
+    </section>
+
+    <section id="export">
+      <h2>Export &amp; review</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Export checklist</h3>
+          <pre><code>&lt;!-- Export steps --&gt;
+1) Save master: patterned_still_life_master.psd
+2) Duplicate &amp; flatten for export
+3) Convert to sRGB (if needed)
+4) PNG (web) / TIFF (print)</code></pre>
+        </article>
+        <article class="card">
+          <h3>Critique prompts</h3>
+          <ul>
+            <li>Does the pattern serve the composition or compete with it?</li>
+            <li>Are values still readable from a distance (squint test)?</li>
+            <li>Does the pattern wrap believably around curves?</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="grid grid-2">
+        <a class="btn" href="lesson_symmetry_and_kaleidoscope.html">⬅ Back to Symmetry &amp; Kaleidoscope</a>
+        <a class="btn" href="paintstorm_intermediate_index.html">Return to Intermediate Index</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-note">© <span id="year"></span> Paintstorm Intermediate • Favicon at <code>/favicon.png</code>. Built with ❤️ for learners.</p>
+  </footer>
+
+  <script>
+    // Canvas demo: unique id ps_intermediate_canvas_tile
+    (function(){
+      const c = document.getElementById('ps_intermediate_canvas_tile');
+      const ctx = c.getContext('2d');
+      const scaleEl = document.getElementById('tile_scale');
+      const scaleVal = document.getElementById('tile_scale_val');
+      const rotEl = document.getElementById('tile_rot');
+      const rotVal = document.getElementById('tile_rot_val');
+      const clearBtn = document.getElementById('tile_clear');
+
+      if (!c || !scaleEl || !rotEl) return;
+
+      const tile = document.createElement('canvas');
+      tile.width = 128; tile.height = 128;
+      const tctx = tile.getContext('2d');
+      let drawing = false, last = null;
+
+      function drawBG(){
+        ctx.clearRect(0,0,c.width,c.height);
+        const g = ctx.createLinearGradient(0,0,0,c.height);
+        g.addColorStop(0,'#ffffff'); g.addColorStop(1,'#f8fafc');
+        ctx.fillStyle = g; ctx.fillRect(0,0,c.width,c.height);
+      }
+      drawBG();
+
+      function drawTile(){
+        const pat = ctx.createPattern(tile, 'repeat');
+        const scale = Number(scaleEl.value)/100;
+        const rot = Number(rotEl.value) * Math.PI/180;
+
+        ctx.save();
+        drawBG();
+        ctx.translate(c.width/2, c.height/2);
+        ctx.rotate(rot);
+        ctx.scale(scale, scale);
+        ctx.translate(-c.width/2, -c.height/2);
+        ctx.fillStyle = pat;
+        ctx.fillRect(0,0,c.width,c.height);
+        ctx.restore();
+      }
+
+      function drawOnTile(x,y){
+        tctx.fillStyle = '#111827';
+        tctx.beginPath();
+        tctx.arc(x, y, 4, 0, Math.PI*2);
+        tctx.fill();
+        drawTile();
+      }
+
+      // map from canvas coords to tile coords (wrap)
+      function toTileCoords(x,y){
+        const tx = ((x % tile.width) + tile.width) % tile.width;
+        const ty = ((y % tile.height) + tile.height) % tile.height;
+        return {x: tx, y: ty};
+      }
+
+      c.addEventListener('mousedown', (e)=>{ drawing = true; last = { x: e.offsetX, y: e.offsetY }; const p = toTileCoords(e.offsetX, e.offsetY); drawOnTile(p.x, p.y); });
+      c.addEventListener('mouseup', ()=>{ drawing = false; last = null; });
+      c.addEventListener('mouseleave', ()=>{ drawing = false; last = null; });
+      c.addEventListener('mousemove', (e)=>{
+        if (!drawing || !last) return;
+        // interpolate line for smoother drawing into tile
+        const steps = 8;
+        for (let i=1;i<=steps;i++){
+          const x = last.x + (e.offsetX - last.x) * (i/steps);
+          const y = last.y + (e.offsetY - last.y) * (i/steps);
+          const p = toTileCoords(x,y);
+          drawOnTile(p.x, p.y);
+        }
+        last = { x: e.offsetX, y: e.offsetY };
+      });
+
+      scaleEl.addEventListener('input', ()=>{ scaleVal.textContent = scaleEl.value + '%'; drawTile(); });
+      rotEl.addEventListener('input', ()=>{ rotVal.textContent = rotEl.value + '°'; drawTile(); });
+      clearBtn.addEventListener('click', ()=>{ tctx.clearRect(0,0,tile.width,tile.height); drawTile(); });
+
+      scaleVal.textContent = scaleEl.value + '%';
+      rotVal.textContent = rotEl.value + '°';
+      drawTile();
+    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

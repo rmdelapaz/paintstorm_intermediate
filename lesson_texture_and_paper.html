@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paintstorm Studio — Intermediate: Texture Maps &amp; Paper Grain</title>
+  <link rel="icon" href="/favicon.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+  <style>
+    :root { --maxw: 1100px; --ink: #0f172a; --muted: #475569; --code-bg: #f5f5f7; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: var(--ink); background: #ffffff; }
+    header, nav, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
+    .title { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+    .tag { display: inline-block; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 999px; padding: .1rem .6rem; font-size: .85rem; }
+    .subtitle { color: var(--muted); }
+    .breadcrumbs { font-size: .9rem; color: var(--muted); padding: 0 1rem; max-width: var(--maxw); margin: 0 auto; }
+    .breadcrumbs a { color: inherit; text-decoration: none; }
+    .hero { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } .grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; background: #fff; }
+    .card h3 { margin-top: 0; }
+    .btn { display: inline-block; padding: .6rem .9rem; border-radius: 8px; border: 1px solid #e5e7eb; text-decoration: none; color: inherit; }
+    pre { overflow: auto; background: var(--code-bg); color: #111; padding: .75rem; border-radius: 8px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .figure { text-align: center; margin: 1rem 0; }
+    .figure figcaption { font-size: .9rem; color: var(--muted); }
+    svg { max-width: 100%; height: auto; }
+    canvas { max-width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff; }
+    nav a { margin-right: .5rem; }
+    .footer-note { font-size: .9rem; color: var(--muted); }
+    .control { display: flex; align-items: center; gap: .5rem; }
+    .control label { font-size: .9rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>Paintstorm Studio — Texture Maps &amp; Paper Grain</h1>
+      <span class="tag">🎨 Paintstorm</span>
+      <span class="tag">🧪 Texture</span>
+      <span class="tag">🧵 Paper Grain</span>
+    </div>
+    <p class="subtitle">Add tactile charm to digital strokes. Texture depth is seasoning — a little goes a long way.</p>
+    <div class="hero">
+      <p><strong>Goal:</strong> Import textures, set depth/scale appropriately, and blend surface feel into brushwork without muddying values.</p>
+    </div>
+  </header>
+
+  <nav aria-label="Primary">
+    <a class="btn" href="paintstorm_intermediate_index.html">⬅ Back to Intermediate Index</a>
+    <a class="btn" href="#overview">Overview</a>
+    <a class="btn" href="#practice">Practice</a>
+    <a class="btn" href="#demos">Demos</a>
+    <a class="btn" href="#wrapup">Wrap-up</a>
+  </nav>
+
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="paintstorm_intermediate_index.html">Home</a> › <span>Lesson: Texture Maps &amp; Paper Grain</span>
+  </div>
+
+  <main>
+    <section id="overview">
+      <h2>Texture is story</h2>
+      <p>Texture tells viewers what a surface <em>feels</em> like. In Paintstorm, you can add texture at the brush level (paper grain) or across the canvas (patterns/overlays). Think of it like choosing the paper you draw on before you pick the pencil.</p>
+
+      <figure class="figure">
+        <div class="mermaid">
+flowchart LR
+  Import["Import Texture (PNG)"] --> Assign["Assign to Brush/Canvas"]
+  Assign --> Tune["Tune Depth &amp; Scale"]
+  Tune --> Paint["Paint with Restraint"]
+  Paint --> Save["Save Preset"]
+        </div>
+        <figcaption>Simple path: import → assign → tune → paint → save.</figcaption>
+      </figure>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Depth vs. Scale</h3>
+          <p><strong>Depth</strong> is how strong the texture emboss feels; <strong>Scale</strong> is pattern size. Match scale to your zoom and canvas size.</p>
+          <pre><code>&lt;!-- Starting points --&gt;
+Depth: 10–35%
+Scale: 80–120%
+Blend: Normal (lower Flow for subtlety)</code></pre>
+        </article>
+        <article class="card">
+          <h3>Comparative note</h3>
+          <ul>
+            <li><strong>Krita:</strong> paper textures via brush tips &amp; texture masks.</li>
+            <li><strong>Photoshop:</strong> pattern/texture overlays and brush texture settings.</li>
+            <li><strong>Corel Painter:</strong> “Paper” system with convincing natural grains.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>Hands-on practice</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Import and assign</h3>
+          <p>Use a high-contrast grayscale PNG. Assign it to your brush texture slot or the canvas pattern slot.</p>
+          <pre><code>&lt;!-- Workflow (escaped) --&gt;
+1) Import PNG (grayscale)
+2) Assign: Brush Texture &gt; Select
+3) Set Depth 20–30%, Scale 90–110%
+4) Save brush preset with texture ON</code></pre>
+        </article>
+        <article class="card">
+          <h3>Value safety</h3>
+          <p>Texture is seasoning. Keep forms readable by using lower Flow and glazing texture in gently.</p>
+          <pre><code>&lt;!-- Readability tips --&gt;
+- Toggle texture off to compare
+- Use larger brushes for broad forms, texture later
+- Avoid 100% depth; aim for 20–35%</code></pre>
+        </article>
+      </div>
+
+      <article class="card">
+        <h3>Subtle break-up pass</h3>
+        <p>On a new layer, lightly add texture only in shadow-halftones and background to avoid stealing attention from focal points.</p>
+        <pre><code>&lt;!-- Layering idea --&gt;
+Separate &quot;Texture Pass&quot; layer (low opacity)
+Mask out highlights
+Feather mask edges 2–3px</code></pre>
+      </article>
+    </section>
+
+    <section id="demos">
+      <h2>Demos &amp; visual aids</h2>
+
+      <figure class="figure">
+        <svg viewBox="0 0 560 200" role="img" aria-label="Texture scale diagram">
+          <rect x="0" y="0" width="560" height="200" fill="#ffffff"/>
+          <rect x="60" y="50" width="140" height="100" fill="#e5e7eb" stroke="#cbd5e1"/>
+          <rect x="230" y="45" width="140" height="110" fill="#e5e7eb" stroke="#cbd5e1"/>
+          <rect x="400" y="40" width="140" height="120" fill="#e5e7eb" stroke="#cbd5e1"/>
+          <text x="92" y="170" font-size="12" fill="#111827">Small</text>
+          <text x="262" y="170" font-size="12" fill="#111827">Medium</text>
+          <text x="432" y="170" font-size="12" fill="#111827">Large</text>
+          Sorry, your browser does not support inline SVG.
+        </svg>
+        <figcaption>Match texture scale to viewing size — too large looks stamped, too small becomes noise.</figcaption>
+      </figure>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Texture sanity flow</h3>
+          <div class="mermaid">
+flowchart TB
+  Start[Add texture] --> CheckValues[Toggle, check values]
+  CheckValues --> Subtle[Lower depth/flow if needed]
+  Subtle --> Mask[Mask &amp; feather]
+  Mask --> Save[Save preset]
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Interactive — texture depth</h3>
+          <p>Drag the slider to change texture depth. Click the canvas to add paint; the grain modulates the color.</p>
+          <div class="control">
+            <label for="texture_depth">Depth</label>
+            <input id="texture_depth" type="range" min="0" max="40" value="18" />
+            <span id="texture_depth_value">18%</span>
+          </div>
+          <canvas id="ps_intermediate_canvas_texture" width="560" height="240"></canvas>
+        </article>
+      </div>
+    </section>
+
+    <section id="wrapup">
+      <h2>What you’ve learned</h2>
+      <ul>
+        <li>How to import and assign textures to brushes or canvas.</li>
+        <li>How to tune depth and scale to match zoom and canvas size.</li>
+        <li>How to preserve readability by glazing texture in lightly.</li>
+      </ul>
+      <p class="hero"><strong>Next step:</strong> Continue to <em>Blending &amp; Smudge</em> to merge edges and planes without losing structure.</p>
+
+      <div class="grid grid-2">
+        <a class="btn" href="lesson_dynamic_brushes.html">⬅ Back to Dynamic Brushes</a>
+        <a class="btn" href="lesson_blending_and_smudge.html">Continue to Blending &amp; Smudge ➡</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-note">© <span id="year"></span> Paintstorm Intermediate • Favicon at <code>/favicon.png</code>. Built with ❤️ for learners.</p>
+  </footer>
+
+  <script>
+    // Canvas demo: unique id ps_intermediate_canvas_texture
+    (function(){
+      const c = document.getElementById('ps_intermediate_canvas_texture');
+      const slider = document.getElementById('texture_depth');
+      const sliderVal = document.getElementById('texture_depth_value');
+      if (!c || !slider) return;
+      const ctx = c.getContext('2d');
+      const dabs = [];
+      let depth = Number(slider.value) / 100;
+
+      // simple noise texture
+      const tex = document.createElement('canvas');
+      tex.width = 128; tex.height = 128;
+      const tctx = tex.getContext('2d');
+      const id = tctx.createImageData(tex.width, tex.height);
+      for (let i=0;i<id.data.length;i+=4){
+        const v = Math.floor(Math.random() * 256);
+        id.data[i] = id.data[i+1] = id.data[i+2] = v;
+        id.data[i+3] = 255;
+      }
+      tctx.putImageData(id, 0, 0);
+      const pattern = ctx.createPattern(tex, 'repeat');
+
+      slider.addEventListener('input', () => {
+        depth = Number(slider.value) / 100;
+        sliderVal.textContent = slider.value + '%';
+      });
+
+      c.addEventListener('click', (e) => {
+        dabs.push({ x: e.offsetX, y: e.offsetY, r: 10 + Math.random()*14, hue: Math.floor(Math.random()*360) });
+      });
+
+      function draw(){
+        // bg
+        ctx.clearRect(0,0,c.width,c.height);
+        const g = ctx.createLinearGradient(0,0,0,c.height);
+        g.addColorStop(0,'#ffffff'); g.addColorStop(1,'#f8fafc');
+        ctx.fillStyle = g; ctx.fillRect(0,0,c.width,c.height);
+
+        // paint dabs with texture modulation
+        dabs.forEach(d => {
+          // base color
+          ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, Math.PI*2);
+          ctx.fillStyle = 'hsl(' + d.hue + ' 70% 60%)'; ctx.fill();
+
+          // multiply-ish grain overlay
+          ctx.save();
+          ctx.globalAlpha = Math.min(0.5, depth * 1.4);
+          ctx.globalCompositeOperation = 'multiply';
+          ctx.fillStyle = pattern;
+          ctx.translate(d.x - d.r, d.y - d.r);
+          ctx.fillRect(0, 0, d.r*2, d.r*2);
+          ctx.restore();
+        });
+
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

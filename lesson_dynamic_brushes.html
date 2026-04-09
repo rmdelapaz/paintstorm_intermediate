@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paintstorm Studio — Intermediate: Dynamic Brushes</title>
+  <link rel="icon" href="/favicon.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+  <style>
+    :root { --maxw: 1100px; --ink: #0f172a; --muted: #475569; --code-bg: #f5f5f7; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: var(--ink); background: #ffffff; }
+    header, nav, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
+    .title { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+    .tag { display: inline-block; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 999px; padding: .1rem .6rem; font-size: .85rem; }
+    .subtitle { color: var(--muted); }
+    .hero { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; }
+    .breadcrumbs { font-size: .9rem; color: var(--muted); padding: 0 1rem; max-width: var(--maxw); margin: 0 auto; }
+    .breadcrumbs a { color: inherit; text-decoration: none; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } .grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; background: #fff; }
+    .card h3 { margin-top: 0; }
+    .btn { display: inline-block; padding: .6rem .9rem; border-radius: 8px; border: 1px solid #e5e7eb; text-decoration: none; color: inherit; }
+    pre { overflow: auto; background: var(--code-bg); color: #111; padding: .75rem; border-radius: 8px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .figure { text-align: center; margin: 1rem 0; }
+    .figure figcaption { font-size: .9rem; color: var(--muted); }
+    svg { max-width: 100%; height: auto; }
+    canvas { max-width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff; }
+    nav a { margin-right: .5rem; }
+    .footer-note { font-size: .9rem; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #e5e7eb; padding: .5rem; text-align: left; }
+    th { background: #f8fafc; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>Paintstorm Studio — Dynamic Brushes</h1>
+      <span class="tag">🎨 Paintstorm</span>
+      <span class="tag">⚙️ Dynamics</span>
+      <span class="tag">🧪 Intermediate</span>
+    </div>
+    <p class="subtitle">Make your brushes react to you — pressure for size, tilt for angle, speed for scatter/texture. Like a calligrapher’s pen that sings when you move with intention.</p>
+    <div class="hero">
+      <p><strong>Goal:</strong> Configure expressive brush dynamics and organize presets so you can switch feels in one click.</p>
+    </div>
+  </header>
+
+  <nav aria-label="Primary">
+    <a class="btn" href="paintstorm_intermediate_index.html">⬅ Back to Intermediate Index</a>
+    <a class="btn" href="#overview">Overview</a>
+    <a class="btn" href="#practice">Practice</a>
+    <a class="btn" href="#demos">Demos</a>
+    <a class="btn" href="#wrapup">Wrap-up</a>
+  </nav>
+
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="paintstorm_intermediate_index.html">Home</a> › <span>Lesson: Dynamic Brushes</span>
+  </div>
+
+  <main>
+    <section id="overview">
+      <h2>How dynamics shape expression</h2>
+      <p>Brush dynamics connect your hand to the digital bristles. Imagine your stylus as a violin bow — <em>pressure</em> is force, <em>tilt</em> is timbre, and <em>speed</em> is tempo.</p>
+
+      <figure class="figure">
+        <div class="mermaid">
+flowchart LR
+  Input["Stylus Input"] -->|Pressure| SizeOpacity["Size &amp; Opacity"]
+  Input -->|Tilt| Angle["Angle &amp; Direction"]
+  Input -->|Speed| Scatter["Scatter &amp; Texture"]
+  SizeOpacity --> Stroke["Stroke Response"]
+  Angle --> Stroke
+  Scatter --> Stroke
+        </div>
+        <figcaption>Map inputs to behaviors to produce a living, responsive stroke.</figcaption>
+      </figure>
+
+      <table aria-label="Dynamics mapping">
+        <thead><tr><th>Input</th><th>Map to</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>Pressure</td><td>Size, Opacity, Flow</td><td>Tapered lines, subtle shading</td></tr>
+          <tr><td>Tilt</td><td>Angle, Rotation</td><td>Edge shading, pencil-like flats</td></tr>
+          <tr><td>Speed</td><td>Scatter, Texture Depth</td><td>Lively flicks, textured edges</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="practice">
+      <h2>Hands-on practice</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Expressive line brush</h3>
+          <p>Create a brush that sings with pressure and tilt. Use a small tip with a long taper and light texture.</p>
+          <pre><code>&lt;!-- Settings (escaped) --&gt;
+Brush Tip: Round (soft)
+Spacing: 5–8%
+Dynamics:
+  - Size: Pressure (ease-in curve)
+  - Opacity: Pressure (linear)
+  - Angle: Tilt
+Texture: Paper Fine (Depth 20%)
+Stabilizer: Low–Medium</code></pre>
+        </article>
+        <article class="card">
+          <h3>Textured painter</h3>
+          <p>Use speed to vary scatter so quick strokes feel dry and lively, slow strokes lay smooth paint.</p>
+          <pre><code>&lt;!-- Settings (escaped) --&gt;
+Brush Tip: Custom oval
+Dynamics:
+  - Scatter: Speed (low)
+  - Flow: Pressure (mid)
+  - Rotation: Tilt
+Texture: Canvas Medium (Depth 30%, Scale 90%)
+Blending: Low smudge</code></pre>
+        </article>
+      </div>
+
+      <article class="card">
+        <h3>Preset hygiene</h3>
+        <p>Save often, tag clearly, and keep a small “favorites” set for speed. Think of it like a chef’s knife roll — only the essential tools travel.</p>
+        <pre><code>&lt;!-- Preset tips --&gt;
+Name format: dyn_line_soft_a, dyn_painter_textured_b
+Tags: line, painterly, texture, smooth
+Export set: Settings &gt; Manage Resources &gt; Export</code></pre>
+      </article>
+    </section>
+
+    <section id="demos">
+      <h2>Demos &amp; visual aids</h2>
+
+      <figure class="figure">
+        <svg viewBox="0 0 560 200" role="img" aria-label="Dynamics diagram">
+          <rect x="0" y="0" width="560" height="200" fill="#ffffff"/>
+          <path d="M40 160 C 160 40, 300 40, 520 160" fill="none" stroke="#111827" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="160" cy="80" r="14" fill="#ef4444"/>
+          <circle cx="260" cy="70" r="14" fill="#f59e0b"/>
+          <circle cx="360" cy="90" r="14" fill="#3b82f6"/>
+          Sorry, your browser does not support inline SVG.
+        </svg>
+        <figcaption>Taper + texture hints — a visual reminder to vary pressure and speed.</figcaption>
+      </figure>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Configuration flow</h3>
+          <div class="mermaid">
+flowchart TB
+  Start[Pick base tip] --> MapPressure[Map Pressure to Size/Opacity]
+  MapPressure --> MapTilt[Map Tilt to Angle]
+  MapTilt --> MapSpeed[Map Speed to Scatter/Texture]
+  MapSpeed --> Test[Test on canvas]
+  Test --> Save[Save preset + tag]
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Interactive — dynamics canvas</h3>
+          <p>Click-drag to draw. Move faster to increase scatter; press longer to grow stroke size over time (simulating pressure).</p>
+          <canvas id="ps_intermediate_canvas_dynamics" width="560" height="240"></canvas>
+        </article>
+      </div>
+    </section>
+
+    <section id="wrapup">
+      <h2>What you’ve learned</h2>
+      <ul>
+        <li>How pressure, tilt, and speed map to size, angle, and texture.</li>
+        <li>How to build two versatile mid-level brushes: expressive line and textured painter.</li>
+        <li>How to maintain a lean, labeled set of presets for speed.</li>
+      </ul>
+      <p class="hero"><strong>Next step:</strong> Continue to <em>Texture Maps &amp; Paper Grain</em> to add subtle surface feel to every stroke.</p>
+
+      <div class="grid grid-2">
+        <a class="btn" href="paintstorm_intermediate_index.html">⬅ Back to Intermediate Index</a>
+        <a class="btn" href="lesson_texture_and_paper.html">Continue to Texture &amp; Paper ➡</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-note">© <span id="year"></span> Paintstorm Intermediate • Favicon at <code>/favicon.png</code>. Built with ❤️ for learners.</p>
+  </footer>
+
+  <script>
+    // Canvas demo: unique id ps_intermediate_canvas_dynamics
+    (function(){
+      const c = document.getElementById('ps_intermediate_canvas_dynamics');
+      if (!c) return;
+      const ctx = c.getContext('2d');
+
+      let drawing = false;
+      let lastTime = 0, lastX = 0, lastY = 0;
+
+      function hsla(h, s, l, a){ return 'hsla(' + h + ', ' + s + '%, ' + l + '%, ' + a + ')'; }
+
+      c.addEventListener('mousedown', (e) => {
+        drawing = true;
+        lastTime = performance.now();
+        lastX = e.offsetX; lastY = e.offsetY;
+      });
+      c.addEventListener('mouseup', () => drawing = false);
+      c.addEventListener('mouseleave', () => drawing = false);
+
+      c.addEventListener('mousemove', (e) => {
+        if (!drawing) return;
+        const now = performance.now();
+        const dt = Math.max(1, now - lastTime);
+        const dx = e.offsetX - lastX;
+        const dy = e.offsetY - lastY;
+        const speed = Math.hypot(dx, dy) / dt; // px/ms
+        // dynamics
+        const baseSize = 6;
+        const size = baseSize + Math.min(16, dt * 0.02); // grows with time pressed (pressure analog)
+        const count = 1 + Math.floor(Math.min(12, speed * 30)); // more speed => more scatter dots
+        for (let i=0; i<count; i++){
+          const jitter = (Math.random()-0.5) * (speed * 40); // scatter radius
+          const x = e.offsetX + jitter;
+          const y = e.offsetY + jitter;
+          ctx.beginPath();
+          ctx.arc(x, y, size * (0.25 + Math.random()*0.75), 0, Math.PI*2);
+          const hue = (x / c.width) * 60 + 10; // warm range
+          ctx.fillStyle = hsla(hue, 80, 55, 0.9);
+          ctx.fill();
+        }
+        lastTime = now; lastX = e.offsetX; lastY = e.offsetY;
+      });
+
+      // light bg
+      function clear(){
+        ctx.clearRect(0,0,c.width,c.height);
+        const g = ctx.createLinearGradient(0,0,0,c.height);
+        g.addColorStop(0,'#ffffff'); g.addColorStop(1,'#f8fafc');
+        ctx.fillStyle = g; ctx.fillRect(0,0,c.width,c.height);
+      }
+      clear();
+    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

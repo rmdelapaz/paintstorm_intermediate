@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paintstorm Studio — Intermediate: Masks &amp; Selections</title>
+  <link rel="icon" href="/favicon.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+  <style>
+    :root { --maxw: 1100px; --ink: #0f172a; --muted: #475569; --code-bg: #f5f5f7; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: var(--ink); background: #ffffff; }
+    header, nav, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 1rem; }
+    .title { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+    .tag { display: inline-block; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 999px; padding: .1rem .6rem; font-size: .85rem; }
+    .subtitle { color: var(--muted); }
+    .breadcrumbs { font-size: .9rem; color: var(--muted); padding: 0 1rem; max-width: var(--maxw); margin: 0 auto; }
+    .breadcrumbs a { color: inherit; text-decoration: none; }
+    .hero { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } .grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; background: #fff; }
+    .card h3 { margin-top: 0; }
+    .btn { display: inline-block; padding: .6rem .9rem; border-radius: 8px; border: 1px solid #e5e7eb; text-decoration: none; color: inherit; }
+    pre { overflow: auto; background: var(--code-bg); color: #111; padding: .75rem; border-radius: 8px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .figure { text-align: center; margin: 1rem 0; }
+    .figure figcaption { font-size: .9rem; color: var(--muted); }
+    svg { max-width: 100%; height: auto; }
+    canvas { max-width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; background: #ffffff; }
+    nav a { margin-right: .5rem; }
+    .footer-note { font-size: .9rem; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #e5e7eb; padding: .5rem; text-align: left; }
+    th { background: #f8fafc; }
+    .control { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+    .control label { font-size: .9rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>Paintstorm Studio — Masks &amp; Selections</h1>
+      <span class="tag">🎨 Paintstorm</span>
+      <span class="tag">🎯 Precision</span>
+      <span class="tag">🧱 Non‑destructive</span>
+    </div>
+    <p class="subtitle">Selections are your “masking tape,” masks are reusable stencils. Together they let you paint boldly without fear.</p>
+    <div class="hero">
+      <p><strong>Goal:</strong> Use selections (lasso/poly/curve), feather and expand/contract, and convert selections to masks for non-destructive editing.</p>
+    </div>
+  </header>
+
+  <nav aria-label="Primary">
+    <a class="btn" href="paintstorm_intermediate_index.html">⬅ Back to Intermediate Index</a>
+    <a class="btn" href="#overview">Overview</a>
+    <a class="btn" href="#practice">Practice</a>
+    <a class="btn" href="#demos">Demos</a>
+    <a class="btn" href="#wrapup">Wrap-up</a>
+  </nav>
+
+  <div class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="paintstorm_intermediate_index.html">Home</a> › <span>Lesson: Masks &amp; Selections</span>
+  </div>
+
+  <main>
+    <section id="overview">
+      <h2>From selection to mask</h2>
+      <p>Create a selection to target an area, then turn it into a mask so the protection persists. Think of it like cutting a stencil once and reusing it.</p>
+
+      <figure class="figure">
+        <div class="mermaid">
+flowchart LR
+  Lasso["Lasso / Poly / Curve"] --> Feather["Feather / Expand / Contract"]
+  Feather --> Convert["Convert to Mask"]
+  Convert --> Clip["Clip to Base (optional)"]
+  Clip --> Paint["Paint safely inside"]
+  Convert --> Refine["Refine mask (paint black/white)"]
+        </div>
+        <figcaption>Selections shape where you can paint; masks make that selection reusable and editable.</figcaption>
+      </figure>
+
+      <table aria-label="Selection operations">
+        <thead><tr><th>Action</th><th>Why</th><th>Metaphor</th></tr></thead>
+        <tbody>
+          <tr><td>Add/Subtract</td><td>Grow or carve the selection</td><td>Masking tape overlaps ✂️</td></tr>
+          <tr><td>Feather</td><td>Soften the border</td><td>Blurred tape edge 🧻</td></tr>
+          <tr><td>Grow/Shrink</td><td>Expand/contract region</td><td>Thicker/thinner tape</td></tr>
+          <tr><td>Invert</td><td>Protect the opposite area</td><td>Flip the stencil</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="practice">
+      <h2>Hands-on practice</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Clean fruit rims</h3>
+          <p>Use the Curve selection to outline the rim of a bowl. Feather 2–3 px, then glaze color on a clipped layer — crisp rim, soft interior.</p>
+          <pre><code>&lt;!-- Steps (escaped) --&gt;
+1) Curve select the rim
+2) Selection &gt; Feather 2–3px
+3) Convert to Mask on a new layer
+4) Paint highlights without spill</code></pre>
+        </article>
+        <article class="card">
+          <h3>Recolor without damage</h3>
+          <p>Convert a fruit silhouette to a mask, then paint on a layer set to Color blend mode — hue shifts, values stay.</p>
+          <pre><code>&lt;!-- Setup --&gt;
+Base (fruit silhouette)
+Mask: from selection
+Above: &quot;Color&quot; mode layer for glazing</code></pre>
+        </article>
+      </div>
+
+      <article class="card">
+        <h3>Marching ants are temporary</h3>
+        <p>Selections vanish when you deselect; masks stay, save with the file, and can be painted black/white to edit.</p>
+        <pre><code>&lt;!-- Mask painting --&gt;
+White = reveal
+Black = hide
+Gray = partial (feather)</code></pre>
+      </article>
+    </section>
+
+    <section id="demos">
+      <h2>Demos &amp; visual aids</h2>
+
+      <figure class="figure">
+        <svg viewBox="0 0 560 200" role="img" aria-label="Selection tools icons">
+          <rect x="0" y="0" width="560" height="200" fill="#ffffff"/>
+          <rect x="60" y="50" width="120" height="100" rx="8" fill="#e5e7eb" stroke="#cbd5e1"/>
+          <text x="92" y="105" font-size="12" fill="#111827">Lasso</text>
+          <rect x="220" y="50" width="120" height="100" rx="8" fill="#e5e7eb" stroke="#cbd5e1"/>
+          <text x="242" y="105" font-size="12" fill="#111827">Polygon</text>
+          <rect x="380" y="50" width="120" height="100" rx="8" fill="#e5e7eb" stroke="#cbd5e1"/>
+          <text x="412" y="105" font-size="12" fill="#111827">Curve</text>
+          Sorry, your browser does not support inline SVG.
+        </svg>
+        <figcaption>Pick the right tool for the edge: organic (lasso), straight (poly), smooth (curve).</figcaption>
+      </figure>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Non-destructive flow</h3>
+          <div class="mermaid">
+flowchart TB
+  Select[Select] --> Feather[Feather / Grow / Shrink]
+  Feather --> Mask[Convert to Mask]
+  Mask --> Clip[Clip to Base]
+  Clip --> Paint[Paint / Adjust]
+  Paint --> Tweak[Refine Mask]
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Interactive — mask painting canvas</h3>
+          <p>Toggle a circular mask and adjust feather. When mask is ON, you can only paint inside the circle; feather controls edge softness.</p>
+          <div class="control">
+            <label><input type="checkbox" id="mask_toggle" checked> Mask ON</label>
+            <label>Feather <input id="feather" type="range" min="0" max="60" value="20"></label>
+            <span id="feather_val">20 px</span>
+          </div>
+          <canvas id="ps_intermediate_canvas_masks" width="560" height="260"></canvas>
+        </article>
+      </div>
+    </section>
+
+    <section id="wrapup">
+      <h2>What you’ve learned</h2>
+      <ul>
+        <li>How to turn precise selections into reusable masks.</li>
+        <li>How feather/grow/shrink shape edges and protect forms.</li>
+        <li>How to paint confidently inside masks for clean, fast results.</li>
+      </ul>
+      <p class="hero"><strong>Next step:</strong> Continue to <em>Symmetry &amp; Kaleidoscope</em> to create decorative motifs for patterned still lifes.</p>
+
+      <div class="grid grid-2">
+        <a class="btn" href="lesson_blending_and_smudge.html">⬅ Back to Blending &amp; Smudge</a>
+        <a class="btn" href="lesson_symmetry_and_kaleidoscope.html">Continue to Symmetry &amp; Kaleidoscope ➡</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-note">© <span id="year"></span> Paintstorm Intermediate • Favicon at <code>/favicon.png</code>. Built with ❤️ for learners.</p>
+  </footer>
+
+  <script>
+    // Canvas demo: unique id ps_intermediate_canvas_masks
+    (function(){
+      const c = document.getElementById('ps_intermediate_canvas_masks');
+      const toggle = document.getElementById('mask_toggle');
+      const feather = document.getElementById('feather');
+      const featherVal = document.getElementById('feather_val');
+      if (!c || !toggle || !feather) return;
+      const ctx = c.getContext('2d');
+      const mask = { x: c.width/2, y: c.height/2, r: 80 };
+      let painting = false;
+
+      function bg(){
+        ctx.clearRect(0,0,c.width,c.height);
+        const g = ctx.createLinearGradient(0,0,0,c.height);
+        g.addColorStop(0,'#ffffff'); g.addColorStop(1,'#f8fafc');
+        ctx.fillStyle = g; ctx.fillRect(0,0,c.width,c.height);
+        // visualize mask
+        if (toggle.checked){
+          ctx.beginPath(); ctx.arc(mask.x, mask.y, mask.r, 0, Math.PI*2);
+          ctx.strokeStyle = '#111827'; ctx.setLineDash([6,4]); ctx.stroke();
+          ctx.setLineDash([]);
+        }
+      }
+
+      function paint(x,y){
+        // check mask
+        if (toggle.checked){
+          const dx = x - mask.x, dy = y - mask.y;
+          const d = Math.hypot(dx,dy);
+          if (d > mask.r + Number(feather.value)) return; // outside hard+feather limit
+          // fade near edge according to feather
+          let alpha = 1.0;
+          const f = Number(feather.value);
+          if (d > mask.r && f > 0){
+            alpha = Math.max(0, 1 - (d - mask.r) / f);
+          }
+          ctx.globalAlpha = alpha;
+        } else {
+          ctx.globalAlpha = 0.95;
+        }
+        ctx.beginPath();
+        ctx.arc(x, y, 10, 0, Math.PI*2);
+        const hue = (x / c.width) * 70 + 5;
+        ctx.fillStyle = 'hsla(' + hue + ', 80%, 55%, 1)';
+        ctx.fill();
+        ctx.globalAlpha = 1.0;
+      }
+
+      c.addEventListener('mousedown', (e)=>{ painting = true; paint(e.offsetX, e.offsetY); });
+      c.addEventListener('mouseup', ()=> painting = false);
+      c.addEventListener('mouseleave', ()=> painting = false);
+      c.addEventListener('mousemove', (e)=>{ if (painting) paint(e.offsetX, e.offsetY); });
+      feather.addEventListener('input', ()=> { featherVal.textContent = feather.value + ' px'; });
+
+      bg();
+    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
